@@ -2,157 +2,500 @@
 <html lang="en">
 
 <head>
-<meta name="google-site-verification" content="LsoJwFSoyY8uRpvhDwxrt3btaOyXoPP0dxTu3JXaIbU" />
+
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" href="1779508386745.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GENZEST | Finance. News. Insight.</title>
+<title>GENZEST | Modern Finance Media</title>
 
-<meta name="description" content="Modern finance media platform covering investing, AI tools, startups, and market insights.">
+<meta name="description" content="GENZEST is a modern finance media platform covering investing, AI, business and future trends.">
 
-<meta name="keywords" content="finance, investing, stock market, AI, startups, business news">
+<meta name="keywords" content="finance, investing, AI, startups, stock market">
 
 <meta name="robots" content="index, follow">
+
+<link rel="icon" type="image/png" href="1779508386745.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/css/style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.topbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:22px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.55);
+backdrop-filter:blur(14px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+font-size:34px;
+font-weight:900;
+letter-spacing:2px;
+color:white;
+}
+
+.nav-links{
+display:flex;
+gap:40px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:15px;
+font-weight:500;
+transition:0.3s;
+opacity:0.8;
+}
+
+.nav-links a:hover{
+color:#00ffe0;
+opacity:1;
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+height:100vh;
+display:flex;
+align-items:center;
+padding:0 7%;
+overflow:hidden;
+}
+
+.hero-img{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0.28;
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(to bottom, rgba(0,0,0,0.4), #050505);
+}
+
+.hero-content{
+position:relative;
+max-width:750px;
+z-index:2;
+}
+
+.mini-text{
+color:#00ffe0;
+letter-spacing:3px;
+font-size:14px;
+margin-bottom:20px;
+font-weight:600;
+}
+
+.hero h1{
+font-size:82px;
+line-height:1;
+font-weight:900;
+margin-bottom:30px;
+}
+
+.hero-para{
+font-size:20px;
+line-height:1.8;
+opacity:0.75;
+max-width:650px;
+margin-bottom:40px;
+}
+
+.hero-btn{
+display:inline-block;
+padding:18px 34px;
+background:#00ffe0;
+color:black;
+text-decoration:none;
+font-weight:700;
+border-radius:16px;
+transition:0.4s;
+}
+
+.hero-btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px rgba(0,255,224,0.35);
+}
+
+/* FEATURED */
+
+.featured-section{
+padding:120px 7%;
+}
+
+.section-header{
+margin-bottom:70px;
+}
+
+.section-header p{
+color:#00ffe0;
+letter-spacing:2px;
+font-size:14px;
+margin-bottom:15px;
+}
+
+.section-header h2{
+font-size:52px;
+line-height:1.2;
+max-width:700px;
+}
+
+.featured-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+
+.featured-card{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.06);
+border-radius:28px;
+overflow:hidden;
+transition:0.4s;
+backdrop-filter:blur(12px);
+}
+
+.featured-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 40px rgba(0,255,224,0.12);
+}
+
+.featured-card img{
+width:100%;
+height:240px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.featured-card:hover img{
+transform:scale(1.05);
+}
+
+.featured-content{
+padding:30px;
+}
+
+.featured-content span{
+color:#00ffe0;
+font-size:13px;
+letter-spacing:2px;
+}
+
+.featured-content h3{
+font-size:28px;
+line-height:1.4;
+margin:18px 0;
+}
+
+.featured-content a{
+display:inline-block;
+margin-top:12px;
+text-decoration:none;
+color:#00ffe0;
+font-weight:600;
+}
+
+/* NEWSLETTER */
+
+.newsletter-section{
+padding:0 7% 120px;
+}
+
+.newsletter-box{
+background:linear-gradient(135deg, rgba(0,255,224,0.08), rgba(255,255,255,0.03));
+border:1px solid rgba(255,255,255,0.06);
+padding:70px;
+border-radius:35px;
+text-align:center;
+backdrop-filter:blur(10px);
+}
+
+.newsletter-mini{
+color:#00ffe0;
+letter-spacing:2px;
+font-size:13px;
+margin-bottom:15px;
+}
+
+.newsletter-box h2{
+font-size:54px;
+margin-bottom:20px;
+}
+
+.newsletter-text{
+font-size:18px;
+opacity:0.75;
+max-width:650px;
+margin:auto;
+line-height:1.8;
+margin-bottom:40px;
+}
+
+.newsletter-form{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.newsletter-form input{
+padding:18px 22px;
+width:340px;
+border:none;
+border-radius:14px;
+background:#101010;
+color:white;
+font-size:16px;
+outline:none;
+}
+
+.newsletter-form button{
+padding:18px 30px;
+border:none;
+background:#00ffe0;
+color:black;
+font-weight:700;
+border-radius:14px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+.footer{
+padding:70px 7%;
+border-top:1px solid rgba(255,255,255,0.06);
+text-align:center;
+}
+
+.footer-logo{
+font-size:34px;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.footer-text{
+opacity:0.7;
+max-width:600px;
+margin:auto;
+line-height:1.8;
+margin-bottom:35px;
+}
+
+.footer-links{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-bottom:30px;
+}
+
+.footer-links a{
+text-decoration:none;
+color:white;
+opacity:0.75;
+transition:0.3s;
+}
+
+.footer-links a:hover{
+color:#00ffe0;
+opacity:1;
+}
+
+.copyright{
+opacity:0.5;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+height:auto;
+padding:180px 7% 120px;
+}
+
+.hero h1{
+font-size:52px;
+}
+
+.hero-para{
+font-size:17px;
+}
+
+.section-header h2{
+font-size:36px;
+}
+
+.newsletter-box{
+padding:45px 25px;
+}
+
+.newsletter-box h2{
+font-size:38px;
+}
+
+.topbar{
+padding:20px 5%;
+}
+
+.nav-links{
+gap:18px;
+}
+
+.nav-links a{
+font-size:13px;
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- TOP NAVBAR -->
+<!-- NAVBAR -->
 
 <header class="topbar">
-
-<div class="menu-btn" onclick="openSidebar()">
-☰
-</div>
 
 <div class="logo">
 GENZEST
 </div>
 
-<div class="search-icon">
-⌕
-</div>
+<nav class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="blog.html">Blog</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
 
 </header>
 
-<!-- SIDEBAR -->
-
-<div class="sidebar" id="sidebar">
-
-<div class="close-btn" onclick="closeSidebar()">
-✕
-</div>
-
-<h2>GENZEST</h2>
-
-<a href="index.html">HOME</a>
-
-<a href="blog/first-article.html">MARKETS</a>
-
-<a href="blog/second-article.html">INVESTING</a>
-
-<a href="blog/third-article.html">BUSINESS</a>
-
-<a href="blog/second-article.html">AI TOOLS</a>
-
-<a href="blog/third-article.html">STARTUPS</a>
-<a href="contact.html">CONTACT</a>
-
-</div>
-
-<!-- HERO SECTION -->
+<!-- HERO -->
 
 <section class="hero">
 
-<img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1400&auto=format&fit=crop" class="hero-img">
+<img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1600&auto=format&fit=crop" class="hero-img">
 
 <div class="overlay"></div>
 
 <div class="hero-content">
 
 <p class="mini-text">
-NEXT GEN FINANCE MEDIA
+MODERN FINANCE MEDIA
 </p>
 
 <h1>
-Build Wealth.<br>
-Understand Markets.
+Future Of<br>
+Finance & AI
 </h1>
 
 <p class="hero-para">
-Finance news, investing insights, AI tools, startups, and modern business analysis.
+GENZEST delivers modern insights on investing, artificial intelligence, startups, business and future financial trends.
 </p>
 
-<a href="#" class="hero-btn">
-Explore Articles
+<a href="blog.html" class="hero-btn">
+Explore Blogs
 </a>
 
 </div>
 
 </section>
 
-<!-- CATEGORY SECTION -->
+<!-- FEATURED -->
 
-<section class="category-section">
+<section class="featured-section">
 
 <div class="section-header">
 
-<p>EXPLORE TOPICS</p>
+<p>FEATURED INSIGHTS</p>
 
 <h2>
-Explore Finance Categories
+Modern Finance Stories & Market Intelligence
 </h2>
 
 </div>
 
-<div class="category-grid">
+<div class="featured-grid">
 
-<div class="category-card">
+<div class="featured-card">
 
-<h3>Markets</h3>
+<img src="https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1200&auto=format&fit=crop">
 
-<p>
-Stock market news, analysis and trends.
-</p>
+<div class="featured-content">
 
-</div>
+<span>INVESTING</span>
 
-<div class="category-card">
+<h3>
+How Gen Z Is Approaching Wealth Creation
+</h3>
 
-<h3>Investing</h3>
-
-<p>
-Beginner investing and wealth building guides.
-</p>
+<a href="#">
+Read Article →
+</a>
 
 </div>
 
-<div class="category-card">
-
-<h3>Business</h3>
-
-<p>
-Startup stories and modern business insights.
-</p>
-
 </div>
 
-<div class="category-card">
+<div class="featured-card">
 
-<h3>AI Tools</h3>
+<img src="https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=1200&auto=format&fit=crop">
 
-<p>
-Latest AI tools changing finance and productivity.
-</p>
+<div class="featured-content">
+
+<span>AI & FINANCE</span>
+
+<h3>
+The Rise Of AI Powered Financial Research
+</h3>
+
+<a href="#">
+Read Article →
+</a>
+
+</div>
 
 </div>
 
@@ -175,8 +518,7 @@ Stay Ahead Of The Market
 </h2>
 
 <p class="newsletter-text">
-Get finance insights, market trends,
-AI tools and investing ideas directly in your inbox.
+Get finance insights, investing ideas and future trends directly in your inbox.
 </p>
 
 <div class="newsletter-form">
@@ -193,175 +535,6 @@ Subscribe
 
 </section>
 
-<!-- FEATURED SECTION -->
-
-<section class="featured-section">
-
-<div class="section-header">
-
-<p>FEATURED STORIES</p>
-
-<h2>
-Latest Finance & Business Insights
-</h2>
-
-</div>
-
-<div class="featured-grid">
-
-<!-- CARD 1 -->
-
-<div class="featured-card">
-
-<img src="https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1200&auto=format&fit=crop">
-
-<div class="featured-content">
-
-<span>MARKETS</span>
-
-<h3>
-Why Young Investors Are Winning In 2026
-</h3>
-
-<p>
-A deep dive into digital investing and wealth building strategies.
-</p>
-
-<a href="blog/first-article.html">
-Read More →
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 2 -->
-
-<div class="featured-card">
-
-<img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop">
-
-<div class="featured-content">
-
-<span>BUSINESS</span>
-
-<h3>
-How AI Is Changing Modern Finance
-</h3>
-
-<p>
-AI tools are reshaping the future of investing and startups.
-</p>
-
-<a href="blog/second-article.html">
-Read More →
-</a>
-
-</div>
-
-</div>
-
-<!-- CARD 3 -->
-
-<div class="featured-card">
-
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
-
-<div class="featured-content">
-
-<span>INVESTING</span>
-
-<h3>
-Beginner Investing Mistakes To Avoid
-</h3>
-
-<p>
-Common investing errors beginners make while entering markets.
-</p>
-
-<a href="blog/third-article.html">
-Read More →
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- LATEST ARTICLES -->
-
-<section class="latest-section">
-
-<div class="section-heading">
-
-<h2>Latest Articles</h2>
-
-<p>
-Fresh finance insights, investing guides,
-AI tools and startup stories.
-</p>
-
-</div>
-
-<div class="latest-grid">
-
-<div class="latest-card">
-
-<img
-src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop"
-alt="Investing">
-
-<div class="latest-content">
-
-<span>INVESTING</span>
-
-<h3>
-How Gen Z Is Building Wealth Faster Than Ever
-</h3>
-
-<p>
-Modern investing strategies helping young people create financial freedom.
-</p>
-
-<a href="blog/first-article.html">
-Read Article →
-</a>
-
-</div>
-</div>
-
-<div class="latest-card">
-
-<img
-src="https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=1200&auto=format&fit=crop"
-alt="AI Finance">
-
-<div class="latest-content">
-
-<span>AI TOOLS</span>
-
-<h3>
-Best AI Tools For Finance Students In 2026
-</h3>
-
-<p>
-Powerful AI tools helping students learn finance and investing faster.
-</p>
-
-<a href="blog/second-article.html">
-Read Article →
-</a>
-
-</div>
-</div>
-
-</div>
-
-</section>
-
 <!-- FOOTER -->
 
 <footer class="footer">
@@ -371,48 +544,26 @@ GENZEST
 </div>
 
 <p class="footer-text">
-Modern finance media platform covering
-investing, business, AI tools,
-markets and startup insights.
+Modern finance media platform focused on investing, AI, startups and future business trends.
 </p>
 
 <div class="footer-links">
 
-<a href="about.html">
-About
-</a>
+<a href="about.html">About</a>
 
-<a href="contact.html">
-Contact
-</a>
+<a href="contact.html">Contact</a>
 
-<a href="privacy-policy.html">
-Privacy Policy
-</a>
+<a href="privacy-policy.html">Privacy Policy</a>
 
-<a href="terms.html">
-Terms
-</a>
+<a href="terms.html">Terms</a>
 
 </div>
 
 <p class="copyright">
-© 2025 GENZEST. All Rights Reserved.
+© 2026 GENZEST. All Rights Reserved.
 </p>
 
 </footer>
-
-<script>
-
-function openSidebar() {
-document.getElementById("sidebar").style.left = "0";
-}
-
-function closeSidebar() {
-document.getElementById("sidebar").style.left = "-100%";
-}
-
-</script>
 
 </body>
 </html>
