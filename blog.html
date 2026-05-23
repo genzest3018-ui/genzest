@@ -3,1360 +3,477 @@
 
 <head>
 
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
 
-  <title>
-    GENZEST | AI, Finance & Investing
-  </title>
+<title>GENZEST Article</title>
 
-  <meta
-    name="description"
-    content="GENZEST delivers modern insights on AI, finance, investing, startups and future business trends."
-  />
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap"
+rel="stylesheet"
+/>
 
-  <meta
-    name="keywords"
-    content="AI investing, Gen Z finance, crypto, fintech, startups, investing"
-  />
+<style>
 
-  <meta
-    name="theme-color"
-    content="#050505"
-  />
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-  <link
-    rel="icon"
-    type="image/png"
-    href="1779508386745.png"
-  />
+:root{
 
-  <!-- Fonts -->
+--bg:#050505;
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap"
-    rel="stylesheet"
-  />
+--surface:#0f172a;
 
-  <!-- Icons -->
+--text:#ffffff;
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+--muted:#94a3b8;
 
-  <style>
+--accent:#60a5fa;
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+--gradient:
+linear-gradient(
+135deg,
+#3b82f6,
+#8b5cf6,
+#ec4899
+);
 
-    :root{
+}
 
-      --bg-primary:#050505;
+body{
 
-      --bg-secondary:#0f172a;
+background:var(--bg);
 
-      --surface:#111827;
+color:var(--text);
 
-      --surface-hover:#1e293b;
+font-family:'Inter',sans-serif;
 
-      --text-primary:#ffffff;
+line-height:1.9;
 
-      --text-secondary:#94a3b8;
+overflow-x:hidden;
 
-      --accent:#3b82f6;
+}
 
-      --accent-2:#a855f7;
+/* NAV */
 
-      --border:rgba(255,255,255,0.08);
+.topbar{
 
-      --gradient:
-      linear-gradient(
-        135deg,
-        #3b82f6,
-        #8b5cf6,
-        #ec4899
-      );
+position:fixed;
 
-    }
+top:0;
+left:0;
 
-    /* LIGHT MODE */
+width:100%;
 
-    body.theme-light{
+padding:1rem 5%;
 
-      --bg-primary:#f8fafc;
+display:flex;
 
-      --bg-secondary:#ffffff;
+justify-content:space-between;
 
-      --surface:#ffffff;
+align-items:center;
 
-      --surface-hover:#f1f5f9;
+background:rgba(5,5,5,0.75);
 
-      --text-primary:#0f172a;
+backdrop-filter:blur(14px);
 
-      --text-secondary:#475569;
+border-bottom:1px solid rgba(255,255,255,0.08);
 
-      --border:rgba(0,0,0,0.08);
+z-index:1000;
 
-    }
+}
 
-    /* EYE CARE MODE */
+.brand{
 
-    body.theme-eye{
+font-size:2rem;
 
-      --bg-primary:#101510;
+font-weight:900;
 
-      --bg-secondary:#1a2218;
+text-decoration:none;
 
-      --surface:#1f2a1d;
+background:var(--gradient);
 
-      --surface-hover:#2c3a28;
+-webkit-background-clip:text;
 
-      --text-primary:#e7f0dc;
+-webkit-text-fill-color:transparent;
 
-      --text-secondary:#b6c2aa;
+}
 
-      --border:rgba(180,220,170,0.08);
+/* ARTICLE */
 
-      --accent:#84cc16;
+.article-container{
 
-      --accent-2:#65a30d;
+width:90%;
 
-      --gradient:
-      linear-gradient(
-        135deg,
-        #84cc16,
-        #65a30d,
-        #4d7c0f
-      );
+max-width:950px;
 
-    }
+margin:auto;
 
-    html{
-      scroll-behavior:smooth;
-    }
+padding:120px 0 80px;
 
-    body{
+}
 
-      background:var(--bg-primary);
+.article-image{
 
-      color:var(--text-primary);
+width:100%;
 
-      font-family:'Inter',sans-serif;
+height:420px;
 
-      overflow-x:hidden;
+object-fit:cover;
 
-      transition:0.3s ease;
+border-radius:28px;
 
-    }
+margin-bottom:40px;
 
-    /* NAVBAR */
+box-shadow:
+0 20px 50px rgba(0,0,0,0.45);
 
-    .topbar{
+}
 
-      position:fixed;
+.article-category{
 
-      top:0;
-      left:0;
+display:inline-block;
 
-      width:100%;
+padding:0.5rem 1rem;
 
-      z-index:1000;
+border-radius:999px;
 
-      display:flex;
+background:rgba(59,130,246,0.15);
 
-      justify-content:space-between;
+color:#60a5fa;
 
-      align-items:center;
+font-size:0.8rem;
 
-      padding:1rem 5%;
+font-weight:700;
 
-      background:rgba(5,5,5,0.75);
+letter-spacing:1px;
 
-      backdrop-filter:blur(14px);
+text-transform:uppercase;
 
-      border-bottom:1px solid var(--border);
+margin-bottom:25px;
 
-    }
+}
 
-    body.theme-light .topbar{
+/* TITLE */
 
-      background:rgba(255,255,255,0.75);
+.article-title{
 
-    }
+font-size:clamp(3rem,10vw,6rem);
 
-    body.theme-eye .topbar{
+line-height:0.95;
 
-      background:rgba(16,21,16,0.8);
+font-weight:900;
 
-    }
+margin-bottom:30px;
 
-    .brand{
+letter-spacing:-4px;
 
-      text-decoration:none;
+background:var(--gradient);
 
-      font-size:2rem;
+-webkit-background-clip:text;
 
-      font-weight:900;
+-webkit-text-fill-color:transparent;
 
-      letter-spacing:-2px;
+text-shadow:
+0 0 30px rgba(59,130,246,0.25);
 
-      background:var(--gradient);
+}
 
-      -webkit-background-clip:text;
+.article-title span{
 
-      -webkit-text-fill-color:transparent;
+display:block;
 
-    }
+font-family:'Caveat',cursive;
 
-    .menu-btn{
+font-size:0.75em;
 
-      width:48px;
-      height:48px;
+letter-spacing:0;
 
-      border-radius:50%;
+color:#60a5fa;
 
-      border:1px solid var(--border);
+-webkit-text-fill-color:#60a5fa;
 
-      background:var(--surface);
+margin-top:10px;
 
-      color:var(--text-primary);
+}
 
-      font-size:1.3rem;
+/* DESCRIPTION */
 
-      cursor:pointer;
+.article-description{
 
-      transition:0.3s ease;
+font-size:1.35rem;
 
-    }
+color:var(--muted);
 
-    .menu-btn:hover{
+margin-bottom:60px;
 
-      background:var(--accent);
+line-height:1.8;
 
-      color:white;
+}
 
-      transform:scale(0.95);
+/* CONTENT */
 
-    }
+.article-content{
 
-    /* SIDEBAR */
+font-size:1.12rem;
 
-    .sidebar{
+color:#e2e8f0;
 
-      position:fixed;
+line-height:2.2;
 
-      top:0;
-      right:-100%;
+background:rgba(15,23,42,0.55);
 
-      width:300px;
-      height:100vh;
+padding:2rem;
 
-      background:rgba(10,15,28,0.98);
+border-radius:24px;
 
-      backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,0.06);
 
-      z-index:2000;
+backdrop-filter:blur(12px);
 
-      padding:2rem;
+white-space:pre-line;
 
-      display:flex;
+}
 
-      flex-direction:column;
+/* MOBILE */
 
-      transition:0.35s ease;
+@media(max-width:768px){
 
-      border-left:1px solid var(--border);
+.article-image{
 
-    }
+height:250px;
 
-    body.theme-light .sidebar{
+}
 
-      background:rgba(255,255,255,0.98);
+.article-title{
 
-    }
+font-size:4rem;
 
-    body.theme-eye .sidebar{
+line-height:0.95;
 
-      background:rgba(16,21,16,0.98);
+letter-spacing:-2px;
 
-    }
+}
 
-    .sidebar.active{
-      right:0;
-    }
+.article-description{
 
-    .sidebar-top{
+font-size:1.1rem;
 
-      display:flex;
+}
 
-      justify-content:flex-end;
+.article-content{
 
-      margin-bottom:3rem;
+font-size:1rem;
 
-    }
+padding:1.4rem;
 
-    .sidebar a{
+line-height:2;
 
-      color:var(--text-primary);
+}
 
-      text-decoration:none;
+}
 
-      font-size:1.25rem;
+.loading{
 
-      padding:1rem 0;
+padding-top:220px;
 
-      border-bottom:1px solid var(--border);
+text-align:center;
 
-      transition:0.25s ease;
+font-size:1.2rem;
 
-      display:flex;
+color:var(--muted);
 
-      align-items:center;
+}
 
-      gap:12px;
-
-      font-family:'Caveat',cursive;
-
-      letter-spacing:1px;
-
-    }
-
-    .sidebar a:hover{
-
-      color:var(--accent);
-
-      padding-left:8px;
-
-    }
-
-    .theme-toggle{
-
-      margin-top:2rem;
-
-      border:none;
-
-      background:var(--gradient);
-
-      color:white;
-
-      padding:1rem;
-
-      border-radius:18px;
-
-      font-weight:700;
-
-      cursor:pointer;
-
-      font-size:1rem;
-
-      transition:0.3s ease;
-
-      box-shadow:
-      0 10px 25px rgba(59,130,246,0.25);
-
-    }
-
-    .theme-toggle:hover{
-
-      transform:translateY(-3px);
-
-    }
-
-    /* OVERLAY */
-
-    .overlay{
-
-      position:fixed;
-
-      inset:0;
-
-      background:rgba(0,0,0,0.6);
-
-      z-index:1500;
-
-      opacity:0;
-
-      visibility:hidden;
-
-      transition:0.3s ease;
-
-    }
-
-    .overlay.active{
-
-      opacity:1;
-
-      visibility:visible;
-
-    }
-
-    /* HERO */
-
-    .hero{
-
-      min-height:100vh;
-
-      display:flex;
-
-      align-items:center;
-
-      padding:8rem 5% 5rem;
-
-      position:relative;
-
-      overflow:hidden;
-
-      background:
-      radial-gradient(
-        circle at top left,
-        rgba(59,130,246,0.18),
-        transparent 30%
-      ),
-      radial-gradient(
-        circle at bottom right,
-        rgba(168,85,247,0.12),
-        transparent 30%
-      );
-
-    }
-
-    .hero-content{
-
-      max-width:900px;
-
-      position:relative;
-
-      z-index:2;
-
-    }
-
-    .hero-badge{
-
-      display:inline-flex;
-
-      align-items:center;
-
-      gap:10px;
-
-      padding:0.5rem 1rem;
-
-      border-radius:999px;
-
-      background:rgba(59,130,246,0.12);
-
-      border:1px solid var(--border);
-
-      margin-bottom:1.5rem;
-
-      font-size:0.9rem;
-
-      color:var(--text-secondary);
-
-    }
-
-    .hero h1{
-
-      font-size:clamp(3rem,11vw,7rem);
-
-      line-height:0.95;
-
-      font-weight:900;
-
-      letter-spacing:-4px;
-
-      margin-bottom:1.5rem;
-
-    }
-
-    .hero-gradient{
-
-      display:block;
-
-      background:var(--gradient);
-
-      -webkit-background-clip:text;
-
-      -webkit-text-fill-color:transparent;
-
-      text-shadow:
-      0 0 30px rgba(59,130,246,0.35);
-
-    }
-
-    .handwritten{
-
-      display:block;
-
-      font-family:'Caveat',cursive;
-
-      font-size:0.82em;
-
-      color:#60a5fa;
-
-      -webkit-text-fill-color:#60a5fa;
-
-      letter-spacing:0;
-
-      margin:6px 0;
-
-      text-shadow:
-      0 0 20px rgba(96,165,250,0.5);
-
-    }
-
-    .hero p{
-
-      max-width:700px;
-
-      color:var(--text-secondary);
-
-      font-size:1.2rem;
-
-      line-height:1.9;
-
-    }
-
-    .hero-btn{
-
-      margin-top:2.5rem;
-
-      display:inline-flex;
-
-      align-items:center;
-
-      gap:10px;
-
-      text-decoration:none;
-
-      background:var(--gradient);
-
-      color:white;
-
-      padding:1rem 2rem;
-
-      border-radius:999px;
-
-      font-weight:700;
-
-      transition:0.3s ease;
-
-      box-shadow:
-      0 10px 30px rgba(59,130,246,0.3);
-
-    }
-
-    .hero-btn:hover{
-
-      transform:translateY(-4px);
-
-    }
-
-    /* FEATURED */
-
-    .featured-section{
-
-      padding:5rem 5%;
-
-    }
-
-    .section-header{
-
-      display:flex;
-
-      justify-content:space-between;
-
-      align-items:center;
-
-      flex-wrap:wrap;
-
-      gap:1rem;
-
-      margin-bottom:3rem;
-
-    }
-
-    .section-header h2{
-
-      font-size:2.7rem;
-
-      font-weight:900;
-
-      letter-spacing:-2px;
-
-      font-family:'Caveat',cursive;
-
-      color:#60a5fa;
-
-    }
-
-    .section-badge{
-
-      background:var(--surface);
-
-      border:1px solid var(--border);
-
-      padding:0.5rem 1rem;
-
-      border-radius:999px;
-
-      color:var(--text-secondary);
-
-      font-size:0.85rem;
-
-    }
-
-    /* BLOG GRID */
-
-    .featured-grid{
-
-      display:grid;
-
-      grid-template-columns:
-      repeat(auto-fit,minmax(320px,1fr));
-
-      gap:2rem;
-
-    }
-
-    .featured-card{
-
-      background:rgba(17,24,39,0.75);
-
-      border-radius:1.7rem;
-
-      overflow:hidden;
-
-      border:1px solid rgba(255,255,255,0.06);
-
-      transition:0.35s ease;
-
-      backdrop-filter:blur(12px);
-
-      box-shadow:
-      0 10px 30px rgba(0,0,0,0.25);
-
-    }
-
-    body.theme-light .featured-card{
-
-      background:white;
-
-    }
-
-    .featured-card:hover{
-
-      transform:translateY(-8px);
-
-      border-color:rgba(59,130,246,0.4);
-
-      box-shadow:
-      0 20px 40px rgba(59,130,246,0.15);
-
-    }
-
-    .featured-card img{
-
-      width:100%;
-      height:240px;
-
-      object-fit:cover;
-
-      transition:transform 0.6s ease;
-
-    }
-
-    .featured-card:hover img{
-
-      transform:scale(1.04);
-
-    }
-
-    .featured-content{
-
-      padding:1.5rem;
-
-    }
-
-    .featured-category{
-
-      font-size:0.75rem;
-
-      color:#60a5fa;
-
-      font-weight:700;
-
-      letter-spacing:1px;
-
-      text-transform:uppercase;
-
-    }
-
-    .featured-content h3{
-
-      margin:1rem 0;
-
-      font-size:1.4rem;
-
-      line-height:1.35;
-
-    }
-
-    .featured-content p{
-
-      color:var(--text-secondary);
-
-      line-height:1.8;
-
-      margin-bottom:1.4rem;
-
-    }
-
-    .read-link{
-
-      display:inline-flex;
-
-      align-items:center;
-
-      gap:10px;
-
-      text-decoration:none;
-
-      color:#60a5fa;
-
-      font-weight:700;
-
-      transition:0.25s ease;
-
-    }
-
-    .read-link:hover{
-
-      gap:15px;
-
-    }
-
-    /* FOOTER */
-
-    .footer{
-
-      margin-top:5rem;
-
-      padding:4rem 5% 2rem;
-
-      border-top:1px solid var(--border);
-
-      background:var(--surface);
-
-    }
-
-    .footer-grid{
-
-      display:grid;
-
-      grid-template-columns:
-      repeat(auto-fit,minmax(220px,1fr));
-
-      gap:3rem;
-
-    }
-
-    .footer-logo{
-
-      font-size:2rem;
-
-      font-weight:900;
-
-      background:var(--gradient);
-
-      -webkit-background-clip:text;
-
-      -webkit-text-fill-color:transparent;
-
-      margin-bottom:1rem;
-
-    }
-
-    .footer-text{
-
-      color:var(--text-secondary);
-
-      line-height:1.8;
-
-      max-width:320px;
-
-    }
-
-    .footer-title{
-
-      font-size:1.2rem;
-
-      font-family:'Caveat',cursive;
-
-      letter-spacing:2px;
-
-      margin-bottom:1.5rem;
-
-      color:#60a5fa;
-
-    }
-
-    .footer-links{
-
-      display:flex;
-
-      flex-direction:column;
-
-      gap:1rem;
-
-    }
-
-    .footer-links a{
-
-      color:var(--text-primary);
-
-      text-decoration:none;
-
-      transition:0.25s ease;
-
-    }
-
-    .footer-links a:hover{
-
-      color:#60a5fa;
-
-    }
-
-    .footer-bottom{
-
-      margin-top:3rem;
-
-      padding-top:2rem;
-
-      border-top:1px solid var(--border);
-
-      text-align:center;
-
-      color:var(--text-secondary);
-
-      font-size:0.9rem;
-
-    }
-
-    /* MOBILE */
-
-    @media(max-width:768px){
-
-      .hero{
-
-        padding-top:7rem;
-
-        min-height:auto;
-
-      }
-
-      .hero h1{
-
-        font-size:4rem;
-
-        line-height:0.95;
-
-        letter-spacing:-2px;
-
-      }
-
-      .hero p{
-
-        font-size:1.05rem;
-
-      }
-
-      .section-header h2{
-
-        font-size:2.2rem;
-
-      }
-
-      .featured-content{
-
-        padding:1.2rem;
-
-      }
-
-      .featured-content h3{
-
-        font-size:1.2rem;
-
-      }
-
-    }
-
-  </style>
+</style>
 
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<header class="topbar">
 
-  <header class="topbar">
+<a
+href="/"
+class="brand"
+>
 
-    <a href="/" class="brand">
-      ⚡ GENZEST
-    </a>
+⚡ GENZEST
 
-    <button
-      class="menu-btn"
-      id="menuBtn"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
+</a>
 
-  </header>
+</header>
 
-  <!-- SIDEBAR -->
+<div
+id="app"
+class="loading"
+>
 
-  <div class="sidebar" id="sidebar">
+Loading article...
 
-    <div class="sidebar-top">
+</div>
 
-      <button
-        class="menu-btn"
-        id="closeBtn"
-      >
-        <i class="fas fa-times"></i>
-      </button>
+<script type="module">
 
-    </div>
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-    <a href="/">
-      <i class="fas fa-house"></i>
-      Home
-    </a>
+import {
+getFirestore,
+collection,
+getDocs
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    <a href="#featured">
-      <i class="fas fa-fire"></i>
-      Latest Drops
-    </a>
+/* FIREBASE */
 
-    <a href="about.html">
-      <i class="fas fa-circle-info"></i>
-      About
-    </a>
+const firebaseConfig = {
 
-    <a href="privacy-policy.html">
-      <i class="fas fa-shield-halved"></i>
-      Privacy Policy
-    </a>
+apiKey:"AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
 
-    <a href="terms.html">
-      <i class="fas fa-file-contract"></i>
-      Terms
-    </a>
+authDomain:"genzest-85233.firebaseapp.com",
 
-    <button
-      class="theme-toggle"
-      id="themeToggle"
-    >
-      🌙 Dark Mode
-    </button>
+projectId:"genzest-85233",
 
-  </div>
+storageBucket:"genzest-85233.firebasestorage.app",
 
-  <!-- OVERLAY -->
+messagingSenderId:"741928938",
 
-  <div class="overlay" id="overlay"></div>
+appId:"1:741928938:web:d55eb961c34732e73e4c93"
 
-  <!-- HERO -->
+};
 
-  <section class="hero">
+const app =
+initializeApp(firebaseConfig);
 
-    <div class="hero-content">
+const db =
+getFirestore(app);
 
-      <div class="hero-badge">
+/* GET SLUG */
 
-        <i class="fas fa-bolt"></i>
+const params =
+new URLSearchParams(
+window.location.search
+);
 
-        future-proof finance
+const slug =
+params.get("slug");
 
-      </div>
+/* LOAD ARTICLE */
 
-      <h1>
+async function loadArticle(){
 
-        <span class="hero-gradient">
-          Future Of
-        </span>
+const appContainer =
+document.getElementById("app");
 
-        <span class="handwritten">
-          AI × Finance
-        </span>
+try{
 
-        <span class="hero-gradient">
-          Investing
-        </span>
+const querySnapshot =
+await getDocs(
+collection(db,"posts")
+);
 
-      </h1>
+let foundPost = null;
 
-      <p>
+querySnapshot.forEach((doc)=>{
 
-        GENZEST delivers modern insights on
-        artificial intelligence, investing,
-        startups, crypto and future business trends.
+const data =
+doc.data();
 
-      </p>
+if(data.slug === slug){
 
-      <a
-        href="#featured"
-        class="hero-btn"
-      >
+foundPost = data;
 
-        Explore Insights
+}
 
-        <i class="fas fa-arrow-right"></i>
+});
 
-      </a>
+if(!foundPost){
 
-    </div>
+appContainer.innerHTML = `
+<div class="loading">
+Article not found.
+</div>
+`;
 
-  </section>
+return;
 
-  <!-- POSTS -->
+}
 
-  <section
-    class="featured-section"
-    id="featured"
-  >
+document.title =
+foundPost.title +
+" | GENZEST";
 
-    <div class="section-header">
+appContainer.innerHTML = `
 
-      <h2>
+<div class="article-container">
 
-        🔥 Latest Drops
+<img
+class="article-image"
+src="${foundPost.image}"
+alt="${foundPost.title}"
+>
 
-      </h2>
+<div class="article-category">
 
-      <div class="section-badge">
+${foundPost.category}
 
-        fresh insights daily
+</div>
 
-      </div>
+<h1 class="article-title">
 
-    </div>
+${foundPost.title}
 
-    <div
-      class="featured-grid"
-      id="blogContainer"
-    >
+<span>
 
-      Loading insights...
+future finance insights
 
-    </div>
+</span>
 
-  </section>
+</h1>
 
-  <!-- FOOTER -->
+<p class="article-description">
 
-  <footer class="footer">
+${foundPost.description}
 
-    <div class="footer-grid">
+</p>
 
-      <div>
+<div class="article-content">
 
-        <div class="footer-logo">
-          GENZEST
-        </div>
+${foundPost.content}
 
-        <p class="footer-text">
+</div>
 
-          Modern media platform focused on
-          finance, AI, investing and future trends.
+</div>
 
-        </p>
+`;
 
-      </div>
+}
 
-      <div>
+catch(error){
 
-        <div class="footer-title">
-          Navigate
-        </div>
+console.error(error);
 
-        <div class="footer-links">
+appContainer.innerHTML = `
+<div class="loading">
+Failed to load article.
+</div>
+`;
 
-          <a href="/">
-            Home
-          </a>
+}
 
-          <a href="#featured">
-            Latest Posts
-          </a>
+}
 
-          <a href="about.html">
-            About
-          </a>
+loadArticle();
 
-        </div>
-
-      </div>
-
-      <div>
-
-        <div class="footer-title">
-          Legal
-        </div>
-
-        <div class="footer-links">
-
-          <a href="privacy-policy.html">
-            Privacy Policy
-          </a>
-
-          <a href="terms.html">
-            Terms
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-
-      © 2026 GENZEST — all rights reserved.
-
-    </div>
-
-  </footer>
-
-  <!-- FIREBASE -->
-
-  <script type="module">
-
-    import { initializeApp }
-    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-    import {
-      getFirestore,
-      collection,
-      getDocs
-    }
-    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-    /* FIREBASE CONFIG */
-
-    const firebaseConfig = {
-
-      apiKey:"AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
-
-      authDomain:"genzest-85233.firebaseapp.com",
-
-      projectId:"genzest-85233",
-
-      storageBucket:"genzest-85233.firebasestorage.app",
-
-      messagingSenderId:"741928938",
-
-      appId:"1:741928938:web:d55eb961c34732e73e4c93"
-
-    };
-
-    const app =
-    initializeApp(firebaseConfig);
-
-    const db =
-    getFirestore(app);
-
-    /* BLOG LOADER */
-
-    async function loadBlogs(){
-
-      const blogContainer =
-      document.getElementById("blogContainer");
-
-      try{
-
-        const querySnapshot =
-        await getDocs(
-          collection(db,"posts")
-        );
-
-        blogContainer.innerHTML = "";
-
-        querySnapshot.forEach((doc)=>{
-
-          const post = doc.data();
-
-          blogContainer.innerHTML += `
-
-            <article class="featured-card">
-
-              <img
-                src="${post.image}"
-                alt="${post.title}"
-              >
-
-              <div class="featured-content">
-
-                <div class="featured-category">
-
-                  ${post.category || "Insights"}
-
-                </div>
-
-                <h3>
-
-                  ${post.title}
-
-                </h3>
-
-                <p>
-
-                  ${post.description}
-
-                </p>
-
-                <a
-                  href="blog.html?slug=${post.slug}"
-                  class="read-link"
-                >
-
-                  Read Article
-
-                  <i class="fas fa-arrow-right"></i>
-
-                </a>
-
-              </div>
-
-            </article>
-
-          `;
-
-        });
-
-      }
-
-      catch(error){
-
-        console.error(error);
-
-        blogContainer.innerHTML =
-        "Unable to load insights.";
-
-      }
-
-    }
-
-    loadBlogs();
-
-    /* SIDEBAR */
-
-    const menuBtn =
-    document.getElementById("menuBtn");
-
-    const closeBtn =
-    document.getElementById("closeBtn");
-
-    const sidebar =
-    document.getElementById("sidebar");
-
-    const overlay =
-    document.getElementById("overlay");
-
-    function openSidebar(){
-
-      sidebar.classList.add("active");
-
-      overlay.classList.add("active");
-
-    }
-
-    function closeSidebar(){
-
-      sidebar.classList.remove("active");
-
-      overlay.classList.remove("active");
-
-    }
-
-    menuBtn.addEventListener(
-      "click",
-      openSidebar
-    );
-
-    closeBtn.addEventListener(
-      "click",
-      closeSidebar
-    );
-
-    overlay.addEventListener(
-      "click",
-      closeSidebar
-    );
-
-    /* THEME MODES */
-
-    const themeBtn =
-    document.getElementById("themeToggle");
-
-    let currentTheme = 0;
-
-    themeBtn.addEventListener("click",()=>{
-
-      currentTheme++;
-
-      if(currentTheme > 2){
-
-        currentTheme = 0;
-
-      }
-
-      document.body.classList.remove(
-        "theme-light",
-        "theme-eye"
-      );
-
-      if(currentTheme === 0){
-
-        themeBtn.innerHTML =
-        "🌙 Dark Mode";
-
-      }
-
-      if(currentTheme === 1){
-
-        document.body.classList.add(
-          "theme-light"
-        );
-
-        themeBtn.innerHTML =
-        "☀️ Light Mode";
-
-      }
-
-      if(currentTheme === 2){
-
-        document.body.classList.add(
-          "theme-eye"
-        );
-
-        themeBtn.innerHTML =
-        "🌿 Eye Care Mode";
-
-      }
-
-    });
-
-  </script>
+</script>
 
 </body>
-
 </html>
