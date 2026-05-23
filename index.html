@@ -538,26 +538,8 @@
         <h2>Modern Finance Stories & Market Intelligence</h2>
       </div>
 
-      <div class="featured-grid">
-        <article class="featured-card">
-          <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1200&auto=format&fit=crop" alt="Finance investing chart showing technical data analysis visualization">
-          <div class="featured-content">
-            <span>INVESTING</span>
-            <h3>How Gen Z Is Approaching Wealth Creation</h3>
-            <p>Understanding how modern investing is changing with AI and technology.</p>
-            <a href="blog/article-1.html">Read Article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="featured-card">
-          <img src="https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=1200&auto=format&fit=crop" alt="AI representation displaying abstract technological nodes and connections">
-          <div class="featured-content">
-            <span>AI & FINANCE</span>
-            <h3>The Rise Of AI Powered Financial Research</h3>
-            <p>Artificial intelligence is changing the speed and quality of finance decisions.</p>
-            <a href="blog/article-2.html">Read Article &rarr;</a>
-          </div>
-        </article>
+      <div class="featured-grid" id="blogContainer">
+        
       </div>
     </section>
   </main>
@@ -636,21 +618,54 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     console.log("GENZEST Backend Connected 😈");
+async function loadBlogs() {
 
-    /* Live Data Streaming Engine */
-    async function loadBlogs() {
-      try {
-        const querySnapshot = await getDocs(collection(db, "posts"));
-        querySnapshot.forEach((doc) => {
-          console.log(doc.id, " => ", doc.data());
-        });
-      } catch (error) {
-        console.error("Error communicating with data layer:", error);
-      }
-    }
+  const blogContainer = document.getElementById("blogContainer");
 
-    // Execute stream query pipeline
-    loadBlogs();
+  try {
+
+    const querySnapshot = await getDocs(collection(db, "posts"));
+
+    blogContainer.innerHTML = "";
+
+    querySnapshot.forEach((doc) => {
+
+      const post = doc.data();
+
+      blogContainer.innerHTML += `
+
+        <article class="featured-card">
+
+          <img src="${post.image}" alt="${post.title}">
+
+          <div class="featured-content">
+
+            <span>${post.category}</span>
+
+            <h3>${post.title}</h3>
+
+            <p>${post.description}</p>
+
+            <a href="blog/${post.slug}.html">
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+      `;
+
+    });
+
+  } catch (error) {
+
+    console.error("Firebase Error:", error);
+
+  }
+
+}
+
   </script>
 
 </body>
