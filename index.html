@@ -3,62 +3,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>GENZEST | Finance, AI & Investing Insights</title>
-  <meta name="description" content="GENZEST delivers modern insights on finance, AI, investing, startups and future business trends." />
-  <link rel="icon" type="image/png" href="1779508386745.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg-primary: #050505;
-      --bg-surface: #0f0f11;
-      --border-color: rgba(255, 255, 255, 0.08);
       --text-primary: #ffffff;
-      --text-secondary: #9ca3af;
       --accent: #2563eb;
-      --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%);
     }
-    body.theme-light {
-      --bg-primary: #f8fafc;
-      --bg-surface: #ffffff;
-      --border-color: rgba(0, 0, 0, 0.1);
-      --text-primary: #0f172a;
-      --text-secondary: #475569;
-    }
+    body.theme-light { --bg-primary: #f8fafc; --text-primary: #0f172a; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', sans-serif; overflow-x: hidden; transition: 0.3s; }
+    body { background: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-    .topbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 5%; background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-color); }
-    .brand { font-size: 1.8rem; font-weight: 900; color: var(--text-primary); text-decoration: none; }
-    .menu-btn { background: none; border: none; color: var(--text-primary); font-size: 2rem; cursor: pointer; }
+    /* Fix Navbar */
+    .topbar { position: fixed; top: 0; width: 100%; padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(5,5,5,0.8); backdrop-filter: blur(10px); z-index: 1000; }
+    .brand { font-size: 1.5rem; font-weight: 900; text-decoration: none; color: var(--text-primary); }
+    .menu-btn { background: none; border: none; color: var(--text-primary); font-size: 1.8rem; cursor: pointer; }
 
-    .sidebar { position: fixed; top: 0; right: -100%; width: 100%; max-width: 320px; height: 100vh; background: var(--bg-surface); padding: 5rem 2rem; z-index: 2000; transition: 0.4s; border-left: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1.5rem; }
+    /* Fix Sidebar */
+    .sidebar { position: fixed; top: 0; right: -100%; width: 85%; height: 100vh; background: #111; padding: 2rem; transition: 0.3s; z-index: 2000; }
     .sidebar.active { right: 0; }
-    .close-btn { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--text-primary); font-size: 2.5rem; cursor: pointer; }
-    .sidebar a { color: var(--text-primary); text-decoration: none; font-size: 1.2rem; }
-    .theme-toggle { padding: 1rem; border-radius: 12px; background: var(--gradient); color: white; font-weight: 700; border: none; cursor: pointer; }
+    .sidebar a { display: block; color: white; padding: 1rem 0; text-decoration: none; font-size: 1.2rem; }
 
-    .hero { min-height: 90vh; display: flex; align-items: center; padding: 8rem 5% 4rem; }
-    .hero h1 { font-size: clamp(3rem, 10vw, 6rem); line-height: 0.95; font-weight: 900; margin-bottom: 2rem; }
-    .hero span { display: block; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .handwritten { font-family: 'Caveat', cursive; -webkit-text-fill-color: #60a5fa !important; transform: rotate(-2deg); }
-    .hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin-bottom: 2rem; }
-    .primary-btn { background: var(--gradient); color: white; padding: 1rem 2rem; border-radius: 20px; text-decoration: none; font-weight: 700; display: inline-block; }
-
-    .featured-section { padding: 4rem 5%; }
-    .featured-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-    .featured-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 20px; overflow: hidden; transition: 0.3s; }
-    .featured-card img { width: 100%; height: 200px; object-fit: cover; }
-    .featured-content { padding: 1.5rem; }
-    .featured-content a { color: #60a5fa; font-weight: 700; text-decoration: none; display: block; margin-top: 1rem; }
-
-    .footer { padding: 4rem 5% 2rem; background: var(--bg-surface); border-top: 1px solid var(--border-color); }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; }
-    .footer-title { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem; }
-    .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
-    .footer-links a { color: var(--text-primary); text-decoration: none; }
-    .footer-bottom { text-align: center; margin-top: 3rem; color: var(--text-secondary); font-size: 0.8rem; }
+    /* Fix Hero for Mobile */
+    .hero { padding: 8rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; }
+    .hero h1 { font-size: clamp(2.5rem, 10vw, 5rem); line-height: 0.9; font-weight: 900; }
+    .handwritten { font-family: 'Caveat', cursive; color: #60a5fa; display: block; }
+    
+    /* Fix Grid */
+    .featured-section { padding: 2rem 5%; }
+    .featured-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
+    @media (min-width: 768px) { .featured-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .featured-grid { grid-template-columns: repeat(3, 1fr); } }
+    
+    .featured-card { background: #111; border-radius: 16px; overflow: hidden; border: 1px solid #222; }
+    .featured-card img { width: 100%; height: 180px; object-fit: cover; }
+    .featured-content { padding: 1.2rem; }
   </style>
 </head>
 <body>
@@ -68,73 +49,55 @@
   </header>
 
   <div class="sidebar" id="sidebar">
-    <button class="close-btn" id="closeBtn">×</button>
+    <button class="menu-btn" id="closeBtn" style="margin-bottom: 2rem;">✕</button>
     <a href="/">Home</a>
     <a href="#featured">Latest Posts</a>
-    <a href="about.html">About</a>
-    <button class="theme-toggle" id="themeToggle">Toggle Theme</button>
+    <button id="themeToggle" style="margin-top:2rem; padding: 0.8rem; width: 100%; border-radius: 8px;">Toggle Theme</button>
   </div>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1><span>Future Of</span> <span class="handwritten">Finance &</span> <span>AI</span></h1>
-      <p>GENZEST delivers modern insights on investing, artificial intelligence, startups, and future business trends.</p>
-      <a href="#featured" class="primary-btn">Explore Insights</a>
-    </div>
+    <h1>Future Of<br><span class="handwritten">Finance &</span> AI</h1>
+    <p style="margin: 2rem 0; color: #9ca3af;">Modern insights on investing, AI, and startups.</p>
+    <a href="#featured" style="color: #2563eb; font-weight: bold; text-decoration: none;">Explore Insights →</a>
   </section>
 
   <section class="featured-section" id="featured">
-    <h2 style="margin-bottom: 2rem;">Featured Insights</h2>
+    <h2 style="margin-bottom: 1rem;">Latest Articles</h2>
     <div class="featured-grid" id="blogContainer">Loading...</div>
   </section>
 
-  <footer class="footer">
-    <div class="footer-grid">
-      <div><h3>GENZEST</h3><p style="color:var(--text-secondary); margin-top:1rem;">Financial intelligence meets future tech.</p></div>
-      <div>
-        <div class="footer-title">Navigate</div>
-        <div class="footer-links"><a href="/">Home</a><a href="#featured">Blog</a></div>
-      </div>
-      <div>
-        <div class="footer-title">Legal</div>
-        <div class="footer-links"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></div>
-      </div>
-    </div>
-    <div class="footer-bottom">© 2026 GENZEST. All Rights Reserved.</div>
+  <footer style="padding: 3rem 5%; border-top: 1px solid #222; margin-top: 4rem; text-align: center; color: #9ca3af;">
+    <p>&copy; 2026 GENZEST. All Rights Reserved.</p>
   </footer>
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    const app = initializeApp({
+    const db = getFirestore(initializeApp({
       apiKey: "AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
       projectId: "genzest-85233",
       storageBucket: "genzest-85233.firebasestorage.app",
       messagingSenderId: "741928938",
       appId: "1:741928938:web:d55eb961c34732e73e4c93"
-    });
-    const db = getFirestore(app);
+    }));
 
     async function loadBlogs() {
-      const blogContainer = document.getElementById("blogContainer");
+      const container = document.getElementById("blogContainer");
       try {
-        const querySnapshot = await getDocs(collection(db, "posts"));
-        blogContainer.innerHTML = "";
-        querySnapshot.forEach((doc) => {
-          const post = doc.data();
-          blogContainer.innerHTML += `
-            <article class="featured-card">
-              <img src="${post.image}" alt="${post.title}" onerror="this.src='https://via.placeholder.com/400x200'">
-              <div class="featured-content">
-                <div style="color:var(--accent); font-size:0.7rem; font-weight:700;">${post.category || 'Insights'}</div>
-                <h3 style="margin:0.5rem 0;">${post.title}</h3>
-                <p style="color:var(--text-secondary); font-size:0.9rem;">${post.description}</p>
-                <a href="blog.html?slug=${post.slug}">Read Article →</a>
-              </div>
-            </article>`;
+        const snap = await getDocs(collection(db, "posts"));
+        container.innerHTML = "";
+        snap.forEach(doc => {
+          const p = doc.data();
+          container.innerHTML += `<article class="featured-card">
+            <img src="${p.image}" alt="${p.title}" onerror="this.src='https://via.placeholder.com/400x200'">
+            <div class="featured-content">
+              <h3>${p.title}</h3>
+              <a href="blog.html?slug=${p.slug}">Read Article</a>
+            </div>
+          </article>`;
         });
-      } catch (err) { blogContainer.innerHTML = "No posts available."; }
+      } catch (e) { container.innerHTML = "Error loading posts."; }
     }
 
     document.getElementById("menuBtn").onclick = () => document.getElementById("sidebar").classList.add("active");
