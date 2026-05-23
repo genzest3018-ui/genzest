@@ -44,8 +44,6 @@ rel="stylesheet"
 
   --accent:#2563eb;
 
-  --accent2:#8b5cf6;
-
   --gradient:
   linear-gradient(
     135deg,
@@ -268,7 +266,9 @@ body{
 
   z-index:2;
 
-  max-width:850px;
+  max-width:100%;
+
+  width:100%;
 
 }
 
@@ -286,19 +286,17 @@ body{
 
 }
 
-/* CRAZY GENZ TITLE */
-
 .hero h1{
 
-  font-size:clamp(3.5rem,11vw,7rem);
+  font-size:clamp(3.2rem,13vw,7rem);
 
-  line-height:0.88;
+  line-height:0.95;
 
   font-weight:900;
 
   margin-bottom:2rem;
 
-  letter-spacing:-5px;
+  letter-spacing:-3px;
 
 }
 
@@ -313,15 +311,17 @@ body{
   -webkit-text-fill-color:transparent;
 
   text-shadow:
-  0 0 25px rgba(99,102,241,0.3);
+  0 0 25px rgba(99,102,241,0.28);
 
 }
 
-.hero .handwritten{
+.handwritten{
 
   font-family:'Caveat',cursive;
 
-  font-size:1.2em;
+  font-size:0.9em;
+
+  line-height:0.9;
 
   transform:rotate(-2deg);
 
@@ -333,11 +333,9 @@ body{
 
 }
 
-/* DESCRIPTION */
-
 .hero p{
 
-  font-size:1.25rem;
+  font-size:1.2rem;
 
   color:var(--text-secondary);
 
@@ -629,9 +627,11 @@ body{
 
   .hero h1{
 
-    font-size:4.5rem;
+    font-size:4rem;
 
-    letter-spacing:-3px;
+    line-height:0.92;
+
+    letter-spacing:-2px;
 
   }
 
