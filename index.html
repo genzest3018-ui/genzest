@@ -14,30 +14,25 @@
   <meta name="google-site-verification" content="LsoJwFSoyY8uRpvhDwxrt3btaOyXoPP0dxTu3JXaIbU" />
   <link rel="canonical" href="https://genzest.in/">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:title" content="GENZEST | Finance, AI & Investing Insights">
   <meta property="og:description" content="Modern finance media platform covering investing, AI, startups, and business trends.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://genzest.in/">
   <meta property="og:image" content="https://genzest.in/1779508386745.png">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GENZEST | Finance, AI & Investing Insights">
   <meta name="twitter:description" content="Modern finance media platform covering investing, AI, startups, and business trends.">
   <meta name="twitter:image" content="https://genzest.in/1779508386745.png">
 
-  <!-- Favicon Asset -->
   <link rel="icon" type="image/png" href="1779508386745.png">
 
-  <!-- Typography Optimization -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Inline UI/UX Styling Strategy for Instant Layout Rendering Performance -->
   <style>
     :root {
       --bg-primary: #050505;
@@ -102,6 +97,7 @@
       text-decoration: none;
       display: flex;
       align-items: center;
+      z-index: 1010;
     }
 
     .brand-text {
@@ -109,6 +105,28 @@
       font-weight: 800;
       letter-spacing: -0.03em;
       color: var(--text-primary);
+    }
+
+    /* CSS-Driven Mobile Menu Logic Toggle Utilities */
+    .menu-toggle-input {
+      display: none;
+    }
+
+    .menu-toggle-label {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 1010;
+    }
+
+    .menu-toggle-label span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--text-primary);
+      border-radius: 2px;
+      transition: var(--transition-smooth);
     }
 
     .nav-links {
@@ -123,7 +141,6 @@
       font-size: 0.925rem;
       font-weight: 500;
       transition: var(--transition-smooth);
-      position: relative;
     }
 
     .nav-links a:hover {
@@ -155,9 +172,11 @@
 
     /* Responsive Hero Space Module */
     .hero {
-      min-height: 85vh;
-      display: flex;
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
       align-items: center;
+      gap: 3rem;
       padding: 4rem 5%;
       position: relative;
     }
@@ -176,19 +195,18 @@
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 6vw, 4.75rem);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
       font-weight: 900;
-      line-height: 1.05;
+      line-height: 1.1;
       letter-spacing: -0.04em;
       margin-bottom: 1.5rem;
     }
 
     .hero-para {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-size: clamp(1rem, 2vw, 1.15rem);
       color: var(--text-secondary);
       margin-bottom: 2.5rem;
       max-width: 600px;
-      font-weight: 400;
     }
 
     .hero-actions {
@@ -229,6 +247,22 @@
       color: var(--accent);
     }
 
+    /* Premium Hero Image Canvas Area */
+    .hero-image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     /* Editorial Content Grid Module */
     .featured-section {
       padding: 6rem 5%;
@@ -256,14 +290,8 @@
 
     .featured-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 2.5rem;
-    }
-
-    @media (max-width: 480px) {
-      .featured-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     .featured-card {
@@ -289,13 +317,8 @@
 
     .featured-card img {
       width: 100%;
-      height: 260px;
+      height: 240px;
       object-fit: cover;
-      transition: var(--transition-smooth);
-    }
-
-    .featured-card:hover img {
-      transform: scale(1.02);
     }
 
     .featured-content {
@@ -314,7 +337,7 @@
     }
 
     .featured-content h3 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 0.75rem;
@@ -334,8 +357,6 @@
       font-weight: 600;
       font-size: 0.925rem;
       transition: var(--transition-smooth);
-      display: inline-flex;
-      align-items: center;
     }
 
     .featured-content a:hover {
@@ -393,6 +414,79 @@
       color: var(--text-secondary);
       font-size: 0.85rem;
     }
+
+    /* ==========================================
+       RESPONSIVE BREAKPOINTS (Mobile Optimization Fix)
+       ========================================== */
+    @media (max-width: 992px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 6rem;
+        min-height: auto;
+        gap: 4rem;
+      }
+
+      .hero-image-wrapper {
+        height: 380px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle-label {
+        display: flex;
+      }
+
+      /* Mobile Drawer Styling Initialization */
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--bg-surface);
+        border-left: 1px solid var(--border-color);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 6rem 10% 2rem 10%;
+        gap: 2rem;
+        transition: var(--transition-smooth);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .nav-links a {
+        font-size: 1.15rem;
+        width: 100%;
+      }
+
+      .theme-toggle {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+      }
+
+      /* CSS State Machine for Hamburger Menu Check */
+      .menu-toggle-input:checked ~ .nav-links {
+        right: 0;
+      }
+
+      .menu-toggle-input:checked ~ .menu-toggle-label span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .menu-toggle-input:checked ~ .menu-toggle-label span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle-input:checked ~ .menu-toggle-label span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -402,6 +496,13 @@
     <a href="index.html" class="brand" aria-label="GENZEST Home">
       <span class="brand-text">GENZEST</span>
     </a>
+
+    <input type="checkbox" id="menuToggleCheckbox" class="menu-toggle-input">
+    <label for="menuToggleCheckbox" class="menu-toggle-label" aria-label="Toggle Navigation Options">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
 
     <nav class="nav-links" aria-label="Main navigation">
       <a href="index.html">Home</a>
@@ -424,6 +525,10 @@
           <a href="#featured" class="hero-btn">Explore Insights</a>
           <a href="about.html" class="hero-link">Learn More</a>
         </div>
+      </div>
+      
+      <div class="hero-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1200&auto=format&fit=crop" alt="Abstract modern premium visualization of finance data and artificial intelligence nodes">
       </div>
     </section>
 
@@ -477,12 +582,13 @@
     <p class="copyright">&copy; 2026 GENZEST. All Rights Reserved.</p>
   </footer>
 
-  <!-- Unified Modular App Script and Backend Initialization Module -->
   <script type="module">
     /* ==========================================
        UI CONTROLLER ENGINE (Theme Manager)
        ========================================== */
     const themeToggle = document.getElementById('themeToggle');
+    const menuToggleCheckbox = document.getElementById('menuToggleCheckbox');
+    const mobileLinks = document.querySelectorAll('.nav-links a');
 
     function setThemeLabel() {
       const isLight = document.body.classList.contains('theme-light');
@@ -501,6 +607,13 @@
       const isLight = document.body.classList.contains('theme-light');
       localStorage.setItem('genzest-theme', isLight ? 'light' : 'dark');
       setThemeLabel();
+    });
+
+    // Close Mobile Drawer upon hitting fractional anchors cleanly
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggleCheckbox.checked = false;
+      });
     });
 
     /* ==========================================
