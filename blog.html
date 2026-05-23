@@ -1,17 +1,23 @@
  <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>GENZEST Article</title>
 
-  <meta name="description" content="GENZEST modern finance, AI, investing and business insights.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap"
+    rel="stylesheet"
+  />
 
-  <link rel="icon" type="image/png" href="1779508386745.png">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 
   <style>
 
@@ -22,189 +28,354 @@
     }
 
     :root{
+
       --bg:#050505;
-      --surface:#0f0f11;
-      --border:rgba(255,255,255,0.08);
+
+      --surface:#0f172a;
+
       --text:#ffffff;
-      --muted:#a1a1aa;
+
+      --text-secondary:#94a3b8;
+
       --accent:#3b82f6;
+
+      --accent2:#a855f7;
+
+      --border:rgba(255,255,255,0.08);
+
+      --gradient:
+      linear-gradient(
+        135deg,
+        #3b82f6,
+        #8b5cf6,
+        #ec4899
+      );
+
     }
 
     body{
+
       background:var(--bg);
+
       color:var(--text);
+
       font-family:'Inter',sans-serif;
-      line-height:1.8;
+
       overflow-x:hidden;
+
+      line-height:1.9;
+
     }
 
+    /* NAVBAR */
+
     .topbar{
+
       position:fixed;
+
       top:0;
       left:0;
+
       width:100%;
-      z-index:1000;
+
+      padding:1rem 5%;
 
       display:flex;
+
       justify-content:space-between;
+
       align-items:center;
 
-      padding:20px 5%;
+      background:rgba(5,5,5,0.78);
 
-      background:rgba(5,5,5,0.7);
-      backdrop-filter:blur(16px);
+      backdrop-filter:blur(14px);
 
       border-bottom:1px solid var(--border);
+
+      z-index:1000;
+
     }
 
     .brand{
+
       text-decoration:none;
-      color:white;
-      font-size:1.5rem;
+
+      font-size:2rem;
+
       font-weight:900;
-      letter-spacing:-1px;
+
+      background:var(--gradient);
+
+      -webkit-background-clip:text;
+
+      -webkit-text-fill-color:transparent;
+
+      letter-spacing:-2px;
+
     }
 
-    .back-btn{
-      color:var(--muted);
+    .back-link{
+
+      color:var(--text-secondary);
+
       text-decoration:none;
-      font-size:0.95rem;
-      transition:0.3s;
+
+      font-size:1rem;
+
+      display:flex;
+
+      align-items:center;
+
+      gap:10px;
+
+      transition:0.25s ease;
+
     }
 
-    .back-btn:hover{
+    .back-link:hover{
+
       color:white;
+
     }
 
-    .article-container{
-      width:90%;
+    /* MAIN */
+
+    .article-wrap{
+
+      width:92%;
+
       max-width:900px;
 
       margin:auto;
 
-      padding:130px 0 80px;
+      padding:8rem 0 5rem;
+
     }
 
+    /* IMAGE */
+
     .article-image{
+
       width:100%;
-      height:450px;
+
+      height:420px;
 
       object-fit:cover;
 
-      border-radius:24px;
+      border-radius:30px;
 
-      margin-bottom:40px;
+      margin-bottom:3rem;
+
+      box-shadow:
+      0 20px 60px rgba(0,0,0,0.45);
 
       border:1px solid var(--border);
+
     }
+
+    /* CATEGORY */
 
     .article-category{
+
       display:inline-block;
 
-      color:var(--accent);
+      margin-bottom:1rem;
 
-      font-size:0.82rem;
+      padding:0.5rem 1rem;
+
+      border-radius:999px;
+
+      background:rgba(59,130,246,0.12);
+
+      color:#60a5fa;
+
+      font-size:0.8rem;
+
       font-weight:700;
-      text-transform:uppercase;
+
       letter-spacing:1px;
 
-      margin-bottom:22px;
+      text-transform:uppercase;
+
+      border:1px solid rgba(59,130,246,0.15);
+
     }
 
-    .article-title{
-      font-size:clamp(2.4rem,5vw,5rem);
+    /* TITLE */
 
-      line-height:1.08;
+    .article-title{
+
+      font-size:
+      clamp(3rem,8vw,6rem);
+
+      line-height:0.95;
 
       font-weight:900;
 
-      margin-bottom:28px;
+      letter-spacing:-4px;
 
-      letter-spacing:-2px;
+      margin-bottom:2rem;
 
-      word-break:break-word;
-      overflow-wrap:break-word;
     }
+
+    .gradient-text{
+
+      display:block;
+
+      background:var(--gradient);
+
+      -webkit-background-clip:text;
+
+      -webkit-text-fill-color:transparent;
+
+    }
+
+    .handwritten{
+
+      display:block;
+
+      font-family:'Caveat',cursive;
+
+      font-size:0.9em;
+
+      color:#60a5fa;
+
+      text-shadow:
+      0 0 18px rgba(96,165,250,0.45);
+
+      margin:10px 0;
+
+      letter-spacing:0;
+
+      transform:rotate(-2deg);
+
+    }
+
+    /* DESCRIPTION */
 
     .article-description{
-      font-size:1.25rem;
-      color:var(--muted);
 
-      line-height:1.7;
+      font-size:1.35rem;
 
-      margin-bottom:55px;
+      color:var(--text-secondary);
 
-      word-break:break-word;
-      overflow-wrap:break-word;
+      line-height:1.8;
+
+      margin-bottom:4rem;
+
+      max-width:780px;
+
     }
 
+    /* CONTENT */
+
     .article-content{
-      font-size:1.08rem;
 
-      color:#e5e5e5;
+      font-size:1.18rem;
 
-      line-height:2;
+      line-height:2.2;
 
-      white-space:pre-line;
+      color:#e5e7eb;
 
-      word-break:break-word;
-      overflow-wrap:break-word;
     }
 
     .article-content p{
-      margin-bottom:28px;
+
+      margin-bottom:2rem;
+
     }
+
+    /* GLASS EFFECT */
+
+    .content-box{
+
+      background:
+      linear-gradient(
+        180deg,
+        rgba(255,255,255,0.02),
+        rgba(255,255,255,0.01)
+      );
+
+      border:1px solid var(--border);
+
+      border-radius:30px;
+
+      padding:2.5rem;
+
+      backdrop-filter:blur(12px);
+
+    }
+
+    /* LOADING */
 
     .loading{
-      text-align:center;
-      padding-top:220px;
-      color:var(--muted);
-      font-size:1.1rem;
+
+      min-height:100vh;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      color:var(--text-secondary);
+
+      font-size:1.2rem;
+
     }
 
-    .error{
-      text-align:center;
-      padding-top:220px;
-      color:#ff6b6b;
-      font-size:1.1rem;
-    }
+    /* MOBILE */
 
     @media(max-width:768px){
 
-      .topbar{
-        padding:18px 5%;
-      }
+      .article-wrap{
 
-      .brand{
-        font-size:1.35rem;
-      }
+        width:90%;
 
-      .article-container{
-        width:92%;
-        padding:115px 0 60px;
+        padding-top:7rem;
+
       }
 
       .article-image{
-        height:240px;
-        border-radius:18px;
-        margin-bottom:30px;
+
+        height:260px;
+
+        border-radius:22px;
+
       }
 
       .article-title{
-        font-size:3rem;
-        line-height:1.1;
-        margin-bottom:22px;
+
+        font-size:4rem;
+
+        line-height:0.95;
+
+        letter-spacing:-2px;
+
       }
 
       .article-description{
-        font-size:1.05rem;
-        line-height:1.8;
-        margin-bottom:40px;
+
+        font-size:1.08rem;
+
+        margin-bottom:3rem;
+
       }
 
       .article-content{
-        font-size:1rem;
-        line-height:1.95;
+
+        font-size:1.05rem;
+
+        line-height:2;
+
+      }
+
+      .content-box{
+
+        padding:1.6rem;
+
+        border-radius:24px;
+
       }
 
     }
@@ -215,63 +386,95 @@
 
 <body>
 
+  <!-- NAVBAR -->
+
   <header class="topbar">
 
     <a href="/" class="brand">
-      GENZEST
+
+      ⚡ GENZEST
+
     </a>
 
-    <a href="/" class="back-btn">
-      ← Home
+    <a href="/" class="back-link">
+
+      <i class="fas fa-arrow-left"></i>
+
+      Home
+
     </a>
 
   </header>
 
+  <!-- APP -->
+
   <div id="app" class="loading">
+
     Loading article...
+
   </div>
+
+  <!-- FIREBASE -->
 
   <script type="module">
 
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
     import {
       getFirestore,
       collection,
       getDocs
-    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    /* FIREBASE CONFIG */
 
     const firebaseConfig = {
 
-      apiKey: "AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
+      apiKey:"AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
 
-      authDomain: "genzest-85233.firebaseapp.com",
+      authDomain:"genzest-85233.firebaseapp.com",
 
-      projectId: "genzest-85233",
+      projectId:"genzest-85233",
 
-      storageBucket: "genzest-85233.firebasestorage.app",
+      storageBucket:"genzest-85233.firebasestorage.app",
 
-      messagingSenderId: "741928938",
+      messagingSenderId:"741928938",
 
-      appId: "1:741928938:web:d55eb961c34732e73e4c93"
+      appId:"1:741928938:web:d55eb961c34732e73e4c93"
 
     };
 
-    const app = initializeApp(firebaseConfig);
+    const app =
+    initializeApp(firebaseConfig);
 
-    const db = getFirestore(app);
+    const db =
+    getFirestore(app);
 
-    const params = new URLSearchParams(window.location.search);
+    /* GET SLUG */
 
-    const slug = params.get("slug");
+    const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+    const slug =
+    params.get("slug");
+
+    /* LOAD ARTICLE */
 
     async function loadArticle(){
 
-      const appContainer = document.getElementById("app");
+      const appContainer =
+      document.getElementById("app");
 
       try{
 
-        const querySnapshot = await getDocs(collection(db, "posts"));
+        const querySnapshot =
+        await getDocs(
+          collection(db,"posts")
+        );
 
         let foundPost = null;
 
@@ -287,12 +490,16 @@
 
         });
 
+        /* NOT FOUND */
+
         if(!foundPost){
 
           appContainer.innerHTML = `
 
-            <div class="error">
+            <div class="loading">
+
               Article not found.
+
             </div>
 
           `;
@@ -301,38 +508,88 @@
 
         }
 
-        document.title = foundPost.title + " | GENZEST";
+        /* SEO TITLE */
 
-        document.querySelector("meta[name='description']")
-        .setAttribute("content", foundPost.description);
+        document.title =
+        foundPost.title + " | GENZEST";
+
+        /* SPLIT TITLE FOR EFFECT */
+
+        const titleWords =
+        foundPost.title.split(" ");
+
+        const fancyTitle = `
+
+          <span class="gradient-text">
+
+            ${titleWords.slice(0,2).join(" ")}
+
+          </span>
+
+          <span class="handwritten">
+
+            ${titleWords.slice(2,4).join(" ")}
+
+          </span>
+
+          <span class="gradient-text">
+
+            ${titleWords.slice(4).join(" ")}
+
+          </span>
+
+        `;
+
+        /* CONTENT PARAGRAPHS */
+
+        const paragraphs =
+        foundPost.content
+        .split("\n")
+        .filter(p => p.trim() !== "")
+        .map(p => `<p>${p}</p>`)
+        .join("");
+
+        /* RENDER */
 
         appContainer.innerHTML = `
 
-          <div class="article-container">
+          <main class="article-wrap">
 
             <img
-              class="article-image"
               src="${foundPost.image}"
               alt="${foundPost.title}"
+              class="article-image"
             >
 
             <div class="article-category">
-              ${foundPost.category}
+
+              ${foundPost.category || "Insights"}
+
             </div>
 
             <h1 class="article-title">
-              ${foundPost.title}
+
+              ${fancyTitle}
+
             </h1>
 
             <p class="article-description">
+
               ${foundPost.description}
+
             </p>
 
-            <div class="article-content">
-              ${foundPost.content || "No content available yet."}
+            <div class="content-box">
+
+              <div class="article-content">
+
+                ${paragraphs}
+
+              </div>
+
             </div>
 
-          </div>
+          </main>
 
         `;
 
@@ -344,8 +601,10 @@
 
         appContainer.innerHTML = `
 
-          <div class="error">
+          <div class="loading">
+
             Failed to load article.
+
           </div>
 
         `;
@@ -354,9 +613,12 @@
 
     }
 
+    /* START */
+
     loadArticle();
 
   </script>
 
 </body>
+
 </html>
