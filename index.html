@@ -1,111 +1,517 @@
- ```html
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>GENZEST | Finance, AI & Investing Insights</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="GENZEST delivers daily alpha on AI investing, crypto trends, fintech hacks, and Gen Z money moves. No fluff, just edge." />
+  <meta name="keywords" content="Gen Z finance, AI investing, crypto news, fintech insights, startup culture, money mindset" />
+  <meta name="author" content="GENZEST" />
+  <meta property="og:title" content="GENZEST | AI, Finance & Investing for the Next Gen" />
+  <meta property="og:description" content="Fresh insights on AI, wealth building, and future-proof investing. Stay ahead of the curve." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>GENZEST | AI, Finance & Gen Z Investing — Real Talk, Real Edge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,900&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-    :root {
-      --bg-primary: #050505;
-      --text-primary: #ffffff;
-      --accent: #2563eb;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    body.theme-light { --bg-primary: #f8fafc; --text-primary: #0f172a; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-    /* Fix Navbar */
-    .topbar { position: fixed; top: 0; width: 100%; padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(5,5,5,0.8); backdrop-filter: blur(10px); z-index: 1000; }
-    .brand { font-size: 1.5rem; font-weight: 900; text-decoration: none; color: var(--text-primary); }
-    .menu-btn { background: none; border: none; color: var(--text-primary); font-size: 1.8rem; cursor: pointer; }
+    :root {
+      --bg-primary: #03050b;
+      --bg-secondary: #0a0f1c;
+      --surface: #111827;
+      --surface-hover: #1e293b;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59,130,246,0.2);
+      --border: #1e293b;
+      --card-radius: 1.5rem;
+      --transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
 
-    /* Fix Sidebar */
-    .sidebar { position: fixed; top: 0; right: -100%; width: 85%; height: 100vh; background: #111; padding: 2rem; transition: 0.3s; z-index: 2000; }
+    body.theme-light {
+      --bg-primary: #f9fafb;
+      --bg-secondary: #ffffff;
+      --surface: #ffffff;
+      --surface-hover: #f1f5f9;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --accent: #2563eb;
+      --border: #e2e8f0;
+    }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      transition: background 0.2s ease, color 0.2s ease;
+      scroll-behavior: smooth;
+    }
+
+    /* GLOW + ANIMATIONS */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-6px); }
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* TOPBAR FIXED */
+    .topbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 0.9rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(var(--bg-primary-rgb), 0.8);
+      backdrop-filter: blur(14px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    body:not(.theme-light) .topbar { background: rgba(3,5,11,0.85); }
+    .brand {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #fff, var(--accent));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-decoration: none;
+    }
+    .menu-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      font-size: 1.6rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu-btn:hover { background: var(--accent); color: white; border-color: var(--accent); transform: scale(0.96); }
+
+    /* SIDEBAR MODERN */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: min(85%, 320px);
+      height: 100vh;
+      background: var(--bg-secondary);
+      backdrop-filter: blur(20px);
+      padding: 2rem 1.8rem;
+      transition: 0.35s ease-out;
+      z-index: 2000;
+      box-shadow: -8px 0 30px rgba(0,0,0,0.4);
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
     .sidebar.active { right: 0; }
-    .sidebar a { display: block; color: white; padding: 1rem 0; text-decoration: none; font-size: 1.2rem; }
+    .sidebar a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 500;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sidebar a i { width: 28px; color: var(--accent); }
+    .sidebar a:hover { padding-left: 8px; color: var(--accent); }
+    #themeToggle {
+      margin-top: 1.8rem;
+      background: var(--surface);
+      border: 1px solid var(--accent);
+      padding: 0.9rem;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    #themeToggle:hover { background: var(--accent); color: white; }
 
-    /* Fix Hero for Mobile */
-    .hero { padding: 8rem 5% 4rem; display: flex; flex-direction: column; justify-content: center; }
-    .hero h1 { font-size: clamp(2.5rem, 10vw, 5rem); line-height: 0.9; font-weight: 900; }
-    .handwritten { font-family: 'Caveat', cursive; color: #60a5fa; display: block; }
-    
-    /* Fix Grid */
-    .featured-section { padding: 2rem 5%; }
-    .featured-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
-    @media (min-width: 768px) { .featured-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1024px) { .featured-grid { grid-template-columns: repeat(3, 1fr); } }
-    
-    .featured-card { background: #111; border-radius: 16px; overflow: hidden; border: 1px solid #222; }
-    .featured-card img { width: 100%; height: 180px; object-fit: cover; }
-    .featured-content { padding: 1.2rem; }
+    /* overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(3px);
+      z-index: 1500;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.25s;
+    }
+    .overlay.active { opacity: 1; visibility: visible; }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 9rem 5% 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 90vh;
+      background: radial-gradient(circle at 20% 30%, var(--accent-glow) 0%, transparent 50%);
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 12vw, 5.5rem);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+    .handwritten {
+      font-family: 'Caveat', cursive;
+      background: linear-gradient(120deg, #60a5fa, #a78bfa);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(59,130,246,0.15);
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      width: fit-content;
+      border: 0.5px solid var(--border);
+    }
+
+    /* featured section */
+    .featured-section {
+      padding: 3rem 5% 4rem;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      animation: fadeSlide 0.5s ease-out;
+    }
+    @media (min-width: 700px) { .featured-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1100px) { .featured-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .featured-card {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
+    }
+    .featured-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 30px -12px rgba(59,130,246,0.3);
+    }
+    .featured-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .featured-card:hover img { transform: scale(1.03); }
+    .featured-content {
+      padding: 1.5rem;
+    }
+    .featured-content h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+    .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 1rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      transition: 0.2s;
+    }
+    .read-link i { font-size: 0.8rem; transition: 0.2s; }
+    .read-link:hover { gap: 12px; border-bottom-color: var(--accent); }
+
+    /* skeleton loading */
+    .skeleton-card {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .skeleton-img { height: 200px; background: linear-gradient(90deg, var(--border) 25%, #334155 50%, var(--border) 75%); background-size: 200% 100%; animation: shimmer 1.2s infinite; }
+    .skeleton-text { margin: 1.2rem; height: 24px; background: var(--border); border-radius: 12px; width: 80%; }
+    .skeleton-text.short { width: 50%; }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+    /* FOOTER — Gen Z friendly + vibe */
+    .footer {
+      padding: 3rem 5% 2rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .footer-left .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), #a855f7);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .social-links a {
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      transition: 0.2s;
+    }
+    .social-links a:hover { color: var(--accent); transform: translateY(-3px); }
+    .footer-copy { color: var(--text-secondary); font-size: 0.85rem; }
+
+    @media (max-width: 650px) {
+      .footer { flex-direction: column; text-align: center; }
+    }
   </style>
 </head>
 <body>
   <header class="topbar">
-    <a href="/" class="brand">GENZEST</a>
-    <button class="menu-btn" id="menuBtn">☰</button>
+    <a href="/" class="brand">⚡ GENZEST</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
   </header>
 
   <div class="sidebar" id="sidebar">
-    <button class="menu-btn" id="closeBtn" style="margin-bottom: 2rem;">✕</button>
-    <a href="/">Home</a>
-    <a href="#featured">Latest Posts</a>
-    <button id="themeToggle" style="margin-top:2rem; padding: 0.8rem; width: 100%; border-radius: 8px;">Toggle Theme</button>
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+      <button class="menu-btn" id="closeBtn" style="width: 40px; height: 40px;"><i class="fas fa-times"></i></button>
+    </div>
+    <a href="/"><i class="fas fa-home"></i> Home</a>
+    <a href="#featured"><i class="fas fa-newspaper"></i> Latest drops</a>
+    <a href="#"><i class="fas fa-chart-line"></i> Alpha vault</a>
+    <button id="themeToggle"><i class="fas fa-moon"></i> <span>Switch vibe</span></button>
   </div>
+  <div class="overlay" id="overlay"></div>
 
-  <section class="hero">
-    <h1>Future Of<br><span class="handwritten">Finance &</span> AI</h1>
-    <p style="margin: 2rem 0; color: #9ca3af;">Modern insights on investing, AI, and startups.</p>
-    <a href="#featured" style="color: #2563eb; font-weight: bold; text-decoration: none;">Explore Insights →</a>
-  </section>
+  <main>
+    <section class="hero">
+      <span class="hero-badge"><i class="fas fa-bolt"></i> no cap, future-proof moves</span>
+      <h1>Own the<br><span class="handwritten">AI x Finance</span> wave</h1>
+      <p style="margin: 1.5rem 0 1rem; font-size: 1.2rem; max-width: 550px; color: var(--text-secondary);">
+        Gen Z decoded: investing, AI tools, crypto, side hustles & market edge. Stay liquid, stay curious.
+      </p>
+      <a href="#featured" style="background: var(--accent); width: fit-content; padding: 12px 28px; border-radius: 40px; color: white; font-weight: 600; text-decoration: none; margin-top: 1rem; transition: 0.2s; display: flex; align-items: center; gap: 8px;">
+        Explore insights <i class="fas fa-arrow-right"></i>
+      </a>
+    </section>
 
-  <section class="featured-section" id="featured">
-    <h2 style="margin-bottom: 1rem;">Latest Articles</h2>
-    <div class="featured-grid" id="blogContainer">Loading...</div>
-  </section>
+    <section class="featured-section" id="featured">
+      <div class="section-header">
+        <h2><i class="fas fa-fire-flame" style="color: var(--accent);"></i> Latest drops & hot takes</h2>
+        <span style="font-size: 0.85rem; background: var(--surface); padding: 5px 12px; border-radius: 30px;">🔥 fresh from the lab</span>
+      </div>
+      <div class="featured-grid" id="blogContainer">
+        <!-- skeleton will be shown by JS -->
+      </div>
+    </section>
+  </main>
 
-  <footer style="padding: 3rem 5%; border-top: 1px solid #222; margin-top: 4rem; text-align: center; color: #9ca3af;">
-    <p>&copy; 2026 GENZEST. All Rights Reserved.</p>
+  <footer class="footer">
+    <div class="footer-left">
+      <div class="footer-logo">GENZEST</div>
+      <p style="font-size: 0.85rem; margin-top: 8px; max-width: 260px;">AI, investing & future finance — built for the new generation.</p>
+    </div>
+    <div class="social-links">
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+      <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 GENZEST — all rights reserved. stay alpha.
+    </div>
   </footer>
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    const db = getFirestore(initializeApp({
+    // Firebase config (KEPT INTACT)
+    const firebaseConfig = {
       apiKey: "AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
       projectId: "genzest-85233",
       storageBucket: "genzest-85233.firebasestorage.app",
       messagingSenderId: "741928938",
       appId: "1:741928938:web:d55eb961c34732e73e4c93"
-    }));
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-    async function loadBlogs() {
-      const container = document.getElementById("blogContainer");
-      try {
-        const snap = await getDocs(collection(db, "posts"));
-        container.innerHTML = "";
-        snap.forEach(doc => {
-          const p = doc.data();
-          container.innerHTML += `<article class="featured-card">
-            <img src="${p.image}" alt="${p.title}" onerror="this.src='https://via.placeholder.com/400x200'">
-            <div class="featured-content">
-              <h3>${p.title}</h3>
-              <a href="blog.html?slug=${p.slug}">Read Article</a>
-            </div>
-          </article>`;
-        });
-      } catch (e) { container.innerHTML = "Error loading posts."; }
+    // DOM elements
+    const container = document.getElementById("blogContainer");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const menuBtn = document.getElementById("menuBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const themeToggleBtn = document.getElementById("themeToggle");
+
+    // Skeleton render helper
+    function renderSkeletons(count = 3) {
+      container.innerHTML = "";
+      for (let i = 0; i < count; i++) {
+        const skeleton = document.createElement("div");
+        skeleton.className = "skeleton-card";
+        skeleton.innerHTML = `
+          <div class="skeleton-img"></div>
+          <div class="skeleton-text"></div>
+          <div class="skeleton-text short" style="margin-top: 0.5rem;"></div>
+          <div style="height: 36px; margin: 1rem;"></div>
+        `;
+        container.appendChild(skeleton);
+      }
     }
 
-    document.getElementById("menuBtn").onclick = () => document.getElementById("sidebar").classList.add("active");
-    document.getElementById("closeBtn").onclick = () => document.getElementById("sidebar").classList.remove("active");
-    document.getElementById("themeToggle").onclick = () => document.body.classList.toggle("theme-light");
+    // Load blogs from firestore with improved error handling
+    async function loadBlogs() {
+      renderSkeletons(3);
+      try {
+        const querySnapshot = await getDocs(collection(db, "posts"));
+        if (querySnapshot.empty) {
+          container.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding: 3rem;"><i class="fas fa-database"></i> No posts yet — check back for fresh alpha 🚀</div>`;
+          return;
+        }
+        container.innerHTML = "";
+        querySnapshot.forEach((doc) => {
+          const post = doc.data();
+          const imgUrl = post.image && post.image.trim() !== "" ? post.image : "https://via.placeholder.com/400x240?text=GENZEST+Insight";
+          const title = post.title || "Untitled insight";
+          const slug = post.slug || doc.id;
+          const card = document.createElement("article");
+          card.className = "featured-card";
+          card.innerHTML = `
+            <img src="${imgUrl}" alt="${escapeHtml(title)}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x240?text=Trending+Now'">
+            <div class="featured-content">
+              <h3>${escapeHtml(title)}</h3>
+              <a href="blog.html?slug=${encodeURIComponent(slug)}" class="read-link">
+                Read the play <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      } catch (err) {
+        console.error("Firebase fetch error:", err);
+        container.innerHTML = `<div style="grid-column:1/-1; background: var(--surface); padding: 2rem; border-radius: 30px; text-align: center;"><i class="fas fa-wifi"></i> Error loading insights, refresh? 🔌</div>`;
+      }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return "";
+      return str.replace(/[&<>]/g, function(m) {
+        if (m === '&') return '&amp;';
+        if (m === '<') return '&lt;';
+        if (m === '>') return '&gt;';
+        return m;
+      });
+    }
+
+    // Sidebar logic + overlay
+    function openSidebar() {
+      sidebar.classList.add("active");
+      overlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+    function closeSidebar() {
+      sidebar.classList.remove("active");
+      overlay.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    menuBtn.addEventListener("click", openSidebar);
+    closeBtn.addEventListener("click", closeSidebar);
+    overlay.addEventListener("click", closeSidebar);
+
+    // Theme toggle (fully functional)
+    function toggleTheme() {
+      document.body.classList.toggle("theme-light");
+      const themeIcon = document.querySelector("#themeToggle i");
+      if (document.body.classList.contains("theme-light")) {
+        themeIcon.className = "fas fa-sun";
+      } else {
+        themeIcon.className = "fas fa-moon";
+      }
+    }
+    if (themeToggleBtn) themeToggleBtn.addEventListener("click", toggleTheme);
+
+    // Load dynamic content — automation untouched
     loadBlogs();
+
+    // close sidebar if window resized > tablet? fine
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 992) closeSidebar();
+    });
+
+    // smooth anchor for hero button
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = this.getAttribute('href');
+        if (target === "#" || target === "") return;
+        const element = document.querySelector(target);
+        if (element) {
+          e.preventDefault();
+          element.scrollIntoView({ behavior: 'smooth' });
+          closeSidebar();
+        }
+      });
+    });
   </script>
 </body>
 </html>
-
-```
