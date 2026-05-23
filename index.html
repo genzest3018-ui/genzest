@@ -2,30 +2,34 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GENZEST | Future Of Finance & AI</title>
+<title>GENZEST | Finance, AI & Investing Insights</title>
 
-<meta name="description"
-content="GENZEST delivers modern insights on finance, AI, startups, investing and future business trends.">
-
-<meta name="keywords"
-content="finance, investing, AI, startups, markets, business, future finance">
-
+<meta name="description" content="GENZEST delivers modern finance, investing, AI, startup, and business insights with a clean premium experience.">
+<meta name="keywords" content="finance, investing, AI, startups, business, stock market, media">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#000000">
 
-<link rel="icon" type="image/png" href="logo.png" />
+<meta property="og:title" content="GENZEST | Finance, AI & Investing Insights">
+<meta property="og:description" content="Modern finance media platform covering investing, AI, startups, and business trends.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://genzest.in/">
+<meta property="og:image" content="https://genzest.in/1779508386745.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GENZEST | Finance, AI & Investing Insights">
+<meta name="twitter:description" content="Modern finance media platform covering investing, AI, startups, and business trends.">
+<meta name="twitter:image" content="https://genzest.in/1779508386745.png">
+
+<link rel="icon" type="image/png" href="1779508386745.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -33,9 +37,13 @@ box-sizing:border-box;
 font-family:'Inter',sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:#000;
-color:white;
+color:#fff;
 overflow-x:hidden;
 }
 
@@ -46,34 +54,44 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:22px 7%;
+padding:18px 5%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.68);
 backdrop-filter:blur(18px);
 z-index:1000;
 border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
-.logo{
-font-size:42px;
-font-weight:900;
-letter-spacing:-1px;
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+color:#fff;
+}
+
+.brand img{
+height:42px;
+width:auto;
+display:block;
+object-fit:contain;
 }
 
 .nav-links{
 display:flex;
-gap:30px;
+gap:28px;
 align-items:center;
+flex-wrap:wrap;
 }
 
 .nav-links a{
 text-decoration:none;
-color:white;
+color:#fff;
 font-size:15px;
 font-weight:600;
-opacity:0.7;
+opacity:0.75;
 transition:0.3s;
 }
 
@@ -89,21 +107,16 @@ position:relative;
 min-height:100vh;
 display:flex;
 align-items:center;
-padding:140px 7%;
+padding:140px 7% 100px;
 overflow:hidden;
 }
 
 .hero::before{
 content:'';
 position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
+inset:0;
 background:
-linear-gradient(to bottom,
-rgba(0,0,0,0.55),
-rgba(0,0,0,0.92)),
+linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.92)),
 url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1600&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
@@ -113,53 +126,56 @@ z-index:-2;
 .hero::after{
 content:'';
 position:absolute;
-width:600px;
-height:600px;
-background:#00ffe015;
+width:620px;
+height:620px;
+background:#00ffe012;
 filter:blur(120px);
-top:-100px;
-right:-100px;
+top:-120px;
+right:-120px;
 z-index:-1;
 }
 
 .hero-content{
 max-width:760px;
+position:relative;
+z-index:2;
 }
 
 .hero-mini{
 color:#00ffe0;
-font-size:15px;
-font-weight:700;
+font-size:14px;
+font-weight:800;
 letter-spacing:6px;
-margin-bottom:25px;
+margin-bottom:22px;
 }
 
 .hero h1{
 font-size:96px;
 line-height:0.95;
 font-weight:900;
-margin-bottom:30px;
+margin-bottom:28px;
 letter-spacing:-4px;
+max-width:760px;
 }
 
 .hero p{
 font-size:22px;
 line-height:1.8;
 opacity:0.75;
-margin-bottom:45px;
 max-width:650px;
+margin-bottom:42px;
 }
 
 .hero-btn{
 display:inline-block;
-padding:20px 40px;
+padding:18px 38px;
 background:#00ffe0;
-color:black;
+color:#000;
 font-size:18px;
 font-weight:800;
 text-decoration:none;
 border-radius:18px;
-transition:0.4s;
+transition:0.35s ease;
 }
 
 .hero-btn:hover{
@@ -167,7 +183,7 @@ transform:translateY(-5px);
 box-shadow:0 0 35px rgba(0,255,224,0.35);
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
 padding:100px 7%;
@@ -176,7 +192,7 @@ padding:100px 7%;
 .section-title{
 font-size:54px;
 font-weight:900;
-margin-bottom:60px;
+margin-bottom:55px;
 letter-spacing:-2px;
 }
 
@@ -185,56 +201,63 @@ letter-spacing:-2px;
 .blog-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:35px;
+gap:28px;
 }
 
 .blog-card{
 background:rgba(255,255,255,0.03);
 border:1px solid rgba(255,255,255,0.08);
-border-radius:30px;
+border-radius:28px;
 overflow:hidden;
-transition:0.4s;
+transition:0.35s ease;
 backdrop-filter:blur(14px);
 }
 
 .blog-card:hover{
 transform:translateY(-8px);
-border-color:#00ffe050;
+border-color:#00ffe040;
+box-shadow:0 12px 40px rgba(0,255,224,0.08);
 }
 
 .blog-card img{
 width:100%;
 height:240px;
 object-fit:cover;
+display:block;
+transition:0.45s ease;
+}
+
+.blog-card:hover img{
+transform:scale(1.04);
 }
 
 .blog-content{
-padding:30px;
+padding:28px;
 }
 
 .blog-content span{
 font-size:13px;
-font-weight:700;
+font-weight:800;
 letter-spacing:2px;
 color:#00ffe0;
 }
 
 .blog-content h3{
-font-size:30px;
+font-size:28px;
 line-height:1.2;
-margin:18px 0;
-font-weight:800;
+margin:16px 0;
+font-weight:900;
 }
 
 .blog-content p{
 font-size:16px;
 line-height:1.8;
-opacity:0.7;
-margin-bottom:25px;
+opacity:0.72;
+margin-bottom:20px;
 }
 
 .blog-content a{
-color:white;
+color:#fff;
 text-decoration:none;
 font-weight:700;
 transition:0.3s;
@@ -247,14 +270,15 @@ color:#00ffe0;
 /* ABOUT */
 
 .about-section{
-padding:120px 7%;
+padding:110px 7%;
 text-align:center;
 }
 
 .about-section h2{
-font-size:60px;
+font-size:58px;
 font-weight:900;
-margin-bottom:30px;
+margin-bottom:24px;
+letter-spacing:-2px;
 }
 
 .about-section p{
@@ -268,40 +292,46 @@ margin:auto;
 /* FOOTER */
 
 .footer{
-padding:80px 7%;
+padding:70px 7%;
 border-top:1px solid rgba(255,255,255,0.08);
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:30px;
+text-align:center;
 }
 
 .footer-logo{
 font-size:34px;
 font-weight:900;
+margin-bottom:18px;
+}
+
+.footer-text{
+opacity:0.7;
+max-width:620px;
+margin:auto;
+line-height:1.8;
+margin-bottom:30px;
 }
 
 .footer-links{
 display:flex;
-gap:25px;
+justify-content:center;
+gap:26px;
+flex-wrap:wrap;
+margin-bottom:28px;
 }
 
 .footer-links a{
 text-decoration:none;
-color:white;
-opacity:0.7;
+color:#fff;
+opacity:0.72;
 transition:0.3s;
 }
 
 .footer-links a:hover{
-opacity:1;
 color:#00ffe0;
+opacity:1;
 }
 
 .copyright{
-width:100%;
-margin-top:40px;
 opacity:0.5;
 font-size:14px;
 }
@@ -311,11 +341,11 @@ font-size:14px;
 @media(max-width:768px){
 
 .topbar{
-padding:18px 5%;
+padding:16px 5%;
 }
 
-.logo{
-font-size:28px;
+.brand img{
+height:34px;
 }
 
 .nav-links{
@@ -327,7 +357,7 @@ font-size:13px;
 }
 
 .hero{
-padding:170px 7% 100px;
+padding:170px 7% 90px;
 }
 
 .hero h1{
@@ -342,66 +372,58 @@ line-height:1.7;
 }
 
 .hero-btn{
-padding:18px 32px;
+padding:16px 30px;
 font-size:16px;
+}
+
+.section{
+padding:80px 7%;
 }
 
 .section-title{
 font-size:38px;
 }
 
+.about-section{
+padding:90px 7%;
+}
+
 .about-section h2{
-font-size:42px;
+font-size:40px;
 }
 
 .about-section p{
 font-size:18px;
 }
 
+.footer-links{
+gap:18px;
 }
 
+}
 </style>
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
 <header class="topbar">
+<a href="index.html" class="brand" aria-label="GENZEST Home">
+<img src="1779508386745.png" alt="GENZEST Logo">
+</a>
 
-<div class="logo">
-GENZEST
-</div>
-
-<div class="nav-links">
-
+<nav class="nav-links">
 <a href="index.html">Home</a>
-
 <a href="#blogs">Blog</a>
-
 <a href="about.html">About</a>
-
 <a href="contact.html">Contact</a>
-
-</div>
-
+</nav>
 </header>
 
-<!-- HERO -->
-
 <section class="hero">
-
 <div class="hero-content">
+<p class="hero-mini">MODERN FINANCE MEDIA</p>
 
-<p class="hero-mini">
-MODERN FINANCE MEDIA
-</p>
-
-<h1>
-Future Of<br>
-Finance & AI
-</h1>
+<h1>Future Of<br>Finance & AI</h1>
 
 <p>
 GENZEST delivers modern insights on investing,
@@ -409,146 +431,72 @@ artificial intelligence, startups,
 business and future financial trends.
 </p>
 
-<a href="#blogs" class="hero-btn">
-Explore Blogs
-</a>
-
+<a href="#blogs" class="hero-btn">Explore Blogs</a>
 </div>
-
 </section>
 
-<!-- BLOG SECTION -->
-
 <section class="section" id="blogs">
-
-<h2 class="section-title">
-Latest Insights
-</h2>
+<h2 class="section-title">Latest Insights</h2>
 
 <div class="blog-grid">
 
-<!-- BLOG 1 -->
-
-<div class="blog-card">
-
-<img src="https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1400&auto=format&fit=crop">
-
+<article class="blog-card">
+<img src="https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1400&auto=format&fit=crop" alt="Finance investing chart">
 <div class="blog-content">
-
 <span>FINANCE</span>
-
-<h3>
-The Future Of Digital Investing
-</h3>
-
-<p>
-Understanding how modern investing is changing with AI and technology.
-</p>
-
-<a href="blog/first-article.html">
-Read More →
-</a>
-
+<h3>The Future Of Digital Investing</h3>
+<p>Understanding how modern investing is changing with AI and technology.</p>
+<a href="blog/first-article.html">Read More →</a>
 </div>
+</article>
 
-</div>
-
-<!-- BLOG 2 -->
-
-<div class="blog-card">
-
-<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1400&auto=format&fit=crop">
-
+<article class="blog-card">
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1400&auto=format&fit=crop" alt="AI business technology">
 <div class="blog-content">
-
 <span>AI</span>
-
-<h3>
-AI Is Reshaping Modern Business
-</h3>
-
-<p>
-Artificial intelligence is transforming productivity and finance forever.
-</p>
-
-<a href="blog/second-article.html">
-Read More →
-</a>
-
+<h3>AI Is Reshaping Modern Business</h3>
+<p>Artificial intelligence is transforming productivity and finance forever.</p>
+<a href="blog/second-article.html">Read More →</a>
 </div>
+</article>
 
-</div>
-
-<!-- BLOG 3 -->
-
-<div class="blog-card">
-
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop">
-
+<article class="blog-card">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop" alt="Startup growth and founder">
 <div class="blog-content">
-
 <span>STARTUPS</span>
-
-<h3>
-Why Gen Z Founders Are Growing Fast
-</h3>
-
-<p>
-Young entrepreneurs are building internet-first companies at scale.
-</p>
-
-<a href="blog/third-article.html">
-Read More →
-</a>
+<h3>Why Gen Z Founders Are Growing Fast</h3>
+<p>Young entrepreneurs are building internet-first companies at scale.</p>
+<a href="blog/third-article.html">Read More →</a>
+</div>
+</article>
 
 </div>
-
-</div>
-
-</div>
-
 </section>
 
-<!-- ABOUT -->
-
 <section class="about-section">
-
-<h2>
-Built For The Next Generation
-</h2>
-
+<h2>Built For The Next Generation</h2>
 <p>
 GENZEST is a modern digital media brand focused on finance,
 AI, investing, startups and future trends.
 We simplify complex topics into modern insights for ambitious people.
 </p>
-
 </section>
 
-<!-- FOOTER -->
-
 <footer class="footer">
+<div class="footer-logo">GENZEST</div>
 
-<div class="footer-logo">
-GENZEST
-</div>
-
-<div class="footer-links">
-
-<a href="index.html">Home</a>
-
-<a href="#blogs">Blog</a>
-
-<a href="about.html">About</a>
-
-<a href="contact.html">Contact</a>
-
-</div>
-
-<p class="copyright">
-© 2026 GENZEST. All Rights Reserved.
+<p class="footer-text">
+Modern finance media platform focused on investing, AI, startups and future business trends.
 </p>
 
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="#blogs">Blog</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<p class="copyright">© 2026 GENZEST. All Rights Reserved.</p>
 </footer>
 
 </body>
