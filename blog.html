@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GENZEST Article</title>
+
+<style>
+
+body{
+  background:#050505;
+  color:white;
+  font-family:Inter,sans-serif;
+  padding:40px;
+  line-height:1.8;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+img{
+  width:100%;
+  border-radius:16px;
+  margin-bottom:25px;
+}
+
+h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+p{
+  font-size:20px;
+  color:#b3b3b3;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img id="blogImage">
+
+<h1 id="blogTitle"></h1>
+
+<p id="blogDescription"></p>
+
+</div>
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getFirestore,
+collection,
+getDocs
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
+
+authDomain: "genzest-85233.firebaseapp.com",
+
+projectId: "genzest-85233",
+
+storageBucket: "genzest-85233.firebasestorage.app",
+
+messagingSenderId: "741928938",
+
+appId: "1:741928938:web:d55eb961c34732e73e4c93"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+const params = new URLSearchParams(window.location.search);
+
+const slug = params.get("slug");
+
+async function loadBlog(){
+
+const querySnapshot =
+await getDocs(collection(db,"posts"));
+
+querySnapshot.forEach((doc)=>{
+
+const post = doc.data();
+
+if(post.slug === slug){
+
+document.getElementById("blogTitle").innerText = post.title;
+
+document.getElementById("blogDescription").innerText = post.description;
+
+document.getElementById("blogImage").src = post.image;
+
+}
+
+});
+
+}
+
+loadBlog();
+
+</script>
+
+</body>
+</html>
