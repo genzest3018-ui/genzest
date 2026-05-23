@@ -1,479 +1,837 @@
- <!DOCTYPE html>
+ <!-- =========================================
+GENZEST BLOG PAGE
+UI + SEO + READING EXPERIENCE IMPROVED
+AUTOMATION SAFE
+========================================= -->
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8" />
+  <!-- SEO -->
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-/>
+  <meta charset="UTF-8" />
 
-<title>GENZEST Article</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap"
-rel="stylesheet"
-/>
+  <title>
+    GENZEST | Article
+  </title>
 
-<style>
+  <meta
+    name="description"
+    content="Read modern AI, investing and finance insights on GENZEST."
+  />
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+  <meta
+    name="robots"
+    content="index, follow"
+  />
 
-:root{
+  <meta
+    name="theme-color"
+    content="#050505"
+  />
 
---bg:#050505;
+  <!-- FAVICON -->
 
---surface:#0f172a;
+  <link
+    rel="icon"
+    type="image/png"
+    href="1779508386745.png"
+  />
 
---text:#ffffff;
+  <!-- FONTS -->
 
---muted:#94a3b8;
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap"
+    rel="stylesheet"
+  />
 
---accent:#60a5fa;
+  <!-- ICONS -->
 
---gradient:
-linear-gradient(
-135deg,
-#3b82f6,
-#8b5cf6,
-#ec4899
-);
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 
-}
+  <style>
 
-body{
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-background:var(--bg);
+    :root{
 
-color:var(--text);
+      --bg:#050505;
 
-font-family:'Inter',sans-serif;
+      --surface:#0b1220;
 
-line-height:1.9;
+      --text:#ffffff;
 
-overflow-x:hidden;
+      --muted:#94a3b8;
 
-}
+      --border:rgba(255,255,255,0.08);
 
-/* NAV */
+      --gradient:
+      linear-gradient(
+        135deg,
+        #3b82f6,
+        #8b5cf6,
+        #ec4899
+      );
 
-.topbar{
+    }
 
-position:fixed;
+    html{
+      scroll-behavior:smooth;
+    }
 
-top:0;
-left:0;
+    body{
 
-width:100%;
+      background:var(--bg);
 
-padding:1rem 5%;
+      color:var(--text);
 
-display:flex;
+      font-family:'Inter',sans-serif;
 
-justify-content:space-between;
+      overflow-x:hidden;
 
-align-items:center;
+    }
 
-background:rgba(5,5,5,0.75);
+    ::selection{
 
-backdrop-filter:blur(14px);
+      background:#8b5cf6;
 
-border-bottom:1px solid rgba(255,255,255,0.08);
+      color:white;
 
-z-index:1000;
+    }
 
-}
+    /* PROGRESS BAR */
 
-.brand{
+    .progress-bar{
 
-font-size:2rem;
+      position:fixed;
 
-font-weight:900;
+      top:0;
+      left:0;
 
-text-decoration:none;
+      width:0%;
 
-background:var(--gradient);
+      height:4px;
 
--webkit-background-clip:text;
+      background:
+      linear-gradient(
+        90deg,
+        #3b82f6,
+        #a855f7
+      );
 
--webkit-text-fill-color:transparent;
+      z-index:99999;
 
-}
+    }
 
-/* ARTICLE */
+    /* NAVBAR */
 
-.article-container{
+    .topbar{
 
-width:90%;
+      position:fixed;
 
-max-width:950px;
+      top:0;
+      left:0;
 
-margin:auto;
+      width:100%;
 
-padding:120px 0 80px;
+      z-index:999;
 
-}
+      padding:1rem 5%;
 
-.article-image{
+      display:flex;
 
-width:100%;
+      justify-content:space-between;
 
-height:420px;
+      align-items:center;
 
-object-fit:cover;
+      backdrop-filter:blur(18px);
 
-border-radius:28px;
+      background:
+      rgba(5,5,5,0.75);
 
-margin-bottom:40px;
+      border-bottom:
+      1px solid var(--border);
 
-box-shadow:
-0 20px 50px rgba(0,0,0,0.45);
+    }
 
-}
+    .brand{
 
-.article-category{
+      text-decoration:none;
 
-display:inline-block;
+      font-size:2.4rem;
 
-padding:0.5rem 1rem;
+      font-weight:900;
 
-border-radius:999px;
+      background:var(--gradient);
 
-background:rgba(59,130,246,0.15);
+      -webkit-background-clip:text;
 
-color:#60a5fa;
+      -webkit-text-fill-color:transparent;
 
-font-size:0.8rem;
+      letter-spacing:-2px;
 
-font-weight:700;
+    }
 
-letter-spacing:1px;
+    .home-btn{
 
-text-transform:uppercase;
+      text-decoration:none;
 
-margin-bottom:25px;
+      color:var(--muted);
 
-}
+      font-size:1rem;
 
-/* TITLE */
+      transition:0.25s ease;
 
-.article-title{
+    }
 
-font-size:clamp(3rem,10vw,6rem);
+    .home-btn:hover{
 
-line-height:0.95;
+      color:white;
 
-font-weight:900;
+    }
 
-margin-bottom:30px;
+    /* HERO */
 
-letter-spacing:-4px;
+    .hero{
 
-background:var(--gradient);
+      padding:
+      9rem 1.5rem 3rem;
 
--webkit-background-clip:text;
+      text-align:center;
 
--webkit-text-fill-color:transparent;
+      position:relative;
 
-text-shadow:
-0 0 30px rgba(59,130,246,0.25);
+      overflow:hidden;
 
-}
+      background:
+      radial-gradient(
+        circle at top left,
+        rgba(59,130,246,0.15),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at bottom right,
+        rgba(168,85,247,0.1),
+        transparent 30%
+      );
 
-.article-title span{
+    }
 
-display:block;
+    .hero-title{
 
-font-family:'Caveat',cursive;
+      max-width:900px;
 
-font-size:0.75em;
+      margin:auto;
 
-letter-spacing:0;
+      font-size:
+      clamp(3.5rem,12vw,7rem);
 
-color:#60a5fa;
+      line-height:0.88;
 
--webkit-text-fill-color:#60a5fa;
+      letter-spacing:-5px;
 
-margin-top:10px;
+      font-weight:900;
 
-}
+      background:var(--gradient);
 
-/* DESCRIPTION */
+      -webkit-background-clip:text;
 
-.article-description{
+      -webkit-text-fill-color:transparent;
 
-font-size:1.35rem;
+      text-shadow:
+      0 0 20px rgba(99,102,241,.35),
+      0 0 50px rgba(168,85,247,.18);
 
-color:var(--muted);
+    }
 
-margin-bottom:60px;
+    .hero-hand{
 
-line-height:1.8;
+      font-family:'Caveat',cursive;
 
-}
+      font-size:4rem;
 
-/* CONTENT */
+      margin-top:2rem;
 
-.article-content{
+      color:#60a5fa;
 
-font-size:1.12rem;
+      text-shadow:
+      0 0 20px rgba(59,130,246,.4);
 
-color:#e2e8f0;
+    }
 
-line-height:2.2;
+    .hero-desc{
 
-background:rgba(15,23,42,0.55);
+      max-width:760px;
 
-padding:2rem;
+      margin:
+      2rem auto 0;
 
-border-radius:24px;
+      color:var(--muted);
 
-border:1px solid rgba(255,255,255,0.06);
+      font-size:1.2rem;
 
-backdrop-filter:blur(12px);
+      line-height:1.9;
 
-white-space:pre-line;
+    }
 
-}
+    .meta{
 
-/* MOBILE */
+      margin-top:1.5rem;
 
-@media(max-width:768px){
+      color:#94a3b8;
 
-.article-image{
+      font-size:0.95rem;
 
-height:250px;
+    }
 
-}
+    /* FEATURE IMAGE */
 
-.article-title{
+    .feature-image{
 
-font-size:4rem;
+      width:100%;
 
-line-height:0.95;
+      max-width:1000px;
 
-letter-spacing:-2px;
+      height:auto;
 
-}
+      border-radius:2rem;
 
-.article-description{
+      margin:
+      4rem auto 0;
 
-font-size:1.1rem;
+      display:block;
 
-}
+      border:
+      1px solid var(--border);
 
-.article-content{
+      box-shadow:
+      0 20px 50px rgba(0,0,0,0.4);
 
-font-size:1rem;
+    }
 
-padding:1.4rem;
+    /* ARTICLE */
 
-line-height:2;
+    .article-wrapper{
 
-}
+      padding:
+      4rem 1.2rem 5rem;
 
-}
+    }
 
-.loading{
+    .blog-content{
 
-padding-top:220px;
+      max-width:820px;
 
-text-align:center;
+      margin:auto;
 
-font-size:1.2rem;
+      padding:
+      3rem 1.5rem;
 
-color:var(--muted);
+      border-radius:2rem;
 
-}
+      background:
+      linear-gradient(
+        180deg,
+        rgba(10,15,40,.88),
+        rgba(5,8,20,.96)
+      );
 
-</style>
+      border:
+      1px solid rgba(255,255,255,0.05);
+
+      backdrop-filter:blur(16px);
+
+      box-shadow:
+      0 10px 40px rgba(0,0,0,0.35);
+
+    }
+
+    .blog-content h2{
+
+      font-size:2rem;
+
+      line-height:1.2;
+
+      margin:
+      4rem 0 1.5rem;
+
+      font-weight:800;
+
+      background:
+      linear-gradient(
+        135deg,
+        #60a5fa,
+        #a855f7
+      );
+
+      -webkit-background-clip:text;
+
+      -webkit-text-fill-color:transparent;
+
+    }
+
+    .blog-content p{
+
+      font-size:1.15rem;
+
+      line-height:2;
+
+      color:#dbe4ff;
+
+      margin-bottom:2rem;
+
+      text-align:left;
+
+      letter-spacing:0.2px;
+
+    }
+
+    /* AUTHOR */
+
+    .author-box{
+
+      max-width:820px;
+
+      margin:
+      3rem auto 0;
+
+      padding:1.5rem;
+
+      border-radius:1.5rem;
+
+      background:
+      rgba(255,255,255,0.03);
+
+      border:
+      1px solid var(--border);
+
+      display:flex;
+
+      align-items:center;
+
+      gap:1rem;
+
+    }
+
+    .author-icon{
+
+      width:60px;
+      height:60px;
+
+      border-radius:50%;
+
+      background:var(--gradient);
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      font-size:1.5rem;
+
+      color:white;
+
+    }
+
+    .author-box h4{
+
+      margin-bottom:0.3rem;
+
+    }
+
+    .author-box p{
+
+      color:var(--muted);
+
+      line-height:1.6;
+
+    }
+
+    /* DISCLAIMER */
+
+    .disclaimer{
+
+      max-width:820px;
+
+      margin:
+      2rem auto 0;
+
+      color:#94a3b8;
+
+      font-size:0.95rem;
+
+      line-height:1.8;
+
+      text-align:center;
+
+      padding:0 1rem;
+
+    }
+
+    /* FOOTER */
+
+    .footer{
+
+      margin-top:5rem;
+
+      padding:3rem 1rem;
+
+      border-top:
+      1px solid var(--border);
+
+      text-align:center;
+
+      color:var(--muted);
+
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero-title{
+
+        font-size:4.8rem;
+
+        line-height:0.92;
+
+        letter-spacing:-3px;
+
+      }
+
+      .hero-hand{
+
+        font-size:3rem;
+
+      }
+
+      .hero-desc{
+
+        font-size:1.05rem;
+
+      }
+
+      .blog-content{
+
+        padding:
+        2rem 1.3rem;
+
+      }
+
+      .blog-content p{
+
+        font-size:1.08rem;
+
+        line-height:1.95;
+
+      }
+
+      .blog-content h2{
+
+        font-size:1.7rem;
+
+      }
+
+    }
+
+  </style>
 
 </head>
 
 <body>
 
-<header class="topbar">
+  <!-- PROGRESS -->
 
-<a
-href="/"
-class="brand"
->
+  <div
+    class="progress-bar"
+    id="progressBar"
+  ></div>
 
-⚡ GENZEST
+  <!-- NAVBAR -->
 
-</a>
+  <header class="topbar">
 
-</header>
+    <a
+      href="/"
+      class="brand"
+    >
+      ⚡ GENZEST
+    </a>
 
-<div
-id="app"
-class="loading"
->
+    <a
+      href="/"
+      class="home-btn"
+    >
+      ← Home
+    </a>
 
-Loading article...
+  </header>
 
-</div>
+  <!-- HERO -->
 
-<script type="module">
+  <section class="hero">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    <h1
+      class="hero-title"
+      id="blogTitle"
+    >
 
-import {
-getFirestore,
-collection,
-getDocs
-}
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+      Loading...
 
-/* FIREBASE */
+    </h1>
 
-const firebaseConfig = {
+    <div class="hero-hand">
 
-apiKey:"AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
+      Future finance insights
 
-authDomain:"genzest-85233.firebaseapp.com",
+    </div>
 
-projectId:"genzest-85233",
+    <p
+      class="hero-desc"
+      id="blogDescription"
+    >
 
-storageBucket:"genzest-85233.firebasestorage.app",
+      AI spending is reshaping markets in 2026,
+      from data centers and chip demand to
+      financing and bond yields.
 
-messagingSenderId:"741928938",
+    </p>
 
-appId:"1:741928938:web:d55eb961c34732e73e4c93"
+    <div class="meta">
 
-};
+      ⏱ 4 min read • AI • GENZEST
 
-const app =
-initializeApp(firebaseConfig);
+    </div>
 
-const db =
-getFirestore(app);
+    <img
+      id="blogImage"
+      class="feature-image"
+      src=""
+      alt="GENZEST Article"
+    >
 
-/* GET SLUG */
+  </section>
 
-const params =
-new URLSearchParams(
-window.location.search
-);
+  <!-- ARTICLE -->
 
-const slug =
-params.get("slug");
+  <section class="article-wrapper">
 
-/* LOAD ARTICLE */
+    <article
+      class="blog-content"
+      id="blogContent"
+    >
 
-async function loadArticle(){
+      Loading article...
 
-const appContainer =
-document.getElementById("app");
+    </article>
 
-try{
+  </section>
 
-const querySnapshot =
-await getDocs(
-collection(db,"posts")
-);
+  <!-- AUTHOR -->
 
-let foundPost = null;
+  <div class="author-box">
 
-querySnapshot.forEach((doc)=>{
+    <div class="author-icon">
 
-const data =
-doc.data();
+      ⚡
 
-if(data.slug === slug){
+    </div>
 
-foundPost = data;
+    <div>
 
-}
+      <h4>
 
-});
+        GENZEST Editorial
 
-if(!foundPost){
+      </h4>
 
-appContainer.innerHTML = `
-<div class="loading">
-Article not found.
-</div>
-`;
+      <p>
 
-return;
+        Modern insights on AI,
+        investing, finance,
+        startups and future trends.
 
-}
+      </p>
 
-document.title =
-foundPost.title +
-" | GENZEST";
+    </div>
 
-appContainer.innerHTML = `
+  </div>
 
-<div class="article-container">
+  <!-- DISCLAIMER -->
 
-<img
-class="article-image"
-src="${foundPost.image}"
-alt="${foundPost.title}"
->
+  <p class="disclaimer">
 
-<div class="article-category">
+    This article is for educational
+    and informational purposes only
+    and should not be considered
+    financial advice.
 
-${foundPost.category}
+  </p>
 
-</div>
+  <!-- FOOTER -->
 
-<h1 class="article-title">
+  <footer class="footer">
 
-${foundPost.title}
+    © 2026 GENZEST — all rights reserved.
 
-<span>
+  </footer>
 
-future finance insights
+  <!-- FIREBASE -->
 
-</span>
+  <script type="module">
 
-</h1>
+    import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-<p class="article-description">
+    import {
+      getFirestore,
+      collection,
+      getDocs
+    }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-${foundPost.description}
+    const firebaseConfig = {
 
-</p>
+      apiKey:"AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
 
-<div class="article-content">
+      authDomain:"genzest-85233.firebaseapp.com",
 
-${foundPost.content}
+      projectId:"genzest-85233",
 
-</div>
+      storageBucket:"genzest-85233.firebasestorage.app",
 
-</div>
+      messagingSenderId:"741928938",
 
-`;
+      appId:"1:741928938:web:d55eb961c34732e73e4c93"
 
-}
+    };
 
-catch(error){
+    const app =
+    initializeApp(firebaseConfig);
 
-console.error(error);
+    const db =
+    getFirestore(app);
 
-appContainer.innerHTML = `
-<div class="loading">
-Failed to load article.
-</div>
-`;
+    const params =
+    new URLSearchParams(
+      window.location.search
+    );
 
-}
+    const slug =
+    params.get("slug");
 
-}
+    async function loadBlog(){
 
-loadArticle();
+      const querySnapshot =
+      await getDocs(
+        collection(db,"posts")
+      );
 
-</script>
+      querySnapshot.forEach((doc)=>{
+
+        const post = doc.data();
+
+        if(post.slug === slug){
+
+          document.title =
+          post.title + " | GENZEST";
+
+          document
+          .getElementById("blogTitle")
+          .innerHTML =
+          post.title;
+
+          document
+          .getElementById("blogDescription")
+          .innerHTML =
+          post.description;
+
+          document
+          .getElementById("blogImage")
+          .src =
+          post.image;
+
+          document
+          .getElementById("blogContent")
+          .innerHTML =
+
+          `
+          <h2>
+            Why AI Spending Is Rising
+          </h2>
+
+          <p>
+            ${post.content}
+          </p>
+
+          <h2>
+            Future Of Investing
+          </h2>
+
+          <p>
+            Artificial intelligence
+            is transforming finance,
+            startups, cloud computing,
+            investing and digital markets.
+          </p>
+          `;
+
+        }
+
+      });
+
+    }
+
+    loadBlog();
+
+    /* READING PROGRESS */
+
+    window.addEventListener(
+      "scroll",
+      ()=>{
+
+        const winScroll =
+
+        document.body.scrollTop ||
+
+        document.documentElement.scrollTop;
+
+        const height =
+
+        document.documentElement.scrollHeight -
+
+        document.documentElement.clientHeight;
+
+        const scrolled =
+
+        (winScroll / height) * 100;
+
+        document
+        .getElementById("progressBar")
+        .style.width =
+
+        scrolled + "%";
+
+      }
+    );
+
+  </script>
 
 </body>
+
 </html>
