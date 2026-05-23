@@ -1,25 +1,41 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>GENZEST Article</title>
 
+  <meta name="description" content="GENZEST modern finance, AI, investing and business insights.">
+
+  <link rel="icon" type="image/png" href="1779508386745.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
     }
 
+    :root{
+      --bg:#050505;
+      --surface:#0f0f11;
+      --border:rgba(255,255,255,0.08);
+      --text:#ffffff;
+      --muted:#a1a1aa;
+      --accent:#3b82f6;
+    }
+
     body{
-      background:#050505;
-      color:white;
+      background:var(--bg);
+      color:var(--text);
       font-family:'Inter',sans-serif;
       line-height:1.8;
+      overflow-x:hidden;
     }
 
     .topbar{
@@ -27,78 +43,188 @@
       top:0;
       left:0;
       width:100%;
-      padding:20px 5%;
-      background:rgba(5,5,5,0.7);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,0.08);
       z-index:1000;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      padding:20px 5%;
+
+      background:rgba(5,5,5,0.7);
+      backdrop-filter:blur(16px);
+
+      border-bottom:1px solid var(--border);
     }
 
     .brand{
-      color:white;
       text-decoration:none;
+      color:white;
       font-size:1.5rem;
-      font-weight:800;
+      font-weight:900;
+      letter-spacing:-1px;
+    }
+
+    .back-btn{
+      color:var(--muted);
+      text-decoration:none;
+      font-size:0.95rem;
+      transition:0.3s;
+    }
+
+    .back-btn:hover{
+      color:white;
     }
 
     .article-container{
       width:90%;
       max-width:900px;
+
       margin:auto;
-      padding:140px 0 80px;
+
+      padding:130px 0 80px;
     }
 
     .article-image{
       width:100%;
-      height:420px;
+      height:450px;
+
       object-fit:cover;
-      border-radius:20px;
+
+      border-radius:24px;
+
       margin-bottom:40px;
+
+      border:1px solid var(--border);
     }
 
     .article-category{
-      color:#3b82f6;
-      font-size:0.85rem;
+      display:inline-block;
+
+      color:var(--accent);
+
+      font-size:0.82rem;
       font-weight:700;
       text-transform:uppercase;
       letter-spacing:1px;
-      margin-bottom:20px;
+
+      margin-bottom:22px;
     }
 
     .article-title{
-      font-size:clamp(2.5rem,7vw,5rem);
-      line-height:1.1;
+      font-size:clamp(2.4rem,5vw,5rem);
+
+      line-height:1.08;
+
       font-weight:900;
-      margin-bottom:30px;
+
+      margin-bottom:28px;
+
+      letter-spacing:-2px;
+
+      word-break:break-word;
+      overflow-wrap:break-word;
     }
 
     .article-description{
-      font-size:1.3rem;
-      color:#a1a1aa;
-      margin-bottom:50px;
+      font-size:1.25rem;
+      color:var(--muted);
+
       line-height:1.7;
+
+      margin-bottom:55px;
+
+      word-break:break-word;
+      overflow-wrap:break-word;
     }
 
     .article-content{
       font-size:1.08rem;
+
       color:#e5e5e5;
-      white-space:pre-line;
+
       line-height:2;
+
+      white-space:pre-line;
+
+      word-break:break-word;
+      overflow-wrap:break-word;
+    }
+
+    .article-content p{
+      margin-bottom:28px;
     }
 
     .loading{
       text-align:center;
-      padding-top:200px;
-      font-size:1.2rem;
-      color:#a1a1aa;
+      padding-top:220px;
+      color:var(--muted);
+      font-size:1.1rem;
     }
+
+    .error{
+      text-align:center;
+      padding-top:220px;
+      color:#ff6b6b;
+      font-size:1.1rem;
+    }
+
+    @media(max-width:768px){
+
+      .topbar{
+        padding:18px 5%;
+      }
+
+      .brand{
+        font-size:1.35rem;
+      }
+
+      .article-container{
+        width:92%;
+        padding:115px 0 60px;
+      }
+
+      .article-image{
+        height:240px;
+        border-radius:18px;
+        margin-bottom:30px;
+      }
+
+      .article-title{
+        font-size:3rem;
+        line-height:1.1;
+        margin-bottom:22px;
+      }
+
+      .article-description{
+        font-size:1.05rem;
+        line-height:1.8;
+        margin-bottom:40px;
+      }
+
+      .article-content{
+        font-size:1rem;
+        line-height:1.95;
+      }
+
+    }
+
   </style>
+
 </head>
 
 <body>
 
   <header class="topbar">
-    <a href="/" class="brand">GENZEST</a>
+
+    <a href="/" class="brand">
+      GENZEST
+    </a>
+
+    <a href="/" class="back-btn">
+      ← Home
+    </a>
+
   </header>
 
   <div id="app" class="loading">
@@ -116,36 +242,47 @@
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
     const firebaseConfig = {
+
       apiKey: "AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
+
       authDomain: "genzest-85233.firebaseapp.com",
+
       projectId: "genzest-85233",
+
       storageBucket: "genzest-85233.firebasestorage.app",
+
       messagingSenderId: "741928938",
+
       appId: "1:741928938:web:d55eb961c34732e73e4c93"
+
     };
 
     const app = initializeApp(firebaseConfig);
+
     const db = getFirestore(app);
 
     const params = new URLSearchParams(window.location.search);
+
     const slug = params.get("slug");
 
-    async function loadArticle() {
+    async function loadArticle(){
 
       const appContainer = document.getElementById("app");
 
-      try {
+      try{
 
         const querySnapshot = await getDocs(collection(db, "posts"));
 
         let foundPost = null;
 
-        querySnapshot.forEach((doc) => {
+        querySnapshot.forEach((doc)=>{
 
           const data = doc.data();
 
           if(data.slug === slug){
+
             foundPost = data;
+
           }
 
         });
@@ -153,15 +290,21 @@
         if(!foundPost){
 
           appContainer.innerHTML = `
-            <div class="loading">
+
+            <div class="error">
               Article not found.
             </div>
+
           `;
 
           return;
+
         }
 
         document.title = foundPost.title + " | GENZEST";
+
+        document.querySelector("meta[name='description']")
+        .setAttribute("content", foundPost.description);
 
         appContainer.innerHTML = `
 
@@ -186,21 +329,25 @@
             </p>
 
             <div class="article-content">
-              ${foundPost.content}
+              ${foundPost.content || "No content available yet."}
             </div>
 
           </div>
 
         `;
 
-      } catch(error){
+      }
+
+      catch(error){
 
         console.error(error);
 
         appContainer.innerHTML = `
-          <div class="loading">
+
+          <div class="error">
             Failed to load article.
           </div>
+
         `;
 
       }
