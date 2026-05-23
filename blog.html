@@ -5,14 +5,44 @@
 
   <meta charset="UTF-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-  <title>GENZEST Article</title>
+  <title>
+    GENZEST | AI, Finance & Investing
+  </title>
+
+  <meta
+    name="description"
+    content="GENZEST delivers modern insights on AI, finance, investing, startups and future business trends."
+  />
+
+  <meta
+    name="keywords"
+    content="AI investing, Gen Z finance, crypto, fintech, startups, investing"
+  />
+
+  <meta
+    name="theme-color"
+    content="#050505"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="1779508386745.png"
+  />
+
+  <!-- Fonts -->
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap"
     rel="stylesheet"
   />
+
+  <!-- Icons -->
 
   <link
     rel="stylesheet"
@@ -29,17 +59,21 @@
 
     :root{
 
-      --bg:#050505;
+      --bg-primary:#050505;
 
-      --surface:#0f172a;
+      --bg-secondary:#0f172a;
 
-      --text:#ffffff;
+      --surface:#111827;
+
+      --surface-hover:#1e293b;
+
+      --text-primary:#ffffff;
 
       --text-secondary:#94a3b8;
 
       --accent:#3b82f6;
 
-      --accent2:#a855f7;
+      --accent-2:#a855f7;
 
       --border:rgba(255,255,255,0.08);
 
@@ -53,17 +87,73 @@
 
     }
 
+    /* LIGHT MODE */
+
+    body.theme-light{
+
+      --bg-primary:#f8fafc;
+
+      --bg-secondary:#ffffff;
+
+      --surface:#ffffff;
+
+      --surface-hover:#f1f5f9;
+
+      --text-primary:#0f172a;
+
+      --text-secondary:#475569;
+
+      --border:rgba(0,0,0,0.08);
+
+    }
+
+    /* EYE CARE MODE */
+
+    body.theme-eye{
+
+      --bg-primary:#101510;
+
+      --bg-secondary:#1a2218;
+
+      --surface:#1f2a1d;
+
+      --surface-hover:#2c3a28;
+
+      --text-primary:#e7f0dc;
+
+      --text-secondary:#b6c2aa;
+
+      --border:rgba(180,220,170,0.08);
+
+      --accent:#84cc16;
+
+      --accent-2:#65a30d;
+
+      --gradient:
+      linear-gradient(
+        135deg,
+        #84cc16,
+        #65a30d,
+        #4d7c0f
+      );
+
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
 
-      background:var(--bg);
+      background:var(--bg-primary);
 
-      color:var(--text);
+      color:var(--text-primary);
 
       font-family:'Inter',sans-serif;
 
       overflow-x:hidden;
 
-      line-height:1.9;
+      transition:0.3s ease;
 
     }
 
@@ -78,7 +168,7 @@
 
       width:100%;
 
-      padding:1rem 5%;
+      z-index:1000;
 
       display:flex;
 
@@ -86,13 +176,25 @@
 
       align-items:center;
 
-      background:rgba(5,5,5,0.78);
+      padding:1rem 5%;
+
+      background:rgba(5,5,5,0.75);
 
       backdrop-filter:blur(14px);
 
       border-bottom:1px solid var(--border);
 
-      z-index:1000;
+    }
+
+    body.theme-light .topbar{
+
+      background:rgba(255,255,255,0.75);
+
+    }
+
+    body.theme-eye .topbar{
+
+      background:rgba(16,21,16,0.8);
 
     }
 
@@ -104,82 +206,245 @@
 
       font-weight:900;
 
+      letter-spacing:-2px;
+
       background:var(--gradient);
 
       -webkit-background-clip:text;
 
       -webkit-text-fill-color:transparent;
 
-      letter-spacing:-2px;
+    }
+
+    .menu-btn{
+
+      width:48px;
+      height:48px;
+
+      border-radius:50%;
+
+      border:1px solid var(--border);
+
+      background:var(--surface);
+
+      color:var(--text-primary);
+
+      font-size:1.3rem;
+
+      cursor:pointer;
+
+      transition:0.3s ease;
 
     }
 
-    .back-link{
+    .menu-btn:hover{
 
-      color:var(--text-secondary);
+      background:var(--accent);
+
+      color:white;
+
+      transform:scale(0.95);
+
+    }
+
+    /* SIDEBAR */
+
+    .sidebar{
+
+      position:fixed;
+
+      top:0;
+      right:-100%;
+
+      width:300px;
+      height:100vh;
+
+      background:rgba(10,15,28,0.98);
+
+      backdrop-filter:blur(18px);
+
+      z-index:2000;
+
+      padding:2rem;
+
+      display:flex;
+
+      flex-direction:column;
+
+      transition:0.35s ease;
+
+      border-left:1px solid var(--border);
+
+    }
+
+    body.theme-light .sidebar{
+
+      background:rgba(255,255,255,0.98);
+
+    }
+
+    body.theme-eye .sidebar{
+
+      background:rgba(16,21,16,0.98);
+
+    }
+
+    .sidebar.active{
+      right:0;
+    }
+
+    .sidebar-top{
+
+      display:flex;
+
+      justify-content:flex-end;
+
+      margin-bottom:3rem;
+
+    }
+
+    .sidebar a{
+
+      color:var(--text-primary);
 
       text-decoration:none;
 
-      font-size:1rem;
+      font-size:1.25rem;
+
+      padding:1rem 0;
+
+      border-bottom:1px solid var(--border);
+
+      transition:0.25s ease;
 
       display:flex;
 
       align-items:center;
 
-      gap:10px;
+      gap:12px;
 
-      transition:0.25s ease;
+      font-family:'Caveat',cursive;
+
+      letter-spacing:1px;
 
     }
 
-    .back-link:hover{
+    .sidebar a:hover{
+
+      color:var(--accent);
+
+      padding-left:8px;
+
+    }
+
+    .theme-toggle{
+
+      margin-top:2rem;
+
+      border:none;
+
+      background:var(--gradient);
 
       color:white;
 
+      padding:1rem;
+
+      border-radius:18px;
+
+      font-weight:700;
+
+      cursor:pointer;
+
+      font-size:1rem;
+
+      transition:0.3s ease;
+
+      box-shadow:
+      0 10px 25px rgba(59,130,246,0.25);
+
     }
 
-    /* MAIN */
+    .theme-toggle:hover{
 
-    .article-wrap{
+      transform:translateY(-3px);
 
-      width:92%;
+    }
+
+    /* OVERLAY */
+
+    .overlay{
+
+      position:fixed;
+
+      inset:0;
+
+      background:rgba(0,0,0,0.6);
+
+      z-index:1500;
+
+      opacity:0;
+
+      visibility:hidden;
+
+      transition:0.3s ease;
+
+    }
+
+    .overlay.active{
+
+      opacity:1;
+
+      visibility:visible;
+
+    }
+
+    /* HERO */
+
+    .hero{
+
+      min-height:100vh;
+
+      display:flex;
+
+      align-items:center;
+
+      padding:8rem 5% 5rem;
+
+      position:relative;
+
+      overflow:hidden;
+
+      background:
+      radial-gradient(
+        circle at top left,
+        rgba(59,130,246,0.18),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at bottom right,
+        rgba(168,85,247,0.12),
+        transparent 30%
+      );
+
+    }
+
+    .hero-content{
 
       max-width:900px;
 
-      margin:auto;
+      position:relative;
 
-      padding:8rem 0 5rem;
-
-    }
-
-    /* IMAGE */
-
-    .article-image{
-
-      width:100%;
-
-      height:420px;
-
-      object-fit:cover;
-
-      border-radius:30px;
-
-      margin-bottom:3rem;
-
-      box-shadow:
-      0 20px 60px rgba(0,0,0,0.45);
-
-      border:1px solid var(--border);
+      z-index:2;
 
     }
 
-    /* CATEGORY */
+    .hero-badge{
 
-    .article-category{
+      display:inline-flex;
 
-      display:inline-block;
+      align-items:center;
 
-      margin-bottom:1rem;
+      gap:10px;
 
       padding:0.5rem 1rem;
 
@@ -187,26 +452,19 @@
 
       background:rgba(59,130,246,0.12);
 
-      color:#60a5fa;
+      border:1px solid var(--border);
 
-      font-size:0.8rem;
+      margin-bottom:1.5rem;
 
-      font-weight:700;
+      font-size:0.9rem;
 
-      letter-spacing:1px;
-
-      text-transform:uppercase;
-
-      border:1px solid rgba(59,130,246,0.15);
+      color:var(--text-secondary);
 
     }
 
-    /* TITLE */
+    .hero h1{
 
-    .article-title{
-
-      font-size:
-      clamp(3rem,8vw,6rem);
+      font-size:clamp(3rem,11vw,7rem);
 
       line-height:0.95;
 
@@ -214,11 +472,11 @@
 
       letter-spacing:-4px;
 
-      margin-bottom:2rem;
+      margin-bottom:1.5rem;
 
     }
 
-    .gradient-text{
+    .hero-gradient{
 
       display:block;
 
@@ -227,6 +485,9 @@
       -webkit-background-clip:text;
 
       -webkit-text-fill-color:transparent;
+
+      text-shadow:
+      0 0 30px rgba(59,130,246,0.35);
 
     }
 
@@ -236,91 +497,356 @@
 
       font-family:'Caveat',cursive;
 
-      font-size:0.9em;
+      font-size:0.82em;
 
       color:#60a5fa;
 
-      text-shadow:
-      0 0 18px rgba(96,165,250,0.45);
-
-      margin:10px 0;
+      -webkit-text-fill-color:#60a5fa;
 
       letter-spacing:0;
 
-      transform:rotate(-2deg);
+      margin:6px 0;
+
+      text-shadow:
+      0 0 20px rgba(96,165,250,0.5);
 
     }
 
-    /* DESCRIPTION */
+    .hero p{
 
-    .article-description{
+      max-width:700px;
 
-      font-size:1.35rem;
+      color:var(--text-secondary);
+
+      font-size:1.2rem;
+
+      line-height:1.9;
+
+    }
+
+    .hero-btn{
+
+      margin-top:2.5rem;
+
+      display:inline-flex;
+
+      align-items:center;
+
+      gap:10px;
+
+      text-decoration:none;
+
+      background:var(--gradient);
+
+      color:white;
+
+      padding:1rem 2rem;
+
+      border-radius:999px;
+
+      font-weight:700;
+
+      transition:0.3s ease;
+
+      box-shadow:
+      0 10px 30px rgba(59,130,246,0.3);
+
+    }
+
+    .hero-btn:hover{
+
+      transform:translateY(-4px);
+
+    }
+
+    /* FEATURED */
+
+    .featured-section{
+
+      padding:5rem 5%;
+
+    }
+
+    .section-header{
+
+      display:flex;
+
+      justify-content:space-between;
+
+      align-items:center;
+
+      flex-wrap:wrap;
+
+      gap:1rem;
+
+      margin-bottom:3rem;
+
+    }
+
+    .section-header h2{
+
+      font-size:2.7rem;
+
+      font-weight:900;
+
+      letter-spacing:-2px;
+
+      font-family:'Caveat',cursive;
+
+      color:#60a5fa;
+
+    }
+
+    .section-badge{
+
+      background:var(--surface);
+
+      border:1px solid var(--border);
+
+      padding:0.5rem 1rem;
+
+      border-radius:999px;
+
+      color:var(--text-secondary);
+
+      font-size:0.85rem;
+
+    }
+
+    /* BLOG GRID */
+
+    .featured-grid{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(320px,1fr));
+
+      gap:2rem;
+
+    }
+
+    .featured-card{
+
+      background:rgba(17,24,39,0.75);
+
+      border-radius:1.7rem;
+
+      overflow:hidden;
+
+      border:1px solid rgba(255,255,255,0.06);
+
+      transition:0.35s ease;
+
+      backdrop-filter:blur(12px);
+
+      box-shadow:
+      0 10px 30px rgba(0,0,0,0.25);
+
+    }
+
+    body.theme-light .featured-card{
+
+      background:white;
+
+    }
+
+    .featured-card:hover{
+
+      transform:translateY(-8px);
+
+      border-color:rgba(59,130,246,0.4);
+
+      box-shadow:
+      0 20px 40px rgba(59,130,246,0.15);
+
+    }
+
+    .featured-card img{
+
+      width:100%;
+      height:240px;
+
+      object-fit:cover;
+
+      transition:transform 0.6s ease;
+
+    }
+
+    .featured-card:hover img{
+
+      transform:scale(1.04);
+
+    }
+
+    .featured-content{
+
+      padding:1.5rem;
+
+    }
+
+    .featured-category{
+
+      font-size:0.75rem;
+
+      color:#60a5fa;
+
+      font-weight:700;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+    }
+
+    .featured-content h3{
+
+      margin:1rem 0;
+
+      font-size:1.4rem;
+
+      line-height:1.35;
+
+    }
+
+    .featured-content p{
 
       color:var(--text-secondary);
 
       line-height:1.8;
 
-      margin-bottom:4rem;
-
-      max-width:780px;
+      margin-bottom:1.4rem;
 
     }
 
-    /* CONTENT */
+    .read-link{
 
-    .article-content{
-
-      font-size:1.18rem;
-
-      line-height:2.2;
-
-      color:#e5e7eb;
-
-    }
-
-    .article-content p{
-
-      margin-bottom:2rem;
-
-    }
-
-    /* GLASS EFFECT */
-
-    .content-box{
-
-      background:
-      linear-gradient(
-        180deg,
-        rgba(255,255,255,0.02),
-        rgba(255,255,255,0.01)
-      );
-
-      border:1px solid var(--border);
-
-      border-radius:30px;
-
-      padding:2.5rem;
-
-      backdrop-filter:blur(12px);
-
-    }
-
-    /* LOADING */
-
-    .loading{
-
-      min-height:100vh;
-
-      display:flex;
+      display:inline-flex;
 
       align-items:center;
 
-      justify-content:center;
+      gap:10px;
+
+      text-decoration:none;
+
+      color:#60a5fa;
+
+      font-weight:700;
+
+      transition:0.25s ease;
+
+    }
+
+    .read-link:hover{
+
+      gap:15px;
+
+    }
+
+    /* FOOTER */
+
+    .footer{
+
+      margin-top:5rem;
+
+      padding:4rem 5% 2rem;
+
+      border-top:1px solid var(--border);
+
+      background:var(--surface);
+
+    }
+
+    .footer-grid{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(220px,1fr));
+
+      gap:3rem;
+
+    }
+
+    .footer-logo{
+
+      font-size:2rem;
+
+      font-weight:900;
+
+      background:var(--gradient);
+
+      -webkit-background-clip:text;
+
+      -webkit-text-fill-color:transparent;
+
+      margin-bottom:1rem;
+
+    }
+
+    .footer-text{
 
       color:var(--text-secondary);
 
+      line-height:1.8;
+
+      max-width:320px;
+
+    }
+
+    .footer-title{
+
       font-size:1.2rem;
+
+      font-family:'Caveat',cursive;
+
+      letter-spacing:2px;
+
+      margin-bottom:1.5rem;
+
+      color:#60a5fa;
+
+    }
+
+    .footer-links{
+
+      display:flex;
+
+      flex-direction:column;
+
+      gap:1rem;
+
+    }
+
+    .footer-links a{
+
+      color:var(--text-primary);
+
+      text-decoration:none;
+
+      transition:0.25s ease;
+
+    }
+
+    .footer-links a:hover{
+
+      color:#60a5fa;
+
+    }
+
+    .footer-bottom{
+
+      margin-top:3rem;
+
+      padding-top:2rem;
+
+      border-top:1px solid var(--border);
+
+      text-align:center;
+
+      color:var(--text-secondary);
+
+      font-size:0.9rem;
 
     }
 
@@ -328,23 +854,15 @@
 
     @media(max-width:768px){
 
-      .article-wrap{
-
-        width:90%;
+      .hero{
 
         padding-top:7rem;
 
-      }
-
-      .article-image{
-
-        height:260px;
-
-        border-radius:22px;
+        min-height:auto;
 
       }
 
-      .article-title{
+      .hero h1{
 
         font-size:4rem;
 
@@ -354,27 +872,27 @@
 
       }
 
-      .article-description{
-
-        font-size:1.08rem;
-
-        margin-bottom:3rem;
-
-      }
-
-      .article-content{
+      .hero p{
 
         font-size:1.05rem;
 
-        line-height:2;
+      }
+
+      .section-header h2{
+
+        font-size:2.2rem;
 
       }
 
-      .content-box{
+      .featured-content{
 
-        padding:1.6rem;
+        padding:1.2rem;
 
-        border-radius:24px;
+      }
+
+      .featured-content h3{
+
+        font-size:1.2rem;
 
       }
 
@@ -391,28 +909,232 @@
   <header class="topbar">
 
     <a href="/" class="brand">
-
       ⚡ GENZEST
-
     </a>
 
-    <a href="/" class="back-link">
-
-      <i class="fas fa-arrow-left"></i>
-
-      Home
-
-    </a>
+    <button
+      class="menu-btn"
+      id="menuBtn"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
 
   </header>
 
-  <!-- APP -->
+  <!-- SIDEBAR -->
 
-  <div id="app" class="loading">
+  <div class="sidebar" id="sidebar">
 
-    Loading article...
+    <div class="sidebar-top">
+
+      <button
+        class="menu-btn"
+        id="closeBtn"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+
+    </div>
+
+    <a href="/">
+      <i class="fas fa-house"></i>
+      Home
+    </a>
+
+    <a href="#featured">
+      <i class="fas fa-fire"></i>
+      Latest Drops
+    </a>
+
+    <a href="about.html">
+      <i class="fas fa-circle-info"></i>
+      About
+    </a>
+
+    <a href="privacy-policy.html">
+      <i class="fas fa-shield-halved"></i>
+      Privacy Policy
+    </a>
+
+    <a href="terms.html">
+      <i class="fas fa-file-contract"></i>
+      Terms
+    </a>
+
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+    >
+      🌙 Dark Mode
+    </button>
 
   </div>
+
+  <!-- OVERLAY -->
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+
+        <i class="fas fa-bolt"></i>
+
+        future-proof finance
+
+      </div>
+
+      <h1>
+
+        <span class="hero-gradient">
+          Future Of
+        </span>
+
+        <span class="handwritten">
+          AI × Finance
+        </span>
+
+        <span class="hero-gradient">
+          Investing
+        </span>
+
+      </h1>
+
+      <p>
+
+        GENZEST delivers modern insights on
+        artificial intelligence, investing,
+        startups, crypto and future business trends.
+
+      </p>
+
+      <a
+        href="#featured"
+        class="hero-btn"
+      >
+
+        Explore Insights
+
+        <i class="fas fa-arrow-right"></i>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- POSTS -->
+
+  <section
+    class="featured-section"
+    id="featured"
+  >
+
+    <div class="section-header">
+
+      <h2>
+
+        🔥 Latest Drops
+
+      </h2>
+
+      <div class="section-badge">
+
+        fresh insights daily
+
+      </div>
+
+    </div>
+
+    <div
+      class="featured-grid"
+      id="blogContainer"
+    >
+
+      Loading insights...
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <div class="footer-logo">
+          GENZEST
+        </div>
+
+        <p class="footer-text">
+
+          Modern media platform focused on
+          finance, AI, investing and future trends.
+
+        </p>
+
+      </div>
+
+      <div>
+
+        <div class="footer-title">
+          Navigate
+        </div>
+
+        <div class="footer-links">
+
+          <a href="/">
+            Home
+          </a>
+
+          <a href="#featured">
+            Latest Posts
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="footer-title">
+          Legal
+        </div>
+
+        <div class="footer-links">
+
+          <a href="privacy-policy.html">
+            Privacy Policy
+          </a>
+
+          <a href="terms.html">
+            Terms
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2026 GENZEST — all rights reserved.
+
+    </div>
+
+  </footer>
 
   <!-- FIREBASE -->
 
@@ -452,22 +1174,12 @@
     const db =
     getFirestore(app);
 
-    /* GET SLUG */
+    /* BLOG LOADER */
 
-    const params =
-    new URLSearchParams(
-      window.location.search
-    );
+    async function loadBlogs(){
 
-    const slug =
-    params.get("slug");
-
-    /* LOAD ARTICLE */
-
-    async function loadArticle(){
-
-      const appContainer =
-      document.getElementById("app");
+      const blogContainer =
+      document.getElementById("blogContainer");
 
       try{
 
@@ -476,122 +1188,59 @@
           collection(db,"posts")
         );
 
-        let foundPost = null;
+        blogContainer.innerHTML = "";
 
         querySnapshot.forEach((doc)=>{
 
-          const data = doc.data();
+          const post = doc.data();
 
-          if(data.slug === slug){
+          blogContainer.innerHTML += `
 
-            foundPost = data;
+            <article class="featured-card">
 
-          }
+              <img
+                src="${post.image}"
+                alt="${post.title}"
+              >
 
-        });
+              <div class="featured-content">
 
-        /* NOT FOUND */
+                <div class="featured-category">
 
-        if(!foundPost){
+                  ${post.category || "Insights"}
 
-          appContainer.innerHTML = `
+                </div>
 
-            <div class="loading">
+                <h3>
 
-              Article not found.
+                  ${post.title}
 
-            </div>
+                </h3>
 
-          `;
+                <p>
 
-          return;
+                  ${post.description}
 
-        }
+                </p>
 
-        /* SEO TITLE */
+                <a
+                  href="blog.html?slug=${post.slug}"
+                  class="read-link"
+                >
 
-        document.title =
-        foundPost.title + " | GENZEST";
+                  Read Article
 
-        /* SPLIT TITLE FOR EFFECT */
+                  <i class="fas fa-arrow-right"></i>
 
-        const titleWords =
-        foundPost.title.split(" ");
-
-        const fancyTitle = `
-
-          <span class="gradient-text">
-
-            ${titleWords.slice(0,2).join(" ")}
-
-          </span>
-
-          <span class="handwritten">
-
-            ${titleWords.slice(2,4).join(" ")}
-
-          </span>
-
-          <span class="gradient-text">
-
-            ${titleWords.slice(4).join(" ")}
-
-          </span>
-
-        `;
-
-        /* CONTENT PARAGRAPHS */
-
-        const paragraphs =
-        foundPost.content
-        .split("\n")
-        .filter(p => p.trim() !== "")
-        .map(p => `<p>${p}</p>`)
-        .join("");
-
-        /* RENDER */
-
-        appContainer.innerHTML = `
-
-          <main class="article-wrap">
-
-            <img
-              src="${foundPost.image}"
-              alt="${foundPost.title}"
-              class="article-image"
-            >
-
-            <div class="article-category">
-
-              ${foundPost.category || "Insights"}
-
-            </div>
-
-            <h1 class="article-title">
-
-              ${fancyTitle}
-
-            </h1>
-
-            <p class="article-description">
-
-              ${foundPost.description}
-
-            </p>
-
-            <div class="content-box">
-
-              <div class="article-content">
-
-                ${paragraphs}
+                </a>
 
               </div>
 
-            </div>
+            </article>
 
-          </main>
+          `;
 
-        `;
+        });
 
       }
 
@@ -599,23 +1248,112 @@
 
         console.error(error);
 
-        appContainer.innerHTML = `
-
-          <div class="loading">
-
-            Failed to load article.
-
-          </div>
-
-        `;
+        blogContainer.innerHTML =
+        "Unable to load insights.";
 
       }
 
     }
 
-    /* START */
+    loadBlogs();
 
-    loadArticle();
+    /* SIDEBAR */
+
+    const menuBtn =
+    document.getElementById("menuBtn");
+
+    const closeBtn =
+    document.getElementById("closeBtn");
+
+    const sidebar =
+    document.getElementById("sidebar");
+
+    const overlay =
+    document.getElementById("overlay");
+
+    function openSidebar(){
+
+      sidebar.classList.add("active");
+
+      overlay.classList.add("active");
+
+    }
+
+    function closeSidebar(){
+
+      sidebar.classList.remove("active");
+
+      overlay.classList.remove("active");
+
+    }
+
+    menuBtn.addEventListener(
+      "click",
+      openSidebar
+    );
+
+    closeBtn.addEventListener(
+      "click",
+      closeSidebar
+    );
+
+    overlay.addEventListener(
+      "click",
+      closeSidebar
+    );
+
+    /* THEME MODES */
+
+    const themeBtn =
+    document.getElementById("themeToggle");
+
+    let currentTheme = 0;
+
+    themeBtn.addEventListener("click",()=>{
+
+      currentTheme++;
+
+      if(currentTheme > 2){
+
+        currentTheme = 0;
+
+      }
+
+      document.body.classList.remove(
+        "theme-light",
+        "theme-eye"
+      );
+
+      if(currentTheme === 0){
+
+        themeBtn.innerHTML =
+        "🌙 Dark Mode";
+
+      }
+
+      if(currentTheme === 1){
+
+        document.body.classList.add(
+          "theme-light"
+        );
+
+        themeBtn.innerHTML =
+        "☀️ Light Mode";
+
+      }
+
+      if(currentTheme === 2){
+
+        document.body.classList.add(
+          "theme-eye"
+        );
+
+        themeBtn.innerHTML =
+        "🌿 Eye Care Mode";
+
+      }
+
+    });
 
   </script>
 
