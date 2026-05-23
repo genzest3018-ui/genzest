@@ -1,37 +1,59 @@
  <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
 
-<title>GENZEST | Finance, AI & Investing Insights</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta name="description" content="GENZEST delivers modern insights on finance, AI, investing, startups and future business trends.">
+<title>
+GENZEST | Finance, AI & Investing Insights
+</title>
 
-<link rel="icon" type="image/png" href="1779508386745.png">
+<meta
+name="description"
+content="GENZEST delivers modern insights on finance, AI, investing, startups and future business trends."
+>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link
+rel="icon"
+type="image/png"
+href="1779508386745.png"
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+rel="stylesheet"
+>
 
 <style>
 
 :root{
+
   --bg-primary:#050505;
   --bg-surface:#0f0f11;
   --border-color:rgba(255,255,255,0.08);
+
   --text-primary:#ffffff;
   --text-secondary:#a1a1aa;
+
   --accent:#2563eb;
   --accent-hover:#3b82f6;
+
   --font-main:'Inter',sans-serif;
+
 }
 
 body.theme-light{
+
   --bg-primary:#f8fafc;
   --bg-surface:#ffffff;
   --border-color:rgba(0,0,0,0.08);
+
   --text-primary:#0f172a;
   --text-secondary:#475569;
+
 }
 
 *{
@@ -45,86 +67,174 @@ html{
 }
 
 body{
+
   background:var(--bg-primary);
+
   color:var(--text-primary);
+
   font-family:var(--font-main);
+
   overflow-x:hidden;
+
 }
 
 /* NAVBAR */
 
 .topbar{
+
   position:fixed;
+
   top:0;
   left:0;
+
   width:100%;
+
   z-index:1000;
 
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
 
-  padding:1.2rem 5%;
+  padding:1.1rem 5%;
 
-  background:rgba(5,5,5,0.75);
+  background:rgba(5,5,5,0.72);
+
   backdrop-filter:blur(14px);
 
   border-bottom:1px solid var(--border-color);
+
 }
 
 .brand{
+
   color:var(--text-primary);
+
   text-decoration:none;
+
   font-size:1.6rem;
+
   font-weight:900;
+
   letter-spacing:-1px;
+
 }
 
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:2rem;
-}
+.menu-btn{
 
-.nav-links a{
-  color:var(--text-secondary);
-  text-decoration:none;
-  font-size:0.95rem;
-  transition:0.25s;
-}
+  background:none;
 
-.nav-links a:hover{
-  color:var(--text-primary);
-}
+  border:none;
 
-.theme-toggle{
-  background:transparent;
   color:var(--text-primary);
 
-  border:1px solid var(--border-color);
-
-  padding:0.55rem 1.2rem;
-
-  border-radius:999px;
+  font-size:2rem;
 
   cursor:pointer;
 
-  transition:0.25s;
 }
 
-.theme-toggle:hover{
-  border-color:var(--accent);
+/* SIDEBAR */
+
+.sidebar{
+
+  position:fixed;
+
+  top:0;
+  right:-100%;
+
+  width:270px;
+  height:100vh;
+
+  background:var(--bg-surface);
+
+  padding:7rem 2rem;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:1.5rem;
+
+  z-index:2000;
+
+  transition:0.35s ease;
+
+  border-left:1px solid var(--border-color);
+
+}
+
+.sidebar.active{
+  right:0;
+}
+
+.sidebar a{
+
+  color:var(--text-primary);
+
+  text-decoration:none;
+
+  font-size:1.05rem;
+
+  transition:0.25s;
+
+}
+
+.sidebar a:hover{
+  color:var(--accent);
+}
+
+.close-btn{
+
+  position:absolute;
+
+  top:1.3rem;
+  right:1.3rem;
+
+  background:none;
+
+  border:none;
+
+  color:white;
+
+  font-size:2rem;
+
+  cursor:pointer;
+
+}
+
+.theme-toggle{
+
+  margin-top:1rem;
+
+  background:var(--accent);
+
+  color:white;
+
+  border:none;
+
+  padding:0.9rem 1rem;
+
+  border-radius:14px;
+
+  cursor:pointer;
+
+  font-weight:600;
+
 }
 
 /* HERO */
 
 .hero{
+
   min-height:100vh;
 
   display:flex;
+
   align-items:center;
 
   padding:8rem 5% 4rem;
+
 }
 
 .hero-content{
@@ -132,19 +242,22 @@ body{
 }
 
 .hero-tag{
+
   color:var(--text-secondary);
 
-  text-transform:uppercase;
+  letter-spacing:5px;
 
-  letter-spacing:6px;
+  text-transform:uppercase;
 
   font-size:0.9rem;
 
   margin-bottom:2rem;
+
 }
 
 .hero h1{
-  font-size:clamp(3rem,8vw,6rem);
+
+  font-size:clamp(3rem,9vw,6rem);
 
   line-height:0.95;
 
@@ -153,28 +266,39 @@ body{
   letter-spacing:-3px;
 
   margin-bottom:2rem;
+
 }
 
 .hero p{
-  font-size:1.25rem;
 
   color:var(--text-secondary);
 
+  font-size:1.2rem;
+
   line-height:1.8;
 
-  max-width:620px;
+  max-width:650px;
+
 }
 
 .hero-buttons{
+
   display:flex;
+
   gap:1rem;
+
   margin-top:2.5rem;
+
   flex-wrap:wrap;
+
 }
 
 .primary-btn{
+
   background:var(--accent);
+
   color:white;
+
   text-decoration:none;
 
   padding:1rem 1.6rem;
@@ -184,6 +308,7 @@ body{
   font-weight:600;
 
   transition:0.25s;
+
 }
 
 .primary-btn:hover{
@@ -191,37 +316,49 @@ body{
 }
 
 .secondary-btn{
+
   color:var(--text-primary);
 
   text-decoration:none;
 
-  padding:1rem 1.4rem;
+  padding:1rem 1.2rem;
 
   border-bottom:1px solid var(--text-secondary);
+
 }
 
-/* BLOG SECTION */
+/* BLOGS */
 
 .featured-section{
+
   padding:6rem 5%;
+
 }
 
 .section-title{
+
   font-size:3rem;
+
   font-weight:900;
-  margin-bottom:3rem;
+
   letter-spacing:-2px;
+
+  margin-bottom:3rem;
+
 }
 
 .featured-grid{
+
   display:grid;
 
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 
   gap:2rem;
+
 }
 
 .featured-card{
+
   background:var(--bg-surface);
 
   border:1px solid var(--border-color);
@@ -231,17 +368,24 @@ body{
   overflow:hidden;
 
   transition:0.3s;
+
 }
 
 .featured-card:hover{
+
   transform:translateY(-6px);
-  border-color:rgba(255,255,255,0.16);
+
+  border-color:rgba(255,255,255,0.15);
+
 }
 
 .featured-card img{
+
   width:100%;
   height:220px;
+
   object-fit:cover;
+
 }
 
 .featured-content{
@@ -249,97 +393,125 @@ body{
 }
 
 .featured-category{
+
   color:var(--accent);
 
   text-transform:uppercase;
 
-  font-size:0.75rem;
+  font-size:0.74rem;
 
   font-weight:700;
 
   letter-spacing:1px;
+
 }
 
 .featured-content h3{
-  font-size:1.5rem;
+
+  font-size:1.45rem;
+
+  line-height:1.3;
 
   margin:0.9rem 0;
 
-  line-height:1.3;
 }
 
 .featured-content p{
-  color:var(--text-secondary);
 
-  font-size:0.96rem;
+  color:var(--text-secondary);
 
   line-height:1.7;
 
-  margin-bottom:1.5rem;
+  margin-bottom:1.4rem;
+
 }
 
 .featured-content a{
+
   color:var(--accent);
 
   text-decoration:none;
 
   font-weight:600;
+
 }
 
 /* FOOTER */
 
 .footer{
+
   margin-top:5rem;
 
   padding:5rem 5% 2rem;
 
+  background:var(--bg-surface);
+
   border-top:1px solid var(--border-color);
 
-  background:var(--bg-surface);
 }
 
 .footer-grid{
+
   display:grid;
 
   grid-template-columns:2fr 1fr 1fr;
 
   gap:4rem;
+
 }
 
 .footer-brand{
+
   font-size:2rem;
+
   font-weight:900;
+
   margin-bottom:1rem;
+
 }
 
 .footer-text{
+
   color:var(--text-secondary);
-  max-width:420px;
+
   line-height:1.8;
+
+  max-width:420px;
+
 }
 
 .footer-title{
+
   color:var(--text-secondary);
 
-  font-size:0.9rem;
-
-  text-transform:uppercase;
+  font-size:0.85rem;
 
   letter-spacing:4px;
 
+  text-transform:uppercase;
+
   margin-bottom:1.5rem;
+
 }
 
 .footer-links{
+
   display:flex;
+
   flex-direction:column;
+
   gap:1rem;
+
 }
 
 .footer-links a{
+
   color:var(--text-primary);
+
   text-decoration:none;
+
   transition:0.25s;
+
 }
 
 .footer-links a:hover{
@@ -347,42 +519,27 @@ body{
 }
 
 .footer-bottom{
-  border-top:1px solid var(--border-color);
 
   margin-top:4rem;
 
   padding-top:2rem;
+
+  border-top:1px solid var(--border-color);
 
   text-align:center;
 
   color:var(--text-secondary);
 
   font-size:0.9rem;
+
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-  .topbar{
-    padding:1rem 5%;
-  }
-
-  .brand{
-    font-size:1.35rem;
-  }
-
-  .nav-links{
-    gap:1rem;
-  }
-
-  .hero{
-    min-height:85vh;
-  }
-
   .hero h1{
     font-size:4rem;
-    line-height:1;
   }
 
   .hero p{
@@ -406,76 +563,96 @@ body{
 
 <body>
 
+<!-- TOPBAR -->
+
 <header class="topbar">
 
   <a href="/" class="brand">
     GENZEST
   </a>
 
-  <nav class="nav-links">
-
-    <a href="/">Home</a>
-
-    <a href="#featured">Blog</a>
-
-    <button id="themeToggle" class="theme-toggle">
-      Theme
-    </button>
-
-  </nav>
+  <button class="menu-btn" id="menuBtn">
+    ☰
+  </button>
 
 </header>
 
-<main>
+<!-- SIDEBAR -->
 
-  <section class="hero">
+<div class="sidebar" id="sidebar">
 
-    <div class="hero-content">
+  <button class="close-btn" id="closeBtn">
+    ×
+  </button>
 
-      <div class="hero-tag">
-        MODERN FINANCE MEDIA
-      </div>
+  <a href="/">Home</a>
 
-      <h1>
-        Future Of<br>
-        Finance & AI
-      </h1>
+  <a href="#featured">Blog</a>
 
-      <p>
-        GENZEST delivers modern insights on investing,
-        artificial intelligence, startups, business and future
-        financial trends.
-      </p>
+  <a href="about.html">About</a>
 
-      <div class="hero-buttons">
+  <a href="privacy-policy.html">Privacy</a>
 
-        <a href="#featured" class="primary-btn">
-          Explore Insights
-        </a>
+  <a href="terms.html">Terms</a>
 
-        <a href="/about.html" class="secondary-btn">
-          Learn More
-        </a>
+  <button id="themeToggle" class="theme-toggle">
+    Toggle Theme
+  </button>
 
-      </div>
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-tag">
+      MODERN FINANCE MEDIA
+    </div>
+
+    <h1>
+      Future Of<br>
+      Finance & AI
+    </h1>
+
+    <p>
+      GENZEST delivers modern insights on investing,
+      artificial intelligence, startups, business and future
+      financial trends.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#featured" class="primary-btn">
+        Explore Insights
+      </a>
+
+      <a href="about.html" class="secondary-btn">
+        Learn More
+      </a>
 
     </div>
 
-  </section>
+  </div>
 
-  <section class="featured-section" id="featured">
+</section>
 
-    <h2 class="section-title">
-      Featured Insights
-    </h2>
+<!-- BLOGS -->
 
-    <div class="featured-grid" id="blogContainer">
-      Loading insights...
-    </div>
+<section class="featured-section" id="featured">
 
-  </section>
+  <h2 class="section-title">
+    Featured Insights
+  </h2>
 
-</main>
+  <div class="featured-grid" id="blogContainer">
+    Loading insights...
+  </div>
+
+</section>
+
+<!-- FOOTER -->
 
 <footer class="footer">
 
@@ -505,7 +682,7 @@ body{
 
         <a href="#featured">Latest Posts</a>
 
-        <a href="/about.html">About Us</a>
+        <a href="about.html">About Us</a>
 
       </div>
 
@@ -519,11 +696,11 @@ body{
 
       <div class="footer-links">
 
-        <a href="/privacy-policy.html">
+        <a href="privacy-policy.html">
           Privacy
         </a>
 
-        <a href="/terms.html">
+        <a href="terms.html">
           Terms
         </a>
 
@@ -538,6 +715,8 @@ body{
   </div>
 
 </footer>
+
+<!-- FIREBASE -->
 
 <script type="module">
 
@@ -570,6 +749,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
+
+/* LOAD BLOGS */
 
 async function loadBlogs(){
 
@@ -635,6 +816,10 @@ async function loadBlogs(){
 
 }
 
+loadBlogs();
+
+/* THEME */
+
 document.getElementById("themeToggle")
 .addEventListener("click",()=>{
 
@@ -642,7 +827,28 @@ document.getElementById("themeToggle")
 
 });
 
-loadBlogs();
+/* SIDEBAR */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const sidebar =
+document.getElementById("sidebar");
+
+const closeBtn =
+document.getElementById("closeBtn");
+
+menuBtn.addEventListener("click",()=>{
+
+  sidebar.classList.add("active");
+
+});
+
+closeBtn.addEventListener("click",()=>{
+
+  sidebar.classList.remove("active");
+
+});
 
 </script>
 
