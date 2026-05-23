@@ -1,84 +1,75 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GENZEST Article</title>
+<title>GENZEST Blog</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
 body{
-  background:#050505;
-  color:white;
-  font-family:Inter,sans-serif;
-  padding:40px;
-  line-height:1.8;
+background:#050505;
+color:white;
+font-family:Inter,sans-serif;
+padding:40px;
+line-height:1.7;
 }
 
 .container{
-  max-width:900px;
-  margin:auto;
+max-width:900px;
+margin:auto;
 }
 
 img{
-  width:100%;
-  border-radius:16px;
-  margin-bottom:25px;
+width:100%;
+border-radius:20px;
+margin-bottom:30px;
+}
+
+.category{
+color:#2563eb;
+font-weight:700;
+margin-bottom:15px;
+text-transform:uppercase;
 }
 
 h1{
-  font-size:48px;
-  margin-bottom:20px;
+font-size:3rem;
+margin-bottom:20px;
 }
 
 p{
-  font-size:20px;
-  color:#b3b3b3;
+font-size:1.1rem;
+color:#cbd5e1;
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-<img id="blogImage">
-
-<h1 id="blogTitle"></h1>
-
-<p id="blogDescription"></p>
-
+<div class="container" id="blogPost">
+Loading article...
 </div>
 
 <script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
 getFirestore,
 collection,
 getDocs
-}
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-
 apiKey: "AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
-
 authDomain: "genzest-85233.firebaseapp.com",
-
 projectId: "genzest-85233",
-
 storageBucket: "genzest-85233.firebasestorage.app",
-
 messagingSenderId: "741928938",
-
 appId: "1:741928938:web:d55eb961c34732e73e4c93"
-
 };
 
 const app = initializeApp(firebaseConfig);
@@ -89,26 +80,36 @@ const params = new URLSearchParams(window.location.search);
 
 const slug = params.get("slug");
 
-async function loadBlog(){
+async function loadBlog() {
 
-const querySnapshot =
-await getDocs(collection(db,"posts"));
+const blogPost = document.getElementById("blogPost");
 
-querySnapshot.forEach((doc)=>{
+const querySnapshot = await getDocs(collection(db, "posts"));
+
+let found = false;
+
+querySnapshot.forEach((doc) => {
 
 const post = doc.data();
 
 if(post.slug === slug){
 
-document.getElementById("blogTitle").innerText = post.title;
+found = true;
 
-document.getElementById("blogDescription").innerText = post.description;
-
-document.getElementById("blogImage").src = post.image;
+blogPost.innerHTML = `
+<img src="${post.image}">
+<div class="category">${post.category}</div>
+<h1>${post.title}</h1>
+<p>${post.description}</p>
+`;
 
 }
 
 });
+
+if(!found){
+blogPost.innerHTML = "<h1>Article Not Found</h1>";
+}
 
 }
 
