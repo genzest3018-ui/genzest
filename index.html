@@ -1,37 +1,13 @@
+ ```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>GENZEST | Finance, AI & Investing Insights</title>
-
   <meta name="description" content="GENZEST delivers modern finance, investing, AI, startup, and business insights with a clean premium experience.">
-  <meta name="keywords" content="finance, investing, AI, startups, business, stock market, media">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#050505">
-  <link rel="canonical" href="https://genzest.in/">
-
-  <meta property="og:title" content="GENZEST | Finance, AI & Investing Insights">
-  <meta property="og:description" content="Modern finance media platform covering investing, AI, startups, and business trends.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://genzest.in/">
-  <meta property="og:image" content="https://genzest.in/1779508386745.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GENZEST | Finance, AI & Investing Insights">
-  <meta name="twitter:description" content="Modern finance media platform covering investing, AI, startups, and business trends.">
-  <meta name="twitter:image" content="https://genzest.in/1779508386745.png">
-
   <link rel="icon" type="image/png" href="1779508386745.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="assets/css/style.css">
-
   <style>
     :root {
       --bg-primary: #050505;
@@ -44,580 +20,56 @@
       --font-main: 'Inter', sans-serif;
       --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
     body.theme-light {
       --bg-primary: #f8fafc;
       --bg-surface: #ffffff;
       --border-color: rgba(0, 0, 0, 0.08);
       --text-primary: #0f172a;
       --text-secondary: #475569;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      font-family: var(--font-main);
-      line-height: 1.6;
-      overflow-x: hidden;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
-    /* Modern Navigation Engine */
-    .topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 5%;
-      background: rgba(5, 5, 5, 0.65);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-color);
-      transition: var(--transition-smooth);
-    }
-
-    body.theme-light .topbar {
-      background: rgba(248, 250, 252, 0.75);
-    }
-
-    .brand {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      z-index: 1010;
-    }
-
-    .brand-text {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--text-primary);
-    }
-
-    /* CSS-Driven Mobile Menu Logic Toggle Utilities */
-    .menu-toggle-input {
-      display: none;
-    }
-
-    .menu-toggle-label {
-      display: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 6px;
-      z-index: 1010;
-    }
-
-    .menu-toggle-label span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background-color: var(--text-primary);
-      border-radius: 2px;
-      transition: var(--transition-smooth);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.925rem;
-      font-weight: 500;
-      transition: var(--transition-smooth);
-    }
-
-    .nav-links a:hover {
-      color: var(--text-primary);
-    }
-
-    /* Premium Theme Controller Button Component */
-    .theme-toggle {
-      background: var(--bg-surface);
-      color: var(--text-primary);
-      border: 1px solid var(--border-color);
-      padding: 0.5rem 1.15rem;
-      border-radius: 9999px;
-      font-family: var(--font-main);
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition-smooth);
-    }
-
-    .theme-toggle:hover {
-      transform: translateY(-1px);
-      border-color: var(--text-primary);
-    }
-
-    main {
-      padding-top: 5rem;
-    }
-
-    /* Responsive Hero Space Module */
-    .hero {
-      min-height: 90vh;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      align-items: center;
-      gap: 3rem;
-      padding: 4rem 5%;
-      position: relative;
-    }
-
-    .hero-content {
-      max-width: 720px;
-    }
-
-    .hero-mini {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-para {
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      color: var(--text-secondary);
-      margin-bottom: 2.5rem;
-      max-width: 600px;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-btn {
-      background: var(--accent);
-      color: #ffffff;
-      padding: 0.95rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.975rem;
-      transition: var(--transition-smooth);
-    }
-
-    .hero-btn:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.2);
-    }
-
-    .hero-link {
-      color: var(--text-primary);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.975rem;
-      transition: var(--transition-smooth);
-      border-bottom: 1px solid currentColor;
-      padding-bottom: 2px;
-    }
-
-    .hero-link:hover {
-      color: var(--accent);
-    }
-
-    /* Premium Hero Image Canvas Area */
-    .hero-image-wrapper {
-      position: relative;
-      width: 100%;
-      height: 500px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-    }
-
-    .hero-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Editorial Content Grid Module */
-    .featured-section {
-      padding: 6rem 5%;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .section-header {
-      margin-bottom: 3.5rem;
-    }
-
-    .section-header p {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-header h2 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      max-width: 700px;
-    }
-
-    .featured-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .featured-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: var(--transition-smooth);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .featured-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    body.theme-light .featured-card:hover {
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-      border-color: rgba(0, 0, 0, 0.12);
-    }
-
-    .featured-card img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-    }
-
-    .featured-content {
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .featured-content span {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-
-    .featured-content h3 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.75rem;
-      line-height: 1.3;
-    }
-
-    .featured-content p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      margin-bottom: 1.75rem;
-      flex-grow: 1;
-    }
-
-    .featured-content a {
-      color: var(--text-primary);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.925rem;
-      transition: var(--transition-smooth);
-    }
-
-    .featured-content a:hover {
-      color: var(--accent);
-    }
-
-    /* Minimalist Footer Architecture */
-    .footer {
-      border-top: 1px solid var(--border-color);
-      background: var(--bg-surface);
-      padding: 5rem 5% 3rem 5%;
-    }
-
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 3rem;
-      flex-wrap: wrap;
-      margin-bottom: 4rem;
-    }
-
-    .footer-logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 1rem;
-    }
-
-    .footer-text {
-      color: var(--text-secondary);
-      max-width: 360px;
-      font-size: 0.925rem;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: var(--transition-smooth);
-    }
-
-    .footer-links a:hover {
-      color: var(--text-primary);
-    }
-
-    .copyright {
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-    }
-
-    /* ==========================================
-       RESPONSIVE BREAKPOINTS (Mobile Optimization Fix)
-       ========================================== */
-    @media (max-width: 992px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 6rem;
-        min-height: auto;
-        gap: 4rem;
-      }
-
-      .hero-image-wrapper {
-        height: 380px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle-label {
-        display: flex;
-      }
-
-      /* Mobile Drawer Styling Initialization */
-      .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 320px;
-        height: 100vh;
-        background: var(--bg-surface);
-        border-left: 1px solid var(--border-color);
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 6rem 10% 2rem 10%;
-        gap: 2rem;
-        transition: var(--transition-smooth);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .nav-links a {
-        font-size: 1.15rem;
-        width: 100%;
-      }
-
-      .theme-toggle {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem;
-      }
-
-      /* CSS State Machine for Hamburger Menu Check */
-      .menu-toggle-input:checked ~ .nav-links {
-        right: 0;
-      }
-
-      .menu-toggle-input:checked ~ .menu-toggle-label span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-      }
-
-      .menu-toggle-input:checked ~ .menu-toggle-label span:nth-child(2) {
-        opacity: 0;
-      }
-
-      .menu-toggle-input:checked ~ .menu-toggle-label span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-      }
-
-      .featured-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-primary); color: var(--text-primary); font-family: var(--font-main); transition: var(--transition-smooth); }
+    .topbar { position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 5%; background: rgba(5, 5, 5, 0.65); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-color); }
+    .brand { text-decoration: none; font-size: 1.35rem; font-weight: 800; color: var(--text-primary); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.925rem; font-weight: 500; }
+    .theme-toggle { background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.5rem 1.15rem; border-radius: 9999px; cursor: pointer; }
+    main { padding-top: 5rem; }
+    .hero { min-height: 90vh; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 3rem; padding: 4rem 5%; }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
+    .featured-section { padding: 6rem 5%; border-top: 1px solid var(--border-color); }
+    .featured-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; }
+    .featured-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 14px; overflow: hidden; transition: var(--transition-smooth); }
+    .featured-card:hover { transform: translateY(-4px); border-color: rgba(255, 255, 255, 0.15); }
+    .featured-card img { width: 100%; height: 240px; object-fit: cover; }
+    .featured-content { padding: 2rem; }
+    .featured-content span { font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; }
+    .featured-content h3 { margin: 0.75rem 0; font-size: 1.35rem; }
+    .featured-content p { color: var(--text-secondary); margin-bottom: 1.5rem; }
   </style>
 </head>
-
 <body>
-
   <header class="topbar">
-    <a href="index.html" class="brand" aria-label="GENZEST Home">
-      <span class="brand-text">GENZEST</span>
-    </a>
-
-    <input type="checkbox" id="menuToggleCheckbox" class="menu-toggle-input">
-    <label for="menuToggleCheckbox" class="menu-toggle-label" aria-label="Toggle Navigation Options">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html">Home</a>
+    <a href="/" class="brand">GENZEST</a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
       <a href="#featured">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle UI Theme">Theme</button>
+      <button id="themeToggle" class="theme-toggle">Theme</button>
     </nav>
   </header>
-
   <main>
-    <section class="hero" id="home">
+    <section class="hero">
       <div class="hero-content">
-        <p class="hero-mini">MODERN FINANCE MEDIA</p>
         <h1>Future Of<br>Finance & AI</h1>
-        <p class="hero-para">
-          GENZEST delivers modern insights on investing, artificial intelligence, startups, business and future financial trends.
-        </p>
-        <div class="hero-actions">
-          <a href="#featured" class="hero-btn">Explore Insights</a>
-          <a href="about.html" class="hero-link">Learn More</a>
-        </div>
-      </div>
-      
-      <div class="hero-image-wrapper">
-        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1200&auto=format&fit=crop" alt="Abstract modern premium visualization of finance data and artificial intelligence nodes">
+        <p>GENZEST delivers modern insights on investing, artificial intelligence, and business.</p>
       </div>
     </section>
-
     <section class="featured-section" id="featured">
-      <div class="section-header">
-        <p>FEATURED INSIGHTS</p>
-        <h2>Modern Finance Stories & Market Intelligence</h2>
-      </div>
-
-      <div class="featured-grid">
-        <article class="featured-card">
-          <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=1200&auto=format&fit=crop" alt="Finance investing chart showing technical data analysis visualization">
-          <div class="featured-content">
-            <span>INVESTING</span>
-            <h3>How Gen Z Is Approaching Wealth Creation</h3>
-            <p>Understanding how modern investing is changing with AI and technology.</p>
-            <a href="blog/article-1.html">Read Article &rarr;</a>
-          </div>
-        </article>
-
-        <article class="featured-card">
-          <img src="https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=1200&auto=format&fit=crop" alt="AI representation displaying abstract technological nodes and connections">
-          <div class="featured-content">
-            <span>AI & FINANCE</span>
-            <h3>The Rise Of AI Powered Financial Research</h3>
-            <p>Artificial intelligence is changing the speed and quality of finance decisions.</p>
-            <a href="blog/article-2.html">Read Article &rarr;</a>
-          </div>
-        </article>
-      </div>
+      <h2>Featured Insights</h2>
+      <div class="featured-grid" id="blogContainer">Loading insights...</div>
     </section>
   </main>
-
-  <footer class="footer">
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">GENZEST</div>
-        <p class="footer-text">
-          Modern finance media platform focused on investing, AI, startups and future business trends.
-        </p>
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="#featured">Blog</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms.html">Terms</a>
-      </div>
-    </div>
-    <p class="copyright">&copy; 2026 GENZEST. All Rights Reserved.</p>
-  </footer>
-
   <script type="module">
-    /* ==========================================
-       UI CONTROLLER ENGINE (Theme Manager)
-       ========================================== */
-    const themeToggle = document.getElementById('themeToggle');
-    const menuToggleCheckbox = document.getElementById('menuToggleCheckbox');
-    const mobileLinks = document.querySelectorAll('.nav-links a');
-
-    function setThemeLabel() {
-      const isLight = document.body.classList.contains('theme-light');
-      themeToggle.textContent = isLight ? 'Dark' : 'Theme';
-    }
-
-    // Run synchronization instantly based on state preservation
-    const savedTheme = localStorage.getItem('genzest-theme');
-    if (savedTheme === 'light') {
-      document.body.classList.add('theme-light');
-    }
-    setThemeLabel();
-
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('theme-light');
-      const isLight = document.body.classList.contains('theme-light');
-      localStorage.setItem('genzest-theme', isLight ? 'light' : 'dark');
-      setThemeLabel();
-    });
-
-    // Close Mobile Drawer upon hitting fractional anchors cleanly
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggleCheckbox.checked = false;
-      });
-    });
-
-    /* ==========================================
-       FIREBASE ECOSYSTEM SERVICES INTEGRATION
-       ========================================== */
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
@@ -627,15 +79,13 @@
       projectId: "genzest-85233",
       storageBucket: "genzest-85233.firebasestorage.app",
       messagingSenderId: "741928938",
-      appId: "1:741928938:web:d55eb961c34732e73e4c93",
-      measurementId: "G-25LP8VZBEV"
+      appId: "1:741928938:web:d55eb961c34732e73e4c93"
     };
 
-    // Initialization routine
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
-    console.log("GENZEST Backend Connected 😈");
-async function loadBlogs() {
+
+    async function loadBlogs() {
       const blogContainer = document.getElementById("blogContainer");
       try {
         const querySnapshot = await getDocs(collection(db, "posts"));
@@ -666,8 +116,8 @@ async function loadBlogs() {
 
     // Run loader on startup
     loadBlogs();
-   
   </script>
-
 </body>
 </html>
+
+```
