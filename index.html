@@ -631,6 +631,41 @@ AUTOMATION SAFE
       font-size:1.2rem;
     }
   }
+  .featured-grid { 
+  display: flex; /* Changed from grid to flex for a straight line layout */
+  gap: 2.5rem; 
+  overflow-x: auto; /* Enables horizontal scrolling */
+  overflow-y: hidden; /* Prevents vertical breaking */
+  scroll-behavior: smooth; /* Gives it a premium elastic feel */
+  -webkit-overflow-scrolling: touch; /* Keeps it smooth on iPhone/Android */
+  padding: 1.5rem 0.5rem 2.5rem 0.5rem;
+  margin: 0 -0.5rem;
+  scroll-snap-type: x mandatory; /* Makes cards snap cleanly into place when scrolling */
+} 
+.featured-card { 
+  background: var(--bg-surface); 
+  border: 1px solid var(--border-color); 
+  border-radius: 14px; 
+  overflow: hidden; 
+  transition: var(--transition-smooth);
+  
+  flex: 0 0 380px; /* Forces each card to stay exactly 380px wide in the row */
+  scroll-snap-align: start;
+  
+  /* Link the card directly to the browser's horizontal scroll position */
+  animation: cardScrollEntrance linear both;
+  animation-timeline: view(inline); /* Tracks horizontal movement inside viewport */
+  animation-range: entry 0% cover 30%; /* Triggers animation right as it enters screen */
+}
+@keyframes cardScrollEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateX(50px); /* Starts slightly smaller and offset */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0); /* Settles into full size smoothly */
+  }
 </style>
 
 </head>
