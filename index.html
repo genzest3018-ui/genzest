@@ -433,6 +433,32 @@ AUTOMATION SAFE
   border-color:#7c5cff;
   box-shadow:0 0 20px rgba(124,92,255,0.25);
 }
+  .filter-wrap{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+
+.filter-btn{
+  padding:0.7rem 1.1rem;
+  border:none;
+  border-radius:999px;
+  background:#111827;
+  color:white;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s ease;
+  font-size:0.95rem;
+}
+
+.filter-btn:hover{
+  background:#7c5cff;
+}
+
+.filter-btn.active{
+  background:#7c5cff;
+}
   .featured-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -706,6 +732,15 @@ AUTOMATION SAFE
   <!-- POSTS -->
   <section class="featured-section" id="featured">
     <div class="search-wrap">
+      <div class="filter-wrap">
+  <button class="filter-btn active" data-category="all">All</button>
+  <button class="filter-btn" data-category="AI">AI</button>
+  <button class="filter-btn" data-category="Finance">Finance</button>
+  <button class="filter-btn" data-category="Investing">Investing</button>
+  <button class="filter-btn" data-category="Startups">Startups</button>
+  <button class="filter-btn" data-category="Future">Future</button>
+  <button class="filter-btn" data-category="Crypto">Crypto</button>
+</div>
   <input
     type="text"
     id="searchInput"
@@ -801,7 +836,7 @@ if (
 }
 
           blogContainer.innerHTML += `
-            <article class="featured-card">
+            <article class="featured-card" data-category="${post.category}">
               <img
                 src="${post.image}"
                 alt="${post.title}"
@@ -832,6 +867,32 @@ if (
     }
 
     loadBlogs();
+    const filterBtns = document.querySelectorAll(".filter-btn");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const category = btn.dataset.category;
+
+    const cards = document.querySelectorAll(".featured-card");
+
+    cards.forEach(card => {
+
+      const cardCategory = card.dataset.category;
+
+      if(category === "all" || cardCategory === category){
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
+  });
+});
     document
   .getElementById("searchInput")
   .addEventListener("input", loadBlogs);
