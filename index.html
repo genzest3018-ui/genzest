@@ -413,6 +413,26 @@ AUTOMATION SAFE
   }
 
   /* BLOG GRID */
+  .search-wrap{
+  margin: 1.5rem 0 2rem;
+}
+
+.search-wrap input{
+  width:100%;
+  padding:1rem 1.2rem;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:#0b1020;
+  color:white;
+  font-size:1rem;
+  outline:none;
+  transition:0.3s ease;
+}
+
+.search-wrap input:focus{
+  border-color:#7c5cff;
+  box-shadow:0 0 20px rgba(124,92,255,0.25);
+}
   .featured-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -685,6 +705,13 @@ AUTOMATION SAFE
 
   <!-- POSTS -->
   <section class="featured-section" id="featured">
+    <div class="search-wrap">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search articles..."
+  />
+</div>
     <div class="section-header">
       <h2>🔥 Latest Drops</h2>
       <div class="section-badge">fresh insights daily</div>
@@ -763,6 +790,15 @@ AUTOMATION SAFE
 
         querySnapshot.forEach((doc) => {
           const post = doc.data();
+          const searchInput = document.getElementById("searchInput");
+
+if (
+  searchInput &&
+  !post.title.toLowerCase().includes(searchInput.value.toLowerCase()) &&
+  !post.category.toLowerCase().includes(searchInput.value.toLowerCase())
+) {
+  return;
+}
 
           blogContainer.innerHTML += `
             <article class="featured-card">
@@ -796,6 +832,9 @@ AUTOMATION SAFE
     }
 
     loadBlogs();
+    document
+  .getElementById("searchInput")
+  .addEventListener("input", loadBlogs);
 
     /* SIDEBAR */
     const menuBtn = document.getElementById("menuBtn");
