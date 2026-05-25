@@ -1,36 +1,82 @@
  <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
-    <loc>https://genzest.in/</loc>
+    <loc>https://www.genzest.in/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Main Blog Page -->
   <url>
-    <loc>https://genzest.in/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://genzest.in/privacy-policy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://genzest.in/terms.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://genzest.in/blog.html</loc>
+    <loc>https://www.genzest.in/blog.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Article 1 -->
+  <url>
+    <loc>https://www.genzest.in/blog.html?slug=e-pharmacy-vs-local-chemist-shop-india-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article 2 -->
+  <url>
+    <loc>https://www.genzest.in/blog.html?slug=ai-job-replacement-timeline-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article 3 -->
+  <url>
+    <loc>https://www.genzest.in/blog.html?slug=sip-vs-fd-for-college-students-which-is-better</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article 4 -->
+  <url>
+    <loc>https://www.genzest.in/blog.html?slug=why-gen-z-feels-broke-full-time-job</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article 5 -->
+  <url>
+    <loc>https://www.genzest.in/blog.html?slug=sip-investing-india-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article 6 -->
+  <url>
+    <loc>https://www.genzest.in/blog.html?slug=why-ai-spending-is-the-biggest-market-story-of-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://www.genzest.in/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://www.genzest.in/privacy-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Terms -->
+  <url>
+    <loc>https://www.genzest.in/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
 
 </urlset>
