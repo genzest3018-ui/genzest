@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://genzest.vercel.app/sitemap.xml
+Sitemap: https://genzest.in/sitemap.xml
