@@ -22,7 +22,7 @@
   <meta name="description" content="Read modern AI, investing and finance insights on GENZEST." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#050505" />
-  <link rel="canonical" href="https://genzest.in/blog.html" />
+  <link rel="canonical" id="canonicalLink" href="" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="GENZEST | Article" />
@@ -585,6 +585,14 @@
       const content = current.content || "";
 
       document.title = `${title} | GENZEST`;
+const canonical = document.getElementById("canonicalLink");
+
+if (canonical) {
+  canonical.setAttribute(
+    "href",
+    `https://genzest.in/blog.html?slug=${encodeURIComponent(slug)}`
+  );
+}
 
       const descriptionMeta = document.querySelector('meta[name="description"]');
       if (descriptionMeta) descriptionMeta.setAttribute("content", desc || "Read modern AI, investing and finance insights on GENZEST.");
