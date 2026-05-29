@@ -682,7 +682,18 @@ content="GENZEST explores AI, finance, investing, future careers, business trend
       border-color: var(--accent);
       background: rgba(37, 99, 235, 0.1);
     }
- 
+ #typing{
+color:#4b1094;
+border-right:3px solid #72ff4f;
+padding-right:5px;
+animation:blink .8s infinite;
+margin-left: 16px;
+}
+@keyframes blink{
+50%{
+border-color:transparent;
+}
+}
 </style>
 
 </head>
@@ -783,6 +794,10 @@ content="GENZEST explores AI, finance, investing, future careers, business trend
 
   <!-- SEO SECTION -->
   <section class="seo-section">
+    <h1 style="color:blueviolet; box-shadow: blueviolet; margin: 16px;">
+Explore More
+<span id="typing"></span>
+</h1>
     <h2>Why GENZEST?</h2>
     <p>
       GENZEST is a modern media platform focused on artificial intelligence, finance, investing, crypto, startups and future business trends.
@@ -1025,5 +1040,76 @@ filterBtns.forEach(btn => {
       }
     });
   </script>
+  <script>
+(function(){
+
+const typingElement =
+document.getElementById("genzestTyping");
+
+if(!typingElement) return;
+
+const typingWords = [
+  "AI",
+  "Finance",
+  "Startups",
+  "Future Trends",
+  "Investing",
+  "Business"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeWriter(){
+
+  const currentWord =
+  typingWords[wordIndex];
+
+  if(!deleting){
+
+    typingElement.textContent =
+    currentWord.substring(0,charIndex+1);
+
+    charIndex++;
+
+    if(charIndex === currentWord.length){
+
+      deleting = true;
+
+      setTimeout(typeWriter,1500);
+
+      return;
+    }
+
+  }else{
+
+    typingElement.textContent =
+    currentWord.substring(0,charIndex-1);
+
+    charIndex--;
+
+    if(charIndex === 0){
+
+      deleting = false;
+
+      wordIndex++;
+
+      if(wordIndex >= typingWords.length){
+        wordIndex = 0;
+      }
+    }
+  }
+
+  setTimeout(
+    typeWriter,
+    deleting ? 60 : 120
+  );
+}
+
+typeWriter();
+
+})();
+</script>
 </body>
 </html>
