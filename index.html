@@ -1041,75 +1041,83 @@ filterBtns.forEach(btn => {
     });
   </script>
   <script>
-(function(){
-
-const typingElement =
-document.getElementById("genzestTyping");
-
-if(!typingElement) return;
-
-const typingWords = [
-  "AI",
-  "Finance",
-  "Startups",
-  "Future Trends",
-  "Investing",
-  "Business"
+     const words = [
+"AI",
+"Finance",
+"Investing",
+"Future ",
+"Business Trends",
+"Crypto"
 ];
 
 let wordIndex = 0;
 let charIndex = 0;
 let deleting = false;
 
-function typeWriter(){
+const typingElement =
+document.getElementById("typing");
 
-  const currentWord =
-  typingWords[wordIndex];
+function typeEffect(){
 
-  if(!deleting){
+let currentWord =
+words[wordIndex];
 
-    typingElement.textContent =
-    currentWord.substring(0,charIndex+1);
+if(!deleting){
 
-    charIndex++;
+typingElement.textContent =
+currentWord.substring(
+0,
+charIndex+1
+);
 
-    if(charIndex === currentWord.length){
+charIndex++;
 
-      deleting = true;
+if(charIndex===currentWord.length){
 
-      setTimeout(typeWriter,1500);
+deleting=true;
 
-      return;
-    }
+setTimeout(typeEffect,1500);
 
-  }else{
+return;
 
-    typingElement.textContent =
-    currentWord.substring(0,charIndex-1);
-
-    charIndex--;
-
-    if(charIndex === 0){
-
-      deleting = false;
-
-      wordIndex++;
-
-      if(wordIndex >= typingWords.length){
-        wordIndex = 0;
-      }
-    }
-  }
-
-  setTimeout(
-    typeWriter,
-    deleting ? 60 : 120
-  );
 }
 
-typeWriter();
+}
 
-})();
+else{
+
+typingElement.textContent=
+currentWord.substring(
+0,
+charIndex-1
+);
+
+charIndex--;
+
+if(charIndex===0){
+
+deleting=false;
+
+wordIndex++;
+
+if(wordIndex===words.length){
+
+wordIndex=0;
+
+}
+
+}
+
+}
+
+setTimeout(
+typeEffect,
+deleting?60:120
+);
+
+}
+
+typeEffect();
 </script>
 </body>
 </html>
