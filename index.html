@@ -794,7 +794,7 @@ border-color:transparent;
       </a>
     </div>
   </section>
-<h1 style="color:blueviolet; box-shadow: blueviolet;">
+<h1 style="color:blueviolet; box-shadow: blueviolet; margin-left:16px;">
 Explore More
 <span id="typing"></span>
 </h1>
@@ -1041,6 +1041,85 @@ filterBtns.forEach(btn => {
         themeBtn.innerHTML = "Eye Care Theme";
       }
     });
+    /*typing event */
+      const words = [
+"AI",
+"Finance",
+"Investing",
+"Future Careers",
+"Business Trends",
+"Gen Z Growth"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const typingElement =
+document.getElementById("typing");
+
+function typeEffect(){
+
+let currentWord =
+words[wordIndex];
+
+if(!deleting){
+
+typingElement.textContent =
+currentWord.substring(
+0,
+charIndex+1
+);
+
+charIndex++;
+
+if(charIndex===currentWord.length){
+
+deleting=true;
+
+setTimeout(typeEffect,1500);
+
+return;
+
+}
+
+}
+
+else{
+
+typingElement.textContent=
+currentWord.substring(
+0,
+charIndex-1
+);
+
+charIndex--;
+
+if(charIndex===0){
+
+deleting=false;
+
+wordIndex++;
+
+if(wordIndex===words.length){
+
+wordIndex=0;
+
+}
+
+}
+
+}
+
+setTimeout(
+typeEffect,
+deleting?60:120
+);
+
+}
+
+typeEffect();
+
   </script>
 </body>
 </html>
