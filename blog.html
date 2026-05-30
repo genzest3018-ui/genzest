@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <!-- Google Analytics -->
@@ -17,26 +17,21 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GENZEST | AI, Finance & Investing</title>
+  <title>GENZEST | Article</title>
 
   <meta name="description" content="Read modern AI, investing and finance insights on GENZEST." />
   <meta name="robots" content="index, follow" />
 <meta name="googlebot" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#050505" />
-  <link id="canonicalLink"
-rel="canonical"
-href="https://genzest.in/blog.html" />
+  <link rel="canonical" href="https://genzest.in/blog.html" />
 
-  <meta property="og:title"
-content="GENZEST | AI, Finance & Investing" />
-  <meta name="twitter:title"
-content="GENZEST | AI, Finance & Investing" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="GENZEST | Article" />
   <meta property="og:description" content="Modern insights on AI, finance and investing." />
   <meta property="og:image" content="https://genzest.in/1779508386745.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title"
-content="GENZEST | AI, Finance & Investing" />
+  <meta name="twitter:title" content="GENZEST | Article" />
   <meta name="twitter:description" content="Modern insights on AI, finance and investing." />
   <meta name="twitter:image" content="https://genzest.in/1779508386745.png" />
 
@@ -612,8 +607,6 @@ l.parentNode.insertBefore(s, l);
       const content = current.content || "";
 
       document.title = `${title} | GENZEST`;
-if (ogTitle) ogTitle.setAttribute("content", title + " | GENZEST");
-if (twTitle) twTitle.setAttribute("content", title + " | GENZEST");
 const canonical = document.getElementById("canonicalLink");
 
 if (canonical) {
@@ -633,12 +626,10 @@ if (canonical) {
       const twDesc = document.querySelector('meta[name="twitter:description"]');
       const twImage = document.querySelector('meta[name="twitter:image"]');
 
-      if (ogTitle)
-ogTitle.setAttribute("content", title + " | GENZEST");
+      if (ogTitle) ogTitle.setAttribute("content", title);
       if (ogDesc) ogDesc.setAttribute("content", desc);
       if (ogImage) ogImage.setAttribute("content", image);
-      if (twTitle)
-twTitle.setAttribute("content", title + " | GENZEST");
+      if (twTitle) twTitle.setAttribute("content", title);
       if (twDesc) twDesc.setAttribute("content", desc);
       if (twImage) twImage.setAttribute("content", image);
 
