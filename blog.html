@@ -23,7 +23,7 @@
   <meta name="robots" content="index, follow" />
 <meta name="googlebot" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#050505" />
-  <link rel="canonical" href="https://genzest.in/blog.html" />
+  <link id="canonicalLink" rel="canonical" href="https://genzest.in/blog.html" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="GENZEST | Article" />
@@ -626,10 +626,10 @@ if (canonical) {
       const twDesc = document.querySelector('meta[name="twitter:description"]');
       const twImage = document.querySelector('meta[name="twitter:image"]');
 
-      if (ogTitle) ogTitle.setAttribute("content", title);
+      if (ogTitle) ogTitle.setAttribute("content", `${title} | GENZEST`);
       if (ogDesc) ogDesc.setAttribute("content", desc);
       if (ogImage) ogImage.setAttribute("content", image);
-      if (twTitle) twTitle.setAttribute("content", title);
+      if (twTitle) twTitle.setAttribute("content", `${title} | GENZEST`);
       if (twDesc) twDesc.setAttribute("content", desc);
       if (twImage) twImage.setAttribute("content", image);
 
