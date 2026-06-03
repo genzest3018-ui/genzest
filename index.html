@@ -954,56 +954,116 @@ border-color:transparent;
   /* ==========================================================================
      RESPONSIVE INTERACTIVE MEDIA BREAKPOINTS
      ========================================================================== */
-  @media (max-width: 992px) {
+ @media (max-width: 992px) {
     .hero {
-      min-height: auto;
-      padding-top: 7.5rem;
+      min-height: auto !important;
+      padding: 7.5rem 5% 3rem 5% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
     }
+
     .hero-container {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      text-align: center;
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
     }
+
     .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      max-width: 100% !important;
     }
+
     .hero h1 {
-      justify-content: center;
+      font-size: 4rem;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      justify-content: center !important;
+      text-align: center !important;
     }
+
+    .hero p {
+      font-size: 1.05rem;
+    }
+
+    /* 3D Visual Stage Responsive Scaling Rules */
     .hero-visual-stage {
-      height: 400px;
-      margin-top: 1rem;
+      width: 100% !important;
+      max-width: 440px !important;
+      height: 380px !important;
+      margin: 1.5rem auto 0 auto !important;
+      position: relative !important;
     }
+
     .glass-orb-wrapper {
-      width: 200px;
-      height: 200px;
+      width: 180px !important;
+      height: 180px !important;
     }
+
     .glass-orb-specular {
-      width: 45px;
-      height: 25px;
+      width: 45px !important;
+      height: 22px !important;
     }
-    .chip-ai { top: 5%; left: 15%; }
-    .chip-finance { top: 15%; right: 10%; }
-    .chip-startups { bottom: 15%; left: 10%; }
-    .chip-future { bottom: 8%; right: 15%; }
-    .chip-investing { top: 45%; left: 40%; }
+
+    /* Pull chips tighter around the orb matrix on tablets */
+    .chip-ai { top: 8% !important; left: 12% !important; }
+    .chip-finance { top: 22% !important; right: 5% !important; }
+    .chip-investing { top: 50% !important; right: -5% !important; left: auto !important; } 
+    .chip-startups { bottom: 22% !important; left: 5% !important; }
+    .chip-future { bottom: 10% !important; right: 12% !important; }
+
+    .featured-section { padding-top: 3rem; }
+    .featured-grid { gap: 1.25rem; }
+    .featured-card { flex: 0 0 300px; }
+    .featured-card img { height: 180px; } 
+    .section-header h2 { font-size: 2rem; }
+    .featured-content { padding: 1.2rem; }
+    .featured-content h3 { font-size: 1.2rem; }
   }
 
   @media (max-width: 480px) {
+    .hero h1 {
+      font-size: clamp(2.5rem, 10vw, 3.8rem) !important;
+      letter-spacing: -2px !important;
+    }
+
+    /* Micro-scale viewport stage adjustments for small smartphones */
     .hero-visual-stage {
-      height: 320px;
+      max-width: 320px !important;
+      height: 340px !important;
     }
+
     .glass-orb-wrapper {
-      width: 150px;
-      height: 150px;
+      width: 140px !important;
+      height: 140px !important;
     }
+
     .floating-chip {
-      padding: 0.45rem 0.85rem;
-      font-size: 0.78rem;
+      width: max-content !important;
+      white-space: nowrap !important;
+      position: absolute !important;
     }
-    .chip-investing { display: none; } /* Conceal center compression clip */
+
+    /* Investing chip fixed position to sit cleanly on the left frame flank */
+ 
+    /* Fixed Micro Matrix Coordinate Alignment */
+    .chip-ai { top: 4% !important; left: 6% !important; }
+    .chip-finance { top: 20% !important; right: 2% !important; }
+    .chip-investing { 
+      display: inline-flex !important; 
+      top: 48% !important; 
+      left: auto !important; 
+      bottom: auto !important;
+      right: auto !important;
+    }
+    .chip-startups { bottom: 18% !important; left: 4% !important; }
+    .chip-future { bottom: 6% !important; right: 6% !important; }
   }
 </style>
 
