@@ -143,5 +143,12 @@
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
+ 
+<url>
+  <loc>https://www.genzest.in/blog.html?slug=agentic-ai-personal-finance-autonomous-money-management-2026</loc>
+  <lastmod>2026-06-04</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url> 
 
 </urlset>
