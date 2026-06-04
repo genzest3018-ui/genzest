@@ -1,1086 +1,78 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta name="2324b346a2c816918e7d4e2853606bcf0a2f84a7" content="2324b346a2c816918e7d4e2853606bcf0a2f84a7" />
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-25LP8VZBEV"></script>
+  <meta name="2324b346a2c816918e7d4e2853606bcf0a2f84a7" content="2324b346a2c816918e7d4e2853606bcf0a2f84a7" />
+  
+  <!-- Google Analytics Tracking ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-25LP8VZBEV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-25LP8VZBEV');
+  </script>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GENZEST | AI, Finance & Investing</title>
 
-  function gtag(){
-    dataLayer.push(arguments);
-  }
+  <meta name="description" content="GENZEST delivers modern insights on AI, investing, startups, crypto and future business trends." />
+  <meta name="keywords" content="AI investing, Gen Z finance, crypto, fintech, startups, investing" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#050505" />
 
-  gtag('js', new Date());
+  <link rel="canonical" href="https://genzest.in/" />
 
-  gtag('config', 'G-25LP8VZBEV');
-</script>
-<meta
-name="description"
-content="GENZEST explores AI, finance, investing, future careers, business trends and practical insights for students and professionals.">
-<meta charset="UTF-8" />
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="GENZEST | AI, Finance & Investing" />
+  <meta property="og:description" content="Modern insights on AI, investing, crypto and future finance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://genzest.in/" />
+  <meta property="og:image" content="https://genzest.in/1779508386745.png" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>GENZEST | AI, Finance & Investing</title>
-
-<meta
-  name="description"
-  content="GENZEST delivers modern insights on AI, investing, startups, crypto and future business trends."
-/>
-
-<meta
-  name="keywords"
-  content="AI investing, Gen Z finance, crypto, fintech, startups, investing"
-/>
-
-<meta name="robots" content="index, follow" />
-<meta name="theme-color" content="#050505" />
-
-<link rel="canonical" href="https://genzest.in/" />
-
-<!-- Open Graph -->
-<meta property="og:title" content="GENZEST | AI, Finance & Investing" />
-<meta
-  property="og:description"
-  content="Modern insights on AI, investing, crypto and future finance."
-/>
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://genzest.in/" />
-<meta
-  property="og:image"
-  content="https://genzest.in/1779508386745.png"
-/>
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="GENZEST | AI, Finance & Investing" />
-<meta
-  name="twitter:description"
-  content="Modern insights on AI, investing, crypto and future finance."
-/>
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GENZEST | AI, Finance & Investing" />
+  <meta name="twitter:description" content="Modern insights on AI, investing, crypto and future finance." />
   <meta name="twitter:image" content="https://genzest.in/officiallogo.jpeg"/>
-<!-- <meta
-  name="twitter:image"
-  content="https://genzest.in/1779508386745.png"
-/> -->
 
-<!-- Favicon -->
-<!-- <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/genzest3018-ui/genzest/main/file_0000000051a071fa98c5016a62ce7c00.png">
-
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/genzest3018-ui/genzest/main/file_0000000051a071fa98c5016a62ce7c00.png"> -->
-<!--logo-->
+  <!-- Logo aur Favicons -->
   <link rel="icon" type="image/jpeg" href="/officiallogo.jpeg">
   <link rel="apple-touch-icon" href="/officiallogo.jpeg">
-
-<meta property="og:image" content="https://genzest.in/officiallogo.jpeg">
-
-
-<!-- Fonts -->
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap"
-  rel="stylesheet"
-/>
-
-<!-- Icons -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-/>
-
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"GENZEST",
-  "url":"https://genzest.in",
-  "logo":"https://genzest.in/officiallogo.jpeg"
-}
-</script>
-
-<style>
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-  }
-
-  :root{
-    --bg:#050505;
-    --surface:#111827;
-    --surface2:#0f172a;
-    --text:#ffffff;
-    --muted:#94a3b8;
-    --border:rgba(255,255,255,0.08);
-    --accent:#3b82f6;
-    --gradient:linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
-  }
-
-  body.theme-light{
-    --bg:#f8fafc;
-    --surface:#ffffff;
-    --surface2:#f1f5f9;
-    --text:#0f172a;
-    --muted:#475569;
-    --border:rgba(0,0,0,0.08);
-  }
-
-  body.theme-eye{
-    --bg:#101510;
-    --surface:#1d271c;
-    --surface2:#182117;
-    --text:#e6f1dd;
-    --muted:#b5c5ae;
-    --accent:#84cc16;
-    --gradient:linear-gradient(135deg, #84cc16, #65a30d, #4d7c0f);
-  }
-
-  html{
-    scroll-behavior:smooth;
-  }
-
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Inter',sans-serif;
-    overflow-x:hidden;
-    transition:0.3s ease;
-  }
-
-  /* NAVBAR */
-  .topbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:1rem 5%;
-    background:rgba(5,5,5,0.75);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--border);
-  }
-
-  body.theme-light .topbar{
-    background:rgba(255,255,255,0.75);
-  }
-
-  body.theme-eye .topbar{
-    background:rgba(16,21,16,0.85);
-  }
-
-  .brand{
-    text-decoration:none;
-    font-size:2rem;
-    font-weight:900;
-    letter-spacing:-2px;
-    background:var(--gradient);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-  }
-
-  .menu-btn{
-    width:48px;
-    height:48px;
-    border:none;
-    border-radius:50%;
-    background:var(--surface);
-    color:var(--text);
-    cursor:pointer;
-    font-size:1.2rem;
-    border:1px solid var(--border);
-    transition:0.3s ease;
-  }
-
-  .menu-btn:hover{
-    background:var(--accent);
-    color:white;
-    transform:scale(0.95);
-  }
-
-  /* SIDEBAR */
-  .sidebar{
-    position:fixed;
-    top:0;
-    right:-100%;
-    width:300px;
-    height:100vh;
-    padding:2rem;
-    background:rgba(10,15,28,0.97);
-    backdrop-filter:blur(20px);
-    z-index:2000;
-    transition:0.35s ease;
-    border-left:1px solid var(--border);
-    display:flex;
-    flex-direction:column;
-  }
-
-  body.theme-light .sidebar{
-    background:rgba(255,255,255,0.97);
-  }
-
-  body.theme-eye .sidebar{
-    background:rgba(16,21,16,0.97);
-  }
-
-  .sidebar.active{
-    right:0;
-  }
-
-  .sidebar-top{
-    display:flex;
-    justify-content:flex-end;
-    margin-bottom:3rem;
-  }
-
-  .sidebar a{
-    text-decoration:none;
-    color:var(--text);
-    padding:1rem 0;
-    border-bottom:1px solid var(--border);
-    font-size:1.25rem;
-    font-family:'Caveat',cursive;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    transition:0.25s ease;
-  }
-
-  .sidebar a:hover{
-    color:var(--accent);
-    padding-left:8px;
-  }
-
-  .theme-toggle{
-    margin-top:2rem;
-    border:none;
-    background:var(--gradient);
-    color:white;
-    padding:1rem;
-    border-radius:18px;
-    font-weight:700;
-    cursor:pointer;
-    transition:0.3s ease;
-  }
-
-  .theme-toggle:hover{
-    transform:translateY(-3px);
-  }
-
-  /* OVERLAY */
-  .overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.6);
-    opacity:0;
-    visibility:hidden;
-    transition:0.3s ease;
-    z-index:1500;
-  }
-
-  .overlay.active{
-    opacity:1;
-    visibility:visible;
-  }
-
-  /* HERO */
-  .hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding:8rem 5% 5rem;
-    background:
-      radial-gradient(circle at top left, rgba(59,130,246,0.18), transparent 30%),
-      radial-gradient(circle at bottom right, rgba(168,85,247,0.12), transparent 30%);
-  }
-
-  .hero-content{
-    max-width:900px;
-  }
-
-  .hero-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:0.5rem 1rem;
-    border-radius:999px;
-    background:rgba(59,130,246,0.12);
-    border:1px solid var(--border);
-    margin-bottom:1.5rem;
-    font-size:0.9rem;
-    color:var(--muted);
-  }
-
-  .hero h1{
-    font-size:clamp(3rem,11vw,7rem);
-    line-height:0.95;
-    font-weight:900;
-    letter-spacing:-4px;
-    margin-bottom:1.5rem;
-  }
-
-  .hero-gradient{
-    display:block;
-    background:var(--gradient);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-  }
-
-  .handwritten{
-    display:block;
-    font-family:'Caveat',cursive;
-    font-size:0.82em;
-    color:#60a5fa;
-    -webkit-text-fill-color:#60a5fa;
-    letter-spacing:0;
-    margin:6px 0;
-  }
-
-  .hero p{
-    max-width:700px;
-    color:var(--muted);
-    font-size:1.15rem;
-    line-height:1.9;
-  }
-
-  .hero-btn{
-    margin-top:2rem;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-    background:var(--gradient);
-    color:white;
-    padding:1rem 2rem;
-    border-radius:999px;
-    font-weight:700;
-    transition:0.3s ease;
-    cursor:pointer;
-    box-shadow:0 10px 30px rgba(59,130,246,0.25);
-  }
-
-  .hero-btn:hover{
-    transform:translateY(-4px);
-  }
-
-  /* SEO SECTION */
-  .seo-section{
-    padding:0 5% 4rem;
-    max-width:1000px;
-  }
-
-  .seo-section h2{
-    font-size:2rem;
-    margin-bottom:1rem;
-    font-family:'Caveat',cursive;
-    color:#60a5fa;
-  }
-
-  .seo-section p{
-    color:var(--muted);
-    line-height:2;
-    font-size:1.05rem;
-  }
-
-  /* FEATURED */
-  .featured-section{
-    padding:4rem 5%;
-  }
-
-  .section-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:1rem;
-    flex-wrap:wrap;
-    margin-bottom:3rem;
-  }
-
-  .section-header h2{
-    font-size:2.6rem;
-    font-family:'Caveat',cursive;
-    color:#60a5fa;
-  }
-
-  .section-badge{
-    padding:0.5rem 1rem;
-    border-radius:999px;
-    background:var(--surface);
-    border:1px solid var(--border);
-    color:var(--muted);
-    font-size:0.85rem;
-  }
-
-  /* BLOG GRID */
-  .search-wrap{
-  margin: 1.5rem 0 2rem;
-}
-
-.search-wrap input{
-  width:100%;
-  padding:1rem 1.2rem;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,0.08);
-  background:#0b1020;
-  color:white;
-  font-size:1rem;
-  outline:none;
-  transition:0.3s ease;
-}
-
-.search-wrap input:focus{
-  border-color:#7c5cff;
-  box-shadow:0 0 20px rgba(124,92,255,0.25);
-}
-  .filter-wrap{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:2rem;
-}
-
-.filter-btn{
-  padding:0.7rem 1.1rem;
-  border:none;
-  border-radius:999px;
-  background:#111827;
-  color:white;
-  cursor:pointer;
-  border:1px solid rgba(255,255,255,0.08);
-  transition:0.3s ease;
-  font-size:0.95rem;
-}
-
-.filter-btn:hover{
-  background:#7c5cff;
-}
-
-.filter-btn.active{
-  background:#7c5cff;
-}
-  .featured-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:2rem;
-  }
-
-  .featured-card{
-    background:rgba(17,24,39,0.7);
-    border:1px solid var(--border);
-    border-radius:1.7rem;
-    overflow:hidden;
-    transition:0.35s ease;
-    backdrop-filter:blur(14px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-  }
-
-  body.theme-light .featured-card{
-    background:white;
-  }
-
-  .featured-card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(59,130,246,0.4);
-    box-shadow:0 20px 40px rgba(59,130,246,0.15);
-  }
-
-  .featured-card img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
-    transition:0.5s ease;
-  }
-
-  .featured-card:hover img{
-    transform:scale(1.04);
-  }
-
-  .featured-content{
-    padding:1.5rem;
-  }
-
-  .featured-category{
-    color:#60a5fa;
-    font-size:0.75rem;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    font-weight:700;
-  }
-
-  .featured-author{
-    margin-top:0.35rem;
-    color:var(--muted);
-    font-size:0.88rem;
-    line-height:1.4;
-  }
-
-  .featured-content h3{
-    margin:1rem 0;
-    font-size:1.4rem;
-    line-height:1.35;
-  }
-
-  .featured-content p{
-    color:var(--muted);
-    line-height:1.8;
-    margin-bottom:1.5rem;
-  }
-
-  .read-link{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    color:#60a5fa;
-    text-decoration:none;
-    font-weight:700;
-    transition:0.25s ease;
-  }
-
-  .read-link:hover{
-    gap:15px;
-  }
-
-  /* FOOTER */
-  .footer{
-    margin-top:5rem;
-    padding:4rem 5% 2rem;
-    background:var(--surface);
-    border-top:1px solid var(--border);
-  }
-
-  .footer-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:3rem;
-  }
-
-  .footer-logo{
-    font-size:2rem;
-    font-weight:900;
-    background:var(--gradient);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    margin-bottom:1rem;
-  }
-
-  .footer-text{
-    color:var(--muted);
-    line-height:1.8;
-    max-width:320px;
-  }
-
-  .footer-title{
-    font-size:1.2rem;
-    font-family:'Caveat',cursive;
-    color:#60a5fa;
-    margin-bottom:1.5rem;
-  }
-
-  .footer-links{
-    display:flex;
-    flex-direction:column;
-    gap:1rem;
-  }
-
-  .footer-links a{
-    color:var(--text);
-    text-decoration:none;
-    transition:0.25s ease;
-  }
-
-  .footer-links a:hover{
-    color:#60a5fa;
-  }
-
-  .footer-bottom{
-    margin-top:3rem;
-    padding-top:2rem;
-    border-top:1px solid var(--border);
-    text-align:center;
-    color:var(--muted);
-    font-size:0.9rem;
-  }
-
-  /* MOBILE */
-  @media(max-width:768px){
-    .hero{
-      padding-top:7rem;
-      min-height:auto;
-    }
-
-    .hero h1{
-      font-size:4rem;
-      line-height:0.95;
-      letter-spacing:-2px;
-    }
-
-    .hero p{
-      font-size:1.05rem;
-    }
-
-    .section-header h2{
-      font-size:2rem;
-    }
-
-    .featured-content{
-      padding:1.2rem;
-    }
-
-    .featured-content h3{
-      font-size:1.2rem;
-    }
-  }
-  .featured-grid { 
-  display: flex; /* Changed from grid to flex for a straight line layout */
-  gap: 2.5rem; 
-  overflow-x: auto; /* Enables horizontal scrolling */
-  overflow-y: hidden; /* Prevents vertical breaking */
-  scroll-behavior: smooth; /* Gives it a premium elastic feel */
-  -webkit-overflow-scrolling: touch; /* Keeps it smooth on iPhone/Android */
-  padding: 1.5rem 0.5rem 2.5rem 0.5rem;
-  margin: 0 -0.5rem;
-  scroll-snap-type: x mandatory; /* Makes cards snap cleanly into place when scrolling */
-} 
-.featured-card { 
-  background: var(--bg-surface); 
-  border: 1px solid var(--border-color); 
-  border-radius: 14px; 
-  overflow: hidden; 
-  transition: var(--transition-smooth);
-  
-  flex: 0 0 380px; /* Forces each card to stay exactly 380px wide in the row */
-  scroll-snap-align: start;
-  
-  /* Link the card directly to the browser's horizontal scroll position */
-  animation: cardScrollEntrance linear both;
-  animation-timeline: view(inline); /* Tracks horizontal movement inside viewport */
-  animation-range: entry 0% cover 30%; /* Triggers animation right as it enters screen */
-}
-@keyframes cardScrollEntrance {
-  from {
-    opacity: 0;
-    transform: scale(0.9) translateX(50px); /* Starts slightly smaller and offset */
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateX(0); /* Settles into full size smoothly */
-  }
-}
-/* Share Button Styling */
-    .share-btn {
-      background: transparent;
-      color: var(--text-secondary);
-      border: 1px solid var(--border-color);
-      padding: 0.35rem 0.85rem;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      cursor: pointer;
-      font-family: var(--font-main);
-      transition: var(--transition-smooth);
-    }
-    .share-btn:hover {
-      color: var(--text-primary);
-      border-color: var(--accent);
-      background: rgba(37, 99, 235, 0.1);
-    }
- #typing{
-color:#4b1094;
-border-right:3px solid #72ff4f;
-padding-right:5px;
-animation:blink .8s infinite;
-margin-left: 16px;
-}
-@keyframes blink{
-50%{
-border-color:transparent;
-}
-}
-  /* ==========================================================================
-     PREMIUM 3D HERO VISUAL CANVAS OVERHAUL (STRIPE/APPLE INSPIRED)
-     ========================================================================== */
-  
-  /* Layout Base Transformation */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6rem 5% 4rem;
-    overflow: hidden;
-    background: var(--bg);
-  }
-
-  .hero-container {
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 4rem;
-    align-items: center;
-    z-index: 10;
-  }
-
-  /* Structural Alignment Fallback for Rest of Content Base */
-  .hero-content {
-    max-width: 100%;
-    position: relative;
-    z-index: 5;
-  }
-
-  /* High-Performance Micro-Particle Canvas and Ambient Lighting Glows */
-  .hero-bg-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, rgba(139, 92, 246, 0.15) 40%, transparent 70%);
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    filter: blur(60px);
-    z-index: 1;
-    transition: transform 0.2s cubic-bezier(0.1, 0.8, 0.2, 1);
-  }
-
-  .hero-bg-grid {
-    position: absolute;
-    inset: 0;
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-    background-size: 50px 50px;
-    background-position: center center;
-    mask-image: radial-gradient(circle at 75% 50%, black 20%, transparent 70%);
-    -webkit-mask-image: radial-gradient(circle at 75% 50%, black 20%, transparent 70%);
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  .hero-particles {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 3;
-  }
-
-  .hero-particle-dot {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background-color: var(--muted);
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: particleFloat 12s infinite linear;
-  }
-
-  @keyframes particleFloat {
-    0% { transform: translateY(0) scale(1); opacity: 0; }
-    10% { opacity: 0.4; }
-    90% { opacity: 0.4; }
-    100% { transform: translateY(-120px) scale(0.5); opacity: 0; }
-  }
-
-  /* Premium Magnetic CTA Button Upgrade */
-  .hero-btn {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
-    will-change: transform;
-  }
-
-  .hero-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .hero-btn:hover {
-    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.45);
-  }
-
-  .hero-btn:hover::before {
-    opacity: 1;
-  }
-
-  /* Right Visual Stage Design Core */
-  .hero-visual-stage {
-    position: relative;
-    width: 100%;
-    height: 550px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
-    perspective: 1200px;
-    will-change: transform;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  }
-
-  /* Pseudo-3D Multi-Layered Glass Orb Element */
-  .glass-orb-wrapper {
-    position: relative;
-    width: 280px;
-    height: 280px;
-    transform-style: preserve-3d;
-    animation: mainOrbFloat 6s ease-in-out infinite;
-  }
-
-  .glass-orb-glow {
-    position: absolute;
-    inset: -30px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(10px);
-    pointer-events: none;
-    transform: translateZ(-20px);
-  }
-
-  .glass-orb {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(25px) saturate(160%);
-    -webkit-backdrop-filter: blur(25px) saturate(160%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 
-      inset 0 20px 30px rgba(255, 255, 255, 0.15),
-      inset 10px 0 30px rgba(168, 85, 247, 0.15),
-      inset -10px 0 30px rgba(59, 130, 246, 0.15),
-      0 30px 60px rgba(0, 0, 0, 0.4);
-    transform: translateZ(0px);
-  }
-
-  body.theme-light .glass-orb {
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 
-      inset 0 10px 20px rgba(255, 255, 255, 0.6),
-      0 20px 45px rgba(15, 23, 42, 0.08);
-  }
-
-  body.theme-eye .glass-orb {
-    background: rgba(29, 39, 28, 0.3);
-    border: 1px solid rgba(132, 204, 22, 0.2);
-    box-shadow: 
-      inset 0 20px 30px rgba(255, 255, 255, 0.05),
-      inset 0 -10px 30px rgba(132, 204, 22, 0.1),
-      0 30px 60px rgba(0, 0, 0, 0.5);
-  }
-
-  .glass-orb-specular {
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    width: 65px;
-    height: 35px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
-    border-radius: 50%;
-    transform: rotate(-40deg);
-    pointer-events: none;
-  }
-
-  .glass-orb-inner-shadow {
-    position: absolute;
-    inset: 2px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 75% 75%, transparent 50%, rgba(0,0,0,0.4) 90%);
-    pointer-events: none;
-  }
-
-  /* Floating Adaptive Tech Context Chips */
-  .floating-chip {
-    position: absolute;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 0.65rem 1.15rem;
-    border-radius: 20px;
-    background: rgba(17, 24, 39, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: var(--text);
-    font-size: 0.88rem;
-    font-weight: 600;
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    transform-style: preserve-3d;
-    will-change: transform;
-    animation: genericChipFloat var(--speed) ease-in-out infinite;
-    animation-delay: var(--delay);
-  }
-
-  body.theme-light .floating-chip {
-    background: rgba(255, 255, 255, 0.75);
-    border-color: rgba(0, 0, 0, 0.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.04);
-  }
-
-  body.theme-eye .floating-chip {
-    background: rgba(29, 39, 28, 0.75);
-    border-color: rgba(132, 204, 22, 0.15);
-  }
-
-  /* Custom Positional Layout Coordinates for Chips Matrix */
-  .chip-ai { top: 12%; left: 10%; transform: translateZ(40px); }
-  .chip-finance { top: 22%; right: 5%; transform: translateZ(25px); }
-  .chip-startups { bottom: 20%; left: 2%; transform: translateZ(50px); }
-  .chip-future { bottom: 12%; right: 8%; transform: translateZ(35px); }
-  .chip-investing { top: 52%; left: 45%; transform: translateZ(60px); }
-
-  /* Kinetic Fluid Floating Animation Mechanics */
-  @keyframes mainOrbFloat {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(2deg); }
-  }
-
-  @keyframes genericChipFloat {
-    0%, 100% { transform: translateY(0px) translateZ(30px); }
-    50% { transform: translateY(-12px) translateZ(45px); }
-  }
-
-  /* ==========================================================================
-     RESPONSIVE INTERACTIVE MEDIA BREAKPOINTS
-     ========================================================================== */
- @media (max-width: 992px) {
-    .hero {
-      min-height: auto !important;
-      padding: 7.5rem 5% 3rem 5% !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-    }
-
-    .hero-container {
-      grid-template-columns: 1fr !important;
-      gap: 1.5rem !important;
-      text-align: center !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-    }
-
-    .hero-content {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      max-width: 100% !important;
-    }
-
-    .hero h1 {
-      font-size: 4rem;
-      line-height: 0.95;
-      letter-spacing: -2px;
-      justify-content: center !important;
-      text-align: center !important;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-    }
-
-    /* 3D Visual Stage Responsive Scaling Rules */
-    .hero-visual-stage {
-      width: 100% !important;
-      max-width: 440px !important;
-      height: 380px !important;
-      margin: 1.5rem auto 0 auto !important;
-      position: relative !important;
-    }
-
-    .glass-orb-wrapper {
-      width: 180px !important;
-      height: 180px !important;
-    }
-
-    .glass-orb-specular {
-      width: 45px !important;
-      height: 22px !important;
-    }
-
-    /* Pull chips tighter around the orb matrix on tablets */
-    .chip-ai { top: 8% !important; left: 12% !important; }
-    .chip-finance { top: 22% !important; right: 5% !important; }
-    .chip-investing { top: 50% !important; right: -5% !important; left: auto !important; } 
-    .chip-startups { bottom: 22% !important; left: 5% !important; }
-    .chip-future { bottom: 10% !important; right: 12% !important; }
-
-    .featured-section { padding-top: 3rem; }
-    .featured-grid { gap: 1.25rem; }
-    .featured-card { flex: 0 0 300px; }
-    .featured-card img { height: 180px; } 
-    .section-header h2 { font-size: 2rem; }
-    .featured-content { padding: 1.2rem; }
-    .featured-content h3 { font-size: 1.2rem; }
-  }
-
-  @media (max-width: 480px) {
-    .hero h1 {
-      font-size: clamp(2.5rem, 10vw, 3.8rem) !important;
-      letter-spacing: -2px !important;
-    }
-
-    /* Micro-scale viewport stage adjustments for small smartphones */
-    .hero-visual-stage {
-      max-width: 320px !important;
-      height: 340px !important;
-    }
-
-    .glass-orb-wrapper {
-      width: 140px !important;
-      height: 140px !important;
-    }
-
-    .floating-chip {
-      width: max-content !important;
-      white-space: nowrap !important;
-      position: absolute !important;
-    }
-
-    /* Investing chip fixed position to sit cleanly on the left frame flank */
- 
-    /* Fixed Micro Matrix Coordinate Alignment */
-    .chip-ai { top: 4% !important; left: 6% !important; }
-    .chip-finance { top: 20% !important; right: 2% !important; }
-    .chip-investing { 
-      display: inline-flex !important; 
-      top: 48% !important; 
-      left: auto !important; 
-      bottom: auto !important;
-      right: auto !important;
-    }
-    .chip-startups { bottom: 18% !important; left: 4% !important; }
-    .chip-future { bottom: 6% !important; right: 6% !important; }
-  }
-</style>
-
+  <meta property="og:image" content="https://genzest.in/officiallogo.jpeg">
+
+  <!-- Font Styles aur Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- External Cleaned Stylesheet Link -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Organization Schema JSON -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"GENZEST",
+    "url":"https://genzest.in",
+    "logo":"https://genzest.in/officiallogo.jpeg"
+  }
+  </script>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR SECTION -->
   <header class="topbar">
     <a href="/" class="brand">⚡ GENZEST</a>
-
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">
       <i class="fas fa-bars"></i>
     </button>
   </header>
 
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR NAVIGATION MENU -->
   <div class="sidebar" id="sidebar">
     <div class="sidebar-top">
       <button class="menu-btn" id="closeBtn" type="button" aria-label="Close menu">
@@ -1088,90 +80,49 @@ border-color:transparent;
       </button>
     </div>
 
-    <a href="/">
-      <i class="fas fa-house"></i>
-      Home
-    </a>
+    <a href="/"><i class="fas fa-house"></i> Home</a>
+    <a href="/" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'}); return false;" style="cursor:pointer;"><i class="fas fa-fire"></i> Latest Drops</a>
+    <a href="about.html"><i class="fas fa-circle-info"></i> About</a>
+    <a href="privacy-policy.html"><i class="fas fa-shield-halved"></i> Privacy Policy</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="disclaimer.html"><i class="fas fa-exclamation-circle"></i> Disclaimer</a>
+    <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
 
-    <a
-      href="/"
-      onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'}); return false;"
-      style="cursor:pointer;"
-    >
-      <i class="fas fa-fire"></i>
-      Latest Drops
-    </a>
-
-    <a href="about.html">
-      <i class="fas fa-circle-info"></i>
-      About
-    </a>
-
-    <a href="privacy-policy.html">
-      <i class="fas fa-shield-halved"></i>
-      Privacy Policy
-    </a>
-    <a href="contact.html">
-    <i class="fas fa-envelope"></i>
-    Contact
-</a>
-
-<a href="disclaimer.html">
-    <i class="fas fa-exclamation-circle"></i>
-    Disclaimer
-</a>
-
-    <a href="terms.html">
-      <i class="fas fa-file-contract"></i>
-      Terms
-    </a>
-
-    <button class="theme-toggle" id="themeToggle" type="button">
-      Theme
-    </button>
+    <button class="theme-toggle" id="themeToggle" type="button">Theme</button>
   </div>
 
-  <!-- OVERLAY -->
+  <!-- BACKDROP OVERLAY FOR SIDEBAR -->
   <div class="overlay" id="overlay"></div>
 
-  <!-- HERO -->
- <section class="hero" id="heroScene">
-
-    <!-- Premium Interactive Background Elements -->
+  <!-- HERO SECTION WITH 3D INTERACTIVE ENGINE -->
+  <section class="hero" id="heroScene">
+    <!-- Ambient Plasma Lighting effects -->
     <div class="hero-bg-glow" id="bgGlow"></div>
     <div class="hero-bg-grid"></div>
     <div class="hero-particles" id="heroParticles"></div>
 
     <div class="hero-container">
-     <div class="hero-content">
-      <div class="hero-badge">
-        <i class="fas fa-bolt"></i>
-        future-proof finance
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-bolt"></i> future-proof finance
+        </div>
+        <h1>
+          <span class="hero-gradient">Future Of</span>
+          <span class="handwritten">AI × Finance</span>
+          <span class="hero-gradient">Investing</span>
+        </h1>
+        <p>
+          GENZEST delivers modern insights on AI, investing, startups and future business trends.
+        </p>
+        <a href="/" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'}); return false;" class="hero-btn" id="magneticBtn">
+          Explore Insights
+          <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
 
-      <h1>
-        <span class="hero-gradient">Future Of</span>
-        <span class="handwritten">AI × Finance</span>
-        <span class="hero-gradient">Investing</span>
-      </h1>
-
-      <p>
-        GENZEST delivers modern insights on AI, investing, startups and future business trends.
-      </p>
-
-      <a
-        href="/"
-        onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'}); return false;"
-        class="hero-btn"
-      >
-        Explore Insights
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
-      <!-- Right Side: 3D Glassmorphic Media Space Engine (Stripe/Vercel Inspired) -->
+      <!-- Right Visual Zone: 3D Spherical Stage & Floating Contextual Badges -->
       <div class="hero-visual-stage" id="visualStage">
         <div class="glass-orb-wrapper">
-          <!-- Multi-layered Pseudo-3D Orb Core -->
           <div class="glass-orb-glow"></div>
           <div class="glass-orb">
             <div class="glass-orb-specular"></div>
@@ -1179,7 +130,7 @@ border-color:transparent;
           </div>
         </div>
 
-        <!-- Floating Interactive Contextual Micro-Chips -->
+        <!-- Float Badges with varying dynamic delays -->
         <div class="floating-chip chip-ai" style="--delay: 0s; --speed: 6s;">
           <i class="fas fa-brain" style="color: #a855f7;"></i> <span>AI</span>
         </div>
@@ -1199,12 +150,12 @@ border-color:transparent;
     </div>
   </section>
 
-  <!-- SEO SECTION -->
+  <!-- TYPING HEADING & INTRODUCING SEO CONTENT -->
   <section class="seo-section">
     <h1 style="color:blueviolet; box-shadow: blueviolet;">
-Explore More
-<span id="typing"></span>
-</h1>
+      Explore More
+      <span id="typing"></span>
+    </h1>
     <h2>Why GENZEST?</h2>
     <p>
       GENZEST is a modern media platform focused on artificial intelligence, finance, investing, crypto, startups and future business trends.
@@ -1212,33 +163,31 @@ Explore More
     </p>
   </section>
 
-  <!-- POSTS -->
+  <!-- BLOG FEED SYSTEM (SEARCH + FILTERING) -->
   <section class="featured-section" id="featured">
     <div class="search-wrap">
       <div class="filter-wrap">
-  <button class="filter-btn active" data-category="all">All</button>
-  <button class="filter-btn" data-category="AI">AI</button>
-  <button class="filter-btn" data-category="Finance">Finance</button>
-  <button class="filter-btn" data-category="Investing">Investing</button>
-  <button class="filter-btn" data-category="Startups">Startups</button>
-  <button class="filter-btn" data-category="Future">Future</button>
-  <!-- <button class="filter-btn" data-category="Crypto">Crypto</button> -->
-</div>
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="Search articles..."
-  />
-</div>
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="AI">AI</button>
+        <button class="filter-btn" data-category="Finance">Finance</button>
+        <button class="filter-btn" data-category="Investing">Investing</button>
+        <button class="filter-btn" data-category="Startups">Startups</button>
+        <button class="filter-btn" data-category="Future">Future</button>
+      </div>
+      <input type="text" id="searchInput" placeholder="Search articles..." />
+    </div>
+
     <div class="section-header">
       <h2>🔥 Latest Drops</h2>
       <div class="section-badge">fresh insights daily</div>
     </div>
 
+    <!-- Firebase dynamically populates items inside here -->
     <div class="featured-grid" id="blogContainer">
       Loading insights...
     </div>
   </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-grid">
@@ -1253,16 +202,10 @@ Explore More
         <div class="footer-title">Navigate</div>
         <div class="footer-links">
           <a href="/">Home</a>
-          <a
-            href="/"
-            onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'}); return false;"
-            style="cursor:pointer;"
-          >
-            Latest Posts
-          </a>
+          <a href="/" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'}); return false;" style="cursor:pointer;">Latest Posts</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
-<a href="disclaimer.html">Disclaimer</a>
+          <a href="disclaimer.html">Disclaimer</a>
         </div>
       </div>
 
@@ -1281,330 +224,9 @@ Explore More
     </div>
   </footer>
 
-    <!-- FIREBASE -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-    /* FIREBASE CONFIG */
-    const firebaseConfig = {
-      apiKey: "AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
-      authDomain: "genzest-85233.firebaseapp.com",
-      projectId: "genzest-85233",
-      storageBucket: "genzest-85233.firebasestorage.app",
-      messagingSenderId: "741928938",
-      appId: "1:741928938:web:d55eb961c34732e73e4c93"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    /* BLOG LOADER */
-    async function loadBlogs() {
-      const blogContainer = document.getElementById("blogContainer");
-
-      try {
-        const querySnapshot = await getDocs(collection(db, "posts"));
-        blogContainer.innerHTML = "";
-
-        querySnapshot.forEach((doc) => {
-          const post = doc.data();
-          const searchInput = document.getElementById("searchInput");
-
-if (
-  searchInput &&
-  !post.title.toLowerCase().includes(searchInput.value.toLowerCase()) &&
-  !post.category.toLowerCase().includes(searchInput.value.toLowerCase())
-) {
-  return;
-}
-
-          blogContainer.innerHTML += `
-            <article class="featured-card" data-category="${post.category}">
-              <img
-                src="${post.image}"
-                alt="${post.title}"
-                loading="lazy"
-                onerror="this.src='https://via.placeholder.com/600x400?text=GENZEST'"
-              >
-              <div class="featured-content">
-                <div class="featured-category">
-                  ${post.category || "Insights"}
-                </div>
-                <div class="featured-author">
-                  ${post.author || "Pulkit & Vansh"}
-                </div>
-                <h3>${post.title}</h3>
-                <p>${post.description}</p>
-                <div class="card-actions" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <a href="blog.html?slug=${post.slug}" class="read-link">
-                  Read Article
-                  <i class="fas fa-arrow-right"></i>
-                  <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.origin + '/blog.html?slug=${post.slug}').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Share', 2000); }).catch(err => console.error('Error copying:', err))">Share</button>
-                </div>
-                </a>
-              </div>
-            </article>
-          `;
-        });
-      } catch (error) {
-        console.error(error);
-        blogContainer.innerHTML = "Unable to load insights.";
-      }
-    }
-
-    loadBlogs();
-    const filterBtns = document.querySelectorAll(".filter-btn");
-
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-
-    filterBtns.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    const category = btn.dataset.category;
-
-    const cards = document.querySelectorAll(".featured-card");
-
-    cards.forEach(card => {
-
-      const cardCategory = card.dataset.category;
-
-      if(category === "all" || cardCategory === category){
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-
-    });
-
-  });
-});
-    document
-  .getElementById("searchInput")
-  .addEventListener("input", loadBlogs);
-
-    /* SIDEBAR */
-    const menuBtn = document.getElementById("menuBtn");
-    const closeBtn = document.getElementById("closeBtn");
-    const sidebar = document.getElementById("sidebar");
-    const overlay = document.getElementById("overlay");
-
-    function openSidebar() {
-      sidebar.classList.add("active");
-      overlay.classList.add("active");
-    }
-
-    function closeSidebar() {
-      sidebar.classList.remove("active");
-      overlay.classList.remove("active");
-    }
-
-    menuBtn.addEventListener("click", openSidebar);
-    closeBtn.addEventListener("click", closeSidebar);
-    overlay.addEventListener("click", closeSidebar);
-
-    /* YEAR */
-    document.getElementById("year").innerText = new Date().getFullYear();
-
-    /* THEME */
-    const themeBtn = document.getElementById("themeToggle");
-    let currentTheme = 0;
-
-    themeBtn.addEventListener("click", () => {
-      currentTheme++;
-
-      if (currentTheme > 2) {
-        currentTheme = 0;
-      }
-
-      document.body.classList.remove("theme-light", "theme-eye");
-
-      if (currentTheme === 0) {
-        themeBtn.innerHTML = "Theme";
-      }
-
-      if (currentTheme === 1) {
-        document.body.classList.add("theme-light");
-        themeBtn.innerHTML = "Light Theme";
-      }
-
-      if (currentTheme === 2) {
-        document.body.classList.add("theme-eye");
-        themeBtn.innerHTML = "Eye Care Theme";
-      }
-    });
-  </script>
-  <script>
-     const words = [
-"AI",
-"Finance",
-"Investing",
-"Future ",
-"Business Trends",
-
-];
-
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-const typingElement =
-document.getElementById("typing");
-
-function typeEffect(){
-
-let currentWord =
-words[wordIndex];
-
-if(!deleting){
-
-typingElement.textContent =
-currentWord.substring(
-0,
-charIndex+1
-);
-
-charIndex++;
-
-if(charIndex===currentWord.length){
-
-deleting=true;
-
-setTimeout(typeEffect,1500);
-
-return;
-
-}
-
-}
-
-else{
-
-typingElement.textContent=
-currentWord.substring(
-0,
-charIndex-1
-);
-
-charIndex--;
-
-if(charIndex===0){
-
-deleting=false;
-
-wordIndex++;
-
-if(wordIndex===words.length){
-
-wordIndex=0;
-
-}
-
-}
-
-}
-
-setTimeout(
-typeEffect,
-deleting?60:120
-);
-
-}
-
-typeEffect();
-</script>
-<!-- HERO INTERACTION PLATFORM UTILITY LAYER -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const hero = document.getElementById("heroScene");
-      const bgGlow = document.getElementById("bgGlow");
-      const stage = document.getElementById("visualStage");
-      const magneticBtn = document.getElementById("magneticBtn");
-      const particlesContainer = document.getElementById("heroParticles");
-
-      /* 1. Hardware Accelerated Micro-Particle Array Generator */
-      if (particlesContainer) {
-        const particleCount = 22;
-        for (let i = 0; i < particleCount; i++) {
-          const particle = document.createElement("div");
-          particle.className = "hero-particle-dot";
-          
-          // Spatial Distributive Coordinates Generator
-          particle.style.left = Math.random() * 100 + "%";
-          particle.style.top = Math.random() * 100 + "%";
-          
-          // Kinetic Variance Shifting Variables Array
-          const sizeVal = Math.random() * 3 + 2;
-          particle.style.width = sizeVal + "px";
-          particle.style.height = sizeVal + "px";
-          particle.style.animationDelay = Math.random() * 8 + "s";
-          particle.style.animationDuration = Math.random() * 6 + 8 + "s";
-          
-          particlesContainer.appendChild(particle);
-        }
-      }
-
-      /* 2. Optimized 3D Mouse Parallax and Glow-Tracking Mechanics */
-      if (hero && window.innerWidth > 992) {
-        let frameTracking = false;
-
-        hero.addEventListener("mousemove", function (e) {
-          if (!frameTracking) {
-            window.requestAnimationFrame(function () {
-              const boundingBox = hero.getBoundingClientRect();
-              
-              // Map Coordinate Spatial Center Zero Offset Axes
-              const offsetX = e.clientX - boundingBox.left;
-              const offsetY = e.clientY - boundingBox.top;
-              
-              const percentageX = offsetX / boundingBox.width;
-              const percentageY = offsetY / boundingBox.height;
-              
-              const relativeX = percentageX - 0.5;
-              const relativeY = percentageY - 0.5;
-
-              // Execute Ambient Plasma Glow Shift Base
-              if (bgGlow) {
-                bgGlow.style.transform = `translate(calc(-50% + ${relativeX * 120}px), calc(-50% + ${relativeY * 120}px))`;
-              }
-
-              // Apply Rotational 3D Pitch Vector Restraints (Max 10 Degrees Strict Limit)
-              if (stage) {
-                const pitchRotation = relativeY * -18; 
-                const yawRotation = relativeX * 18;   
-                stage.style.transform = `rotateX(${pitchRotation}deg) rotateY(${yawRotation}deg)`;
-              }
-
-              frameTracking = false;
-            });
-            frameTracking = true;
-          }
-        });
-
-        // Soft Return Easing Array Reset Logic Wrapper
-        hero.addEventListener("mouseleave", function () {
-          if (bgGlow) bgGlow.style.transform = "translate(-50%, -50%)";
-          if (stage) stage.style.transform = "rotateX(0deg) rotateY(0deg)";
-        });
-      }
-
-      /* 3. High-Fidelity Button Magnetic Interface Engine */
-      if (magneticBtn && window.innerWidth > 768) {
-        magneticBtn.addEventListener("mousemove", function (e) {
-          const coordinates = magneticBtn.getBoundingClientRect();
-          const targetX = e.clientX - coordinates.left - coordinates.width / 2;
-          const targetY = e.clientY - coordinates.top - coordinates.height / 2;
-
-          // Pull Matrix toward cursor vector weight calculations
-          magneticBtn.style.transform = `translate(${targetX * 0.35}px, ${targetY * 0.35}px) scale(1.02)`;
-        });
-
-        magneticBtn.addEventListener("mouseleave", function () {
-          magneticBtn.style.transform = "translate(0px, 0px) scale(1)";
-        });
-      }
-    });
-  </script>
+  <!-- Unified Module Interactive Logic Script -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>
+
+```
