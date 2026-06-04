@@ -1,8 +1,6 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-25LP8VZBEV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -22,7 +20,6 @@
   <link id="canonicalLink" rel="canonical" href="https://genzest.in/blog.html" />
   <meta property="og:url" id="ogUrl" content="https://genzest.in/" />
 
-  <!-- Dynamic Social Sharing Metadata tags with clean IDs -->
   <meta property="og:type" content="article" />
   <meta property="og:title" id="ogTitle" content="GENZEST | Article" />
   <meta property="og:description" id="ogDesc" content="Modern insights on AI, finance and investing." />
@@ -434,7 +431,6 @@
 
     <section class="article-section">
       <article class="blog-content" id="blogContent">
-        <!-- Google crawlers will not find old hardcoded fallback keywords here -->
         <div style="text-align: center; padding: 3rem 1rem; color: var(--muted);">
           <i class="fas fa-circle-notch fa-spin" style="font-size: 2.2rem; margin-bottom: 1.2rem; color: #8b5cf6;"></i>
           <p>Loading the latest GENZEST insights...</p>
@@ -469,13 +465,12 @@
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import {
-  getFirestore,
-  collection,
-  getDocs,
-  query,
-  where
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+      getFirestore,
+      collection,
+      getDocs,
+      query,
+      where
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyAaBBRJWboc_TZ_Tf_e0c3uK0k57l64PP8",
@@ -573,51 +568,43 @@
       }
 
       flushAll();
-
       return html || "<p>Content coming soon.</p>";
     }
 
     async function loadBlog() {
-      // Step 1: Same dynamic query that already works on your database
-      const postQuery = query(
-  collection(db, "posts"),
-  where("slug", "==", slug)
-);
-
-const postSnapshot = await getDocs(postQuery);
-
-if (postSnapshot.empty) {
-  document.getElementById("blogTitle").textContent = "Article not found";
-  document.getElementById("blogDescription").textContent =
-    "This post is unavailable or the link is broken.";
-  document.getElementById("blogContent").innerHTML =
-    "<p>Article not found.</p>";
-  return;
-}
-
-const current = postSnapshot.docs[0].data();
-
-const querySnapshot = await getDocs(collection(db, "posts"));
-const docs = querySnapshot.docs.map(doc => doc.data());
-      if (!current) {
-        document.getElementById("blogTitle").textContent = "Article not found";
-        document.getElementById("blogDescription").textContent = "This post is unavailable or the link is broken.";
-        document.getElementById("blogContent").innerHTML = "<p>Article not found.</p>";
-        document.getElementById("metaRow").innerHTML = "<span>❌ Missing slug</span>";
+      if (!slug) {
+        showNotFoundError();
         return;
       }
+
+      const postQuery = query(collection(db, "posts"), where("slug", "==", slug));
+      const postSnapshot = await getDocs(postQuery);
+
+      if (postSnapshot.empty) {
+        showNotFoundError();
+        return;
+      }
+
+      const current = postSnapshot.docs[0].data();
+      const querySnapshot = await getDocs(collection(db, "posts"));
+      const docs = querySnapshot.docs.map(doc => doc.data());
 
       const title = current.title || "Untitled Article";
       const desc = current.description || "";
       const image = current.image || "https://genzest.in/officiallogo.jpeg";
       const content = current.content || "";
 
-      // Step 2: Instantly overwrite the metadata to resolve the Google crawler indexing bug
+      // Document Meta Updates
       document.title = `${title} | GENZEST`;
       
       const canonical = document.getElementById("canonicalLink");
       if (canonical) {
-       canonical.href = window.location.href;
+        canonical.href = `https://genzest.in/blog.html?slug=${encodeURIComponent(slug)}`;
+      }
+
+      const ogUrl = document.getElementById("ogUrl");
+      if (ogUrl) {
+        ogUrl.setAttribute("content", `https://genzest.in/blog.html?slug=${encodeURIComponent(slug)}`);
       }
 
       const descriptionMeta = document.getElementById("metaDescription");
@@ -625,7 +612,6 @@ const docs = querySnapshot.docs.map(doc => doc.data());
         descriptionMeta.setAttribute("content", desc || "Read modern AI, investing and finance insights on GENZEST.");
       }
 
-      // Dynamic Open Graph / Twitter cards rewrite
       const updateMetaAttribute = (id, value) => {
         const el = document.getElementById(id);
         if (el) el.setAttribute("content", value);
@@ -653,10 +639,8 @@ const docs = querySnapshot.docs.map(doc => doc.data());
 
       document.getElementById("blogContent").innerHTML = contentToHtml(content);
 
-      const related = docs
-        .filter(post => post.slug !== slug)
-        .slice(0, 3);
-
+      // Related articles rendering block logic
+      const related = docs.filter(post => post.slug !== slug).slice(0, 3);
       const relatedGrid = document.getElementById("relatedGrid");
       if (related.length) {
         relatedGrid.innerHTML = related.map(post => `
@@ -676,8 +660,47 @@ const docs = querySnapshot.docs.map(doc => doc.data());
       } else {
         relatedGrid.innerHTML = "";
       }
+
+      // Secure Scope Encapsulated Structural JSON-LD Injection
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title,
+        "description": desc,
+        "image": image,
+        "author": {
+          "@type": "Organization",
+          "name": "GENZEST"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "GENZEST",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://genzest.in/officiallogo.jpeg"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://genzest.in/blog.html?slug=${encodeURIComponent(slug)}`
+        }
+      };
+
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
     }
 
+    function showNotFoundError() {
+      document.getElementById("blogTitle").textContent = "Article not found";
+      document.getElementById("blogDescription").textContent = "This post is unavailable or the link is broken.";
+      document.getElementById("blogContent").innerHTML = "<p>Article not found.</p>";
+      const metaRow = document.getElementById("metaRow");
+      if (metaRow) metaRow.innerHTML = "<span>❌ Missing slug</span>";
+    }
+
+    // Initialize execution logic
     loadBlog().catch(err => {
       console.error(err);
       document.getElementById("blogContent").innerHTML = "<p>Failed to load article.</p>";
@@ -690,43 +713,6 @@ const docs = querySnapshot.docs.map(doc => doc.data());
       const progressBar = document.getElementById("progressBar");
       if (progressBar) progressBar.style.width = scrolled + "%";
     });
-    const ogUrl = document.getElementById("ogUrl");
-
-if (ogUrl) {
-  ogUrl.setAttribute("content", window.location.href);
-}
-    const content = current.content || "";
-    const schema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": title,
-  "description": desc,
-  "image": image,
-  "author": {
-    "@type": "Organization",
-    "name": "GENZEST"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "GENZEST",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://genzest.in/officiallogo.jpeg"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": window.location.href
-  }
-};
-
-const script = document.createElement("script");
-script.type = "application/ld+json";
-script.textContent = JSON.stringify(schema);
-
-document.head.appendChild(script);
   </script>
 </body>
 </html>
-
-```
