@@ -1,39 +1,36 @@
-  <!DOCTYPE html>
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-25LP8VZBEV"></script>
-
 <script>
   window.dataLayer = window.dataLayer || [];
-
-  function gtag(){
-    dataLayer.push(arguments);
-  }
-
+  function gtag(){ dataLayer.push(arguments); }
   gtag('js', new Date());
-
   gtag('config', 'G-25LP8VZBEV');
 </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GENZEST | Article</title>
+  <title id="pageTitle">GENZEST | Loading...</title>
 
-  <meta name="description" content="Read modern AI, investing and finance insights on GENZEST." />
+  <meta name="description" id="metaDescription" content="Read modern AI, investing and finance insights on GENZEST." />
   <meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow, max-image-preview:large" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#050505" />
   <link id="canonicalLink" rel="canonical" href="https://genzest.in/blog.html" />
 
+  <!-- Dynamic Social Sharing Metadata tags with clean IDs -->
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="GENZEST | Article" />
-  <meta property="og:description" content="Modern insights on AI, finance and investing." />
-  <meta property="og:image" content="https://genzest.in/1779508386745.png" />
+  <meta property="og:title" id="ogTitle" content="GENZEST | Article" />
+  <meta property="og:description" id="ogDesc" content="Modern insights on AI, finance and investing." />
+  <meta property="og:image" id="ogImage" content="https://genzest.in/1779508386745.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GENZEST | Article" />
-  <meta name="twitter:description" content="Modern insights on AI, finance and investing." />
-  <meta name="twitter:image" content="https://genzest.in/1779508386745.png" />
+  <meta name="twitter:title" id="twTitle" content="GENZEST | Article" />
+  <meta name="twitter:description" id="twDesc" content="Modern insights on AI, finance and investing." />
+  <meta name="twitter:image" id="twImage" content="https://genzest.in/1779508386745.png" />
 
   <link rel="icon" type="image/png" href="1779508386745.png" />
   <link rel="apple-touch-icon" href="1779508386745.png" />
@@ -415,12 +412,12 @@
         AI • Finance • Investing
       </div>
 
-      <h1 class="hero-title" id="blogTitle">Loading Article...</h1>
+      <h1 class="hero-title" id="blogTitle">⚡ Loading Insights...</h1>
 
       <div class="hero-sub">future finance insights</div>
 
       <p class="hero-desc" id="blogDescription">
-        AI spending is reshaping investing, startups, cloud infrastructure and future markets.
+        Please wait while we fetch the latest market research for you.
       </p>
 
       <div class="meta" id="metaRow">
@@ -436,16 +433,12 @@
 
     <section class="article-section">
       <article class="blog-content" id="blogContent">
-
-<p>Loading latest GENZEST article...</p>
-
-<h2>AI, Finance and Future of Work Insights</h2>
-
-<p>
-GENZEST publishes modern insights on AI, investing, careers, startups and future technology trends.
-</p>
-
-</article>
+        <!-- Google crawlers will not find old hardcoded fallback keywords here -->
+        <div style="text-align: center; padding: 3rem 1rem; color: var(--muted);">
+          <i class="fas fa-circle-notch fa-spin" style="font-size: 2.2rem; margin-bottom: 1.2rem; color: #8b5cf6;"></i>
+          <p>Loading the latest GENZEST insights...</p>
+        </div>
+      </article>
     </section>
 
     <section class="related-section">
@@ -577,6 +570,7 @@ GENZEST publishes modern insights on AI, investing, careers, startups and future
     }
 
     async function loadBlog() {
+      // Step 1: Same dynamic query that already works on your database
       const querySnapshot = await getDocs(collection(db, "posts"));
       const docs = querySnapshot.docs.map(doc => doc.data());
       const current = docs.find(post => post.slug === slug);
@@ -591,36 +585,39 @@ GENZEST publishes modern insights on AI, investing, careers, startups and future
 
       const title = current.title || "Untitled Article";
       const desc = current.description || "";
-      const image = current.image || "https://via.placeholder.com/1200x675?text=GENZEST";
+      const image = current.image || "https://genzest.in/officiallogo.jpeg";
       const content = current.content || "";
 
+      // Step 2: Instantly overwrite the metadata to resolve the Google crawler indexing bug
       document.title = `${title} | GENZEST`;
-const canonical = document.getElementById("canonicalLink");
+      
+      const canonical = document.getElementById("canonicalLink");
+      if (canonical) {
+        canonical.setAttribute(
+          "href",
+          `https://genzest.in/blog.html?slug=${encodeURIComponent(slug)}`
+        );
+      }
 
-if (canonical) {
-  canonical.setAttribute(
-    "href",
-    `https://genzest.in/blog.html?slug=${encodeURIComponent(slug)}`
-  );
-}
+      const descriptionMeta = document.getElementById("metaDescription");
+      if (descriptionMeta) {
+        descriptionMeta.setAttribute("content", desc || "Read modern AI, investing and finance insights on GENZEST.");
+      }
 
-      const descriptionMeta = document.querySelector('meta[name="description"]');
-      if (descriptionMeta) descriptionMeta.setAttribute("content", desc || "Read modern AI, investing and finance insights on GENZEST.");
+      // Dynamic Open Graph / Twitter cards rewrite
+      const updateMetaAttribute = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.setAttribute("content", value);
+      };
 
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      const ogDesc = document.querySelector('meta[property="og:description"]');
-      const ogImage = document.querySelector('meta[property="og:image"]');
-      const twTitle = document.querySelector('meta[name="twitter:title"]');
-      const twDesc = document.querySelector('meta[name="twitter:description"]');
-      const twImage = document.querySelector('meta[name="twitter:image"]');
+      updateMetaAttribute("ogTitle", `${title} | GENZEST`);
+      updateMetaAttribute("ogDesc", desc);
+      updateMetaAttribute("ogImage", image);
+      updateMetaAttribute("twTitle", `${title} | GENZEST`);
+      updateMetaAttribute("twDesc", desc);
+      updateMetaAttribute("twImage", image);
 
-      if (ogTitle) ogTitle.setAttribute("content", `${title} | GENZEST`);
-      if (ogDesc) ogDesc.setAttribute("content", desc);
-      if (ogImage) ogImage.setAttribute("content", image);
-      if (twTitle) twTitle.setAttribute("content", `${title} | GENZEST`);
-      if (twDesc) twDesc.setAttribute("content", desc);
-      if (twImage) twImage.setAttribute("content", image);
-
+      // Render updated DOM
       document.getElementById("blogTitle").textContent = title;
       document.getElementById("blogDescription").textContent = desc;
       document.getElementById("blogImage").src = image;
@@ -669,9 +666,11 @@ if (canonical) {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = height ? (winScroll / height) * 100 : 0;
-      document.getElementById("progressBar").style.width = scrolled + "%";
+      const progressBar = document.getElementById("progressBar");
+      if (progressBar) progressBar.style.width = scrolled + "%";
     });
   </script>
-
 </body>
 </html>
+
+```
