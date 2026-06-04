@@ -20,6 +20,7 @@
   <meta name="googlebot" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#050505" />
   <link id="canonicalLink" rel="canonical" href="https://genzest.in/blog.html" />
+  <meta property="og:url" id="ogUrl" content="https://genzest.in/" />
 
   <!-- Dynamic Social Sharing Metadata tags with clean IDs -->
   <meta property="og:type" content="article" />
@@ -467,6 +468,13 @@
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
     import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
     const firebaseConfig = {
@@ -571,10 +579,26 @@
 
     async function loadBlog() {
       // Step 1: Same dynamic query that already works on your database
-      const querySnapshot = await getDocs(collection(db, "posts"));
-      const docs = querySnapshot.docs.map(doc => doc.data());
-      const current = docs.find(post => post.slug === slug);
+      const postQuery = query(
+  collection(db, "posts"),
+  where("slug", "==", slug)
+);
 
+const postSnapshot = await getDocs(postQuery);
+
+if (postSnapshot.empty) {
+  document.getElementById("blogTitle").textContent = "Article not found";
+  document.getElementById("blogDescription").textContent =
+    "This post is unavailable or the link is broken.";
+  document.getElementById("blogContent").innerHTML =
+    "<p>Article not found.</p>";
+  return;
+}
+
+const current = postSnapshot.docs[0].data();
+
+const querySnapshot = await getDocs(collection(db, "posts"));
+const docs = querySnapshot.docs.map(doc => doc.data());
       if (!current) {
         document.getElementById("blogTitle").textContent = "Article not found";
         document.getElementById("blogDescription").textContent = "This post is unavailable or the link is broken.";
@@ -593,10 +617,7 @@
       
       const canonical = document.getElementById("canonicalLink");
       if (canonical) {
-        canonical.setAttribute(
-          "href",
-          `https://genzest.in/blog.html?slug=${encodeURIComponent(slug)}`
-        );
+       canonical.href = window.location.href;
       }
 
       const descriptionMeta = document.getElementById("metaDescription");
@@ -669,6 +690,41 @@
       const progressBar = document.getElementById("progressBar");
       if (progressBar) progressBar.style.width = scrolled + "%";
     });
+    const ogUrl = document.getElementById("ogUrl");
+
+if (ogUrl) {
+  ogUrl.setAttribute("content", window.location.href);
+}
+    const content = current.content || "";
+    const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": desc,
+  "image": image,
+  "author": {
+    "@type": "Organization",
+    "name": "GENZEST"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GENZEST",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://genzest.in/officiallogo.jpeg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": window.location.href
+  }
+};
+
+const script = document.createElement("script");
+script.type = "application/ld+json";
+script.textContent = JSON.stringify(schema);
+
+document.head.appendChild(script);
   </script>
 </body>
 </html>
