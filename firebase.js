@@ -55,7 +55,7 @@ if (
                 <a href="${post.slug}.html" class="read-link">
                   Read Article
                   <i class="fas fa-arrow-right"></i>
-                  <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.origin + '/blog.html?slug=${post.slug}').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Share', 2000); }).catch(err => console.error('Error copying:', err))">Share</button>
+                  <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.origin + '/' + post.slug + '.html').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Share', 2000); }).catch(err => console.error('Error copying:', err))">Share</button>
                 </div>
                 </a>
               </div>
