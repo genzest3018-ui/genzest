@@ -41,6 +41,9 @@
 <link rel="icon" type="image/jpeg" href="/officiallogo.jpeg">
 <link rel="apple-touch-icon" href="/officiallogo.jpeg">
 
+<meta property="og:image" content="https://genzest.in/officiallogo.jpeg">
+
+<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
@@ -56,23 +59,30 @@
 <link rel="stylesheet" href="assets/css/style.css"> 
 
 <style>
-  /* Unified Text Baseline Styling */
-  .hero-merged-summary {
+  /* 🎯 Symmetric Layout Glass Card with Sharp White Outline and Text Base */
+  .hero-merged-summary-box {
     max-width: 900px;
-    margin: 1rem auto 0;
+    margin: 1.5rem auto 0;
     text-align: left;
     width: 100%;
     box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Sleek outline border */
+    border-radius: 14px;
+    padding: 1.2rem 1.5rem;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
   
-  .hero-merged-summary p {
-    font-size: 1.12rem;
-    line-height: 1.8;
-    color: #cbd5e1;
+  .hero-merged-summary-box p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #f8fafc !important; /* Fixed Dullness to Proper Sharp White Text */
     margin: 0;
+    font-weight: 400;
   }
 
-  /* Clear Border Outline Box Framework for Cards */
+  /* Clear Border Outline Box Framework for Cards Stability */
   .featured-card {
     border: 1px solid rgba(255, 255, 255, 0.12) !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
@@ -93,7 +103,6 @@
     letter-spacing: 0.5px;
   }
 
-  /* Control Deck Form Controls Alignment */
   .search-control-deck {
     max-width: 900px;
     margin: 0 auto 1.5rem;
@@ -154,7 +163,6 @@
     font-size: 0.85rem;
   }
 
-  /* Swipe Horizontal Indication Banner Setup */
   .swipe-guidance-track {
     max-width: 900px;
     margin: 0.5rem auto 1.5rem;
@@ -187,8 +195,13 @@
       padding-left: 1rem !important;
       padding-right: 1rem !important;
     }
-    .hero-merged-summary p {
-      font-size: 1rem !important;
+    .hero-merged-summary-box {
+      margin: 1.2rem 0 0 0 !important; /* Force complete relative alignment inside borders */
+      padding: 1.2rem 1.1rem !important;
+      border-radius: 12px !important;
+    }
+    .hero-merged-summary-box p {
+      font-size: 0.98rem !important;
       line-height: 1.65 !important;
     }
     .featured-section {
@@ -250,7 +263,8 @@
         <span class="handwritten">AI × Finance</span>
       </h1>
 
-      <div class="hero-merged-summary">
+      <!-- 🎯 MERGED CLEAN WHITE BOX WITH SYMMETRIC GAPING EQUAL TO BOTH SIDES -->
+      <div class="hero-merged-summary-box">
         <p>
           GENZEST is your ultimate guide to cracking artificial intelligence frameworks, personal finance concepts, and tech trends with simplified, high-signal insights designed for the next generation.
         </p>
@@ -266,8 +280,9 @@
         <input type="text" id="searchInput" placeholder="Search insights..." />
       </div>
       <div class="dropdown-filter-wrapper">
-        <!-- 🎯 SPECIFIC REQUESTED TARGET FILTER CRITERIA SETTINGS ONLY -->
+        <!-- 🎯 DROPDOWN MODIFIED WITH REQUESTED "ALL" CRITERIA OPTION -->
         <select class="segment-select-custom" id="segmentDropdown">
+          <option value="all">All Insights</option>
           <option value="AI">AI</option>
           <option value="Finance">Finance</option>
           <option value="Most Viewed">Most Viewed</option>
@@ -276,7 +291,7 @@
       </div>
     </div>
 
-    <!-- ⚡ USER GUIDE SWIPE METRIC INDICATOR LAYER -->
+    <!-- USER GUIDE SWIPE METRIC INDICATOR LAYER -->
     <div class="swipe-guidance-track">
       <span>Swipe left / right to browse</span> <i class="fas fa-arrow-right-long"></i>
     </div>
@@ -385,7 +400,6 @@
     </div>
 
     <div class="footer-bottom">
-      <!-- FIXED CORE YEAR INJECTION FUNCTION -->
       © <span id="year"></span> GENZEST — all rights reserved.
     </div>
   </footer>
@@ -406,11 +420,10 @@
           const cardTitle = card.querySelector("h3").textContent.toLowerCase();
           const cardDesc = card.querySelector("p").textContent.toLowerCase();
 
-          // Map filter conditions dynamically
           let matchesDropdown = false;
-          if (selectedValue === "AI" && cardCategory === "AI") matchesDropdown = true;
+          if (selectedValue === "all") matchesDropdown = true;
+          else if (selectedValue === "AI" && cardCategory === "AI") matchesDropdown = true;
           else if (selectedValue === "Finance" && cardCategory === "Finance") matchesDropdown = true;
-          // Most Viewed and Latest will default display relevant static entries for current roadmap setup
           else if (selectedValue === "Most Viewed" || selectedValue === "Latest") matchesDropdown = true;
 
           const matchesSearch = cardTitle.includes(searchQuery) || cardDesc.includes(searchQuery);
@@ -426,7 +439,6 @@
       if (dropdown) dropdown.addEventListener("change", filterCards);
       if (searchInput) searchInput.addEventListener("input", filterCards);
       
-      // Run initial check
       filterCards();
     });
   </script>
