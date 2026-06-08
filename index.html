@@ -56,42 +56,41 @@
 <link rel="stylesheet" href="assets/css/style.css"> 
 
 <style>
-  .seo-section {
-    padding: 1.5rem 5% 1rem;
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
-  }
-  
-  .why-genzest-card {
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    padding: 1.5rem 2rem;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    margin: 0 auto;
+  /* Sharp Structural Alignment For Unified Layout Headers */
+  .hero-merged-summary {
     max-width: 900px;
+    margin: 1rem auto 0;
+    text-align: left;
     width: 100%;
     box-sizing: border-box;
   }
   
-  .why-genzest-card h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    background: linear-gradient(135deg, #60a5fa, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .why-genzest-card p {
-    font-size: 1.05rem;
-    line-height: 1.7;
+  .hero-merged-summary p {
+    font-size: 1.12rem;
+    line-height: 1.8;
     color: #cbd5e1;
     margin: 0;
+  }
+
+  /* Clear Border Outline Box Framework for Cards Stability */
+  .featured-card {
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+    transition: cubic-bezier(0.16, 1, 0.3, 1) 0.4s !important;
+  }
+  
+  .featured-card:hover {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05) !important;
+  }
+  
+  .featured-author-subtext {
+    font-size: 0.78rem !important;
+    color: #64748b !important;
+    font-weight: 500 !important;
+    margin-top: 0.15rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .search-control-deck {
@@ -158,22 +157,20 @@
     .hero {
       min-height: auto !important;
       padding-top: 6.5rem !important;
-      padding-bottom: 0.5rem !important;
+      padding-bottom: 1.5rem !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
     }
-    .seo-section {
-      padding: 0.25rem 1rem 0.5rem !important;
+    .hero-merged-summary p {
+      font-size: 1rem !important;
+      line-height: 1.65 !important;
     }
-    .why-genzest-card {
-      padding: 1.2rem 1rem !important;
-      border-radius: 12px !important;
+    .featured-section {
+      padding: 1.5rem 1rem !important;
     }
-    .why-genzest-card h2 { font-size: 1.45rem !important; }
-    .why-genzest-card p { font-size: 0.95rem !important; line-height: 1.6 !important; }
-    
     .search-control-deck {
       flex-direction: column !important;
       gap: 0.75rem !important;
-      padding: 0 1rem;
     }
     .dropdown-filter-wrapper {
       width: 100% !important;
@@ -217,7 +214,7 @@
 
   <!-- HERO BLOCK -->
   <section class="hero">
-     <div class="hero-content">
+     <div class="hero-content" style="width: 100%;">
       <div class="hero-badge">
         <i class="fas fa-bolt"></i> AI & Financial Intelligence
       </div>
@@ -227,24 +224,17 @@
         <span class="handwritten">AI × Finance</span>
       </h1>
 
-      <p>
-        Simplifying complex artificial intelligence concepts and financial intelligence for the next generation.
-      </p>
+      <!-- 🎯 PERFECTLY ALIGNED MERGED TEXT LOGIC -->
+      <div class="hero-merged-summary">
+        <p>
+          GENZEST is your ultimate guide to cracking artificial intelligence frameworks, personal finance concepts, and tech trends with simplified, high-signal insights designed for the next generation.
+        </p>
+      </div>
     </div>   
   </section>
 
-  <!-- SEO INSIGHTS COMPACT CARD -->
-  <section class="seo-section">
-    <div class="why-genzest-card">
-      <h2>Why GENZEST?</h2>
-      <p>
-        Your ultimate guide to cracking artificial intelligence frameworks, personal finance concepts, and tech trends with simplified, high-signal insights.
-      </p>
-    </div>
-  </section>
-
-  <!-- ARTICLES FEED CONTAINER SECTION (100% PURE STATIC FORMAT) -->
-  <section class="featured-section" id="featured" style="width: 100%; box-sizing: border-box; padding: 2rem 5%;">
+  <!-- ARTICLES FEED CONTAINER SECTION -->
+  <section class="featured-section" id="featured" style="width: 100%; box-sizing: border-box; padding: 1rem 5% 2rem;">
     
     <div class="search-control-deck">
       <div class="search-wrap-fixed">
@@ -267,19 +257,16 @@
       <div class="section-badge">fresh insights daily</div>
     </div>
 
-    <!-- HARDCODED ARTICLES GRID MATRIX -->
+    <!-- HARDCODED ARTICLES GRID MATRIX WITH HIGH-QUALITY SEPARATION BORDERS -->
     <div class="featured-grid" id="blogContainer">
 
-      <!-- ===================================================================== -->
-      <!-- 📝 JAB BHI NEW .HTML ARTICLE FILE BANAO, USKA CARD SABSE UPAR YAHAN PASTE KARO -->
-      <!-- ===================================================================== -->
-
-      <!-- CARD 1: ACTIVE LIVE ARTICLE (AI + FINANCE) -->
+      <!-- CARD 1: ACTIVE LIVE STATIC HTML ARTICLE -->
       <article class="featured-card" data-category="AI">
         <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop" alt="AI Stock Trading Preview" loading="lazy">
         <div class="featured-content">
           <div class="featured-category">AI Models</div>
           <div class="featured-author">Pulkit & Vansh</div>
+          <div class="featured-author-subtext">Authors • GENZEST Editorial</div>
           <h3>The AI Revolution in Indian Stock Trading: How Retail Investors Are Beating the Market in 2026</h3>
           <p>Discover how retail investors in India are leveraging advanced AI algorithms and automated technical analysis to beat the stock market.</p>
           <div class="card-actions" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 1rem;">
@@ -289,23 +276,20 @@
         </div>
       </article>
 
-      <!-- CARD 2: DUMMY COMING SOON CARD -->
-      <article class="featured-card" data-category="Finance" style="opacity: 0.75;">
+      <!-- CARD 2: HIGH-SIGNAL STATIC COMING SOON TEMPLATE -->
+      <article class="featured-card" data-category="Finance" style="opacity: 0.8;">
         <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200&auto=format&fit=crop" alt="Coming Soon Preview" loading="lazy">
         <div class="featured-content">
           <div class="featured-category">Finance</div>
           <div class="featured-author">GENZEST Lab</div>
-          <h3>Next-Gen Financial Intelligence & Macro Frameworks</h3>
-          <p>We are cracking down on structural market indicators and machine learning analysis systems. Stay tuned for the complete documentation drop.</p>
+          <div class="featured-author-subtext">Authors • GENZEST Editorial</div>
+          <h3>Next-Gen Financial Intelligence & Macro Analytics Frameworks</h3>
+          <p>Cracking deep indicators, structural financial modeling, and asset analytics parameters. Complete drop coming soon.</p>
           <div class="card-actions" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 1rem;">
             <span style="color: #a855f7; font-weight: 700; font-size: 0.9rem;"><i class="fas fa-hourglass-half"></i> Coming Soon</span>
           </div>
         </div>
       </article>
-
-      <!-- ===================================================================== -->
-      <!-- END OF STATIC ARTICLES GRID MATRIX -->
-      <!-- ===================================================================== -->
 
     </div>
   </section>
