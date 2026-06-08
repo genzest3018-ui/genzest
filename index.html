@@ -16,7 +16,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- SEO Core Metadata Setup -->
 <title>GENZEST | Insights on AI, Finance & Investing</title>
 <meta name="description" content="GENZEST delivers premium analytics, simplified intelligence, and structural trends across artificial intelligence, fintech models, and modern investing ecosystems.">
 <meta name="keywords" content="AI finance, algorithmic investing, quantitative trading, fintech solutions, financial machine learning, digital banking tech" />
@@ -25,29 +24,23 @@
 
 <link rel="canonical" href="https://genzest.in/" />
 
-<!-- Open Graph / Social Matrices -->
 <meta property="og:title" content="GENZEST | Insights on AI, Finance & Investing" />
 <meta property="og:description" content="Premium analytics and simplified structural trends bridging the intersection of artificial intelligence and modern finance." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://genzest.in/" />
 <meta property="og:image" content="https://genzest.in/1779508386745.png" />
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="GENZEST | Insights on AI, Finance & Investing" />
 <meta name="twitter:description" content="Premium analytics and simplified structural trends bridging the intersection of artificial intelligence and modern finance." />
 <meta name="twitter:image" content="https://genzest.in/officiallogo.jpeg"/>
 
-<!-- Logo Favicon Asset Setup -->
 <link rel="icon" type="image/jpeg" href="/officiallogo.jpeg">
 <link rel="apple-touch-icon" href="/officiallogo.jpeg">
-<meta property="og:image" content="https://genzest.in/officiallogo.jpeg">
 
-<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-<!-- Structural Schema -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -59,9 +52,7 @@
 </script>
 <link rel="stylesheet" href="assets/css/style.css"> 
 
-<!-- Advanced Layout Overwrites For Left Sidebar Filter Matrix -->
 <style>
-  /* Compact Box Layout With Solid White Outline */
   .seo-section {
     padding: 1.5rem 5% 1rem;
     width: 100%;
@@ -100,97 +91,74 @@
     margin: 0;
   }
 
-  /* Split Layout Architecture: Left Sidebar Filters + Right Blogs Feed Grid */
-  .blog-split-container {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 2.5rem;
-    align-items: start;
-    max-width: 1300px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .left-filter-sidebar {
-    position: sticky;
-    top: 6rem;
+  /* Premium Integrated Search & Dropdown Control Deck */
+  .search-control-deck {
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
     display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    background: rgba(17, 24, 39, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 1.5rem;
-    border-radius: 16px;
-  }
-
-  .sidebar-filter-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #60a5fa;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.25rem;
-  }
-
-  .left-filter-sidebar .filter-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    margin: 0;
-  }
-
-  .left-filter-sidebar .filter-btn {
+    gap: 1rem;
     width: 100%;
-    text-align: left;
-    padding: 0.75rem 1.2rem;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    color: #94a3b8;
+    box-sizing: border-box;
+  }
+
+  .search-wrap-fixed {
+    flex: 1;
+  }
+
+  .search-wrap-fixed input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0b1020;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease;
+  }
+
+  .search-wrap-fixed input:focus {
+    border-color: #7c5cff;
+  }
+
+  .dropdown-filter-wrapper {
+    position: relative;
+    width: 200px;
+  }
+
+  .segment-select-custom {
+    width: 100%;
+    height: 100%;
+    padding: 0 1.2rem;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
+    color: #ffffff;
+    background: #0b1020;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
     transition: 0.25s ease;
   }
 
-  .left-filter-sidebar .filter-btn:hover,
-  .left-filter-sidebar .filter-btn.active {
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    color: #ffffff;
-    border-color: transparent;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+  .segment-select-custom:focus {
+    border-color: #7c5cff;
+    box-shadow: 0 0 15px rgba(124, 92, 255, 0.15);
   }
 
-  /* Micro Tuning Layout Adjustments for Phones */
-  @media (max-width: 992px) {
-    .blog-split-container {
-      grid-template-columns: 1fr !important;
-      gap: 1.5rem;
-    }
-    .left-filter-sidebar {
-      position: relative !important;
-      top: 0 !important;
-      padding: 1rem !important;
-      background: transparent !important;
-      border: none !important;
-      gap: 0.8rem !important;
-    }
-    .sidebar-filter-title { display: none; }
-    
-    /* Transform to Native Horizontal Smooth Horizontal Tracker on mobile */
-    .left-filter-sidebar .filter-wrap {
-      flex-direction: row !important;
-      overflow-x: auto;
-      white-space: nowrap;
-      width: 100vw;
-      margin-left: -5%;
-      padding: 0 5% 0.5rem;
-      -webkit-overflow-scrolling: touch;
-    }
-    .left-filter-sidebar .filter-btn {
-      width: auto !important;
-      display: inline-block;
-      padding: 0.6rem 1.2rem !important;
-      border-radius: 999px !important;
-    }
+  .dropdown-filter-wrapper::after {
+    content: '\f078';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #60a5fa;
+    pointer-events: none;
+    font-size: 0.85rem;
   }
 
   @media (max-width: 768px) {
@@ -208,7 +176,19 @@
     }
     .why-genzest-card h2 { font-size: 1.45rem !important; }
     .why-genzest-card p { font-size: 0.95rem !important; line-height: 1.6 !important; }
-    .featured-section { padding-top: 0.25rem !important; }
+    
+    .search-control-deck {
+      flex-direction: column !important;
+      gap: 0.75rem !important;
+      padding: 0 1rem;
+    }
+    .dropdown-filter-wrapper {
+      width: 100% !important;
+    }
+    .segment-select-custom {
+      padding: 1rem 1.2rem !important;
+      height: auto !important;
+    }
   }
 </style>
 </head>
@@ -274,40 +254,34 @@
     </div>
   </section>
 
-  <!-- SPLIT SCREEN BLOGGING LAYER CONTAINER -->
-  <section class="featured-section" id="featured">
-    <div class="blog-split-container">
-      
-      <!-- LEFT FIXED SIDEBAR / MOBILE ROW FILTER COMPONENT -->
-      <aside class="left-filter-sidebar">
-        <div class="sidebar-filter-title"><i class="fas fa-filter"></i> Segments</div>
-        <div class="filter-wrap">
-          <button class="filter-btn active" data-category="all">All Insights</button>
-          <button class="filter-btn" data-category="AI">AI Models</button>
-          <button class="filter-btn" data-category="Finance">Finance</button>
-          <button class="filter-btn" data-category="Investing">Investing</button>
-          <button class="filter-btn" data-category="Startups">Startups</button>
-          <button class="filter-btn" data-category="Future">Future Tech</button>
-        </div>
-      </aside>
-
-      <!-- RIGHT COLUMN FEED LAYER CONTENT -->
-      <div class="feed-content-column" style="width: 100%;">
-        <div class="search-wrap" style="margin-top: 0;">
-          <input type="text" id="searchInput" placeholder="Search insights and analytical papers..." />
-        </div>
-        
-        <div class="section-header">
-          <h2>🔥 Latest Drops</h2>
-          <div class="section-badge">fresh insights daily</div>
-        </div>
-
-        <!-- FIREBASE AUTOMATION ENGINE POPULATION MATRIX CONTAINER -->
-        <div class="featured-grid" id="blogContainer">
-          Loading insights...
-        </div>
+  <!-- ARTICLES FEED CONTAINER SECTION -->
+  <section class="featured-section" id="featured" style="width: 100%; box-sizing: border-box; padding: 2rem 5%;">
+    
+    <!-- FIXED RE-CENTERED CONTROL DECK (SEARCH + DROP DOWN SELECTOR) -->
+    <div class="search-control-deck">
+      <div class="search-wrap-fixed">
+        <input type="text" id="searchInput" placeholder="Search insights and analytical papers..." />
       </div>
+      <div class="dropdown-filter-wrapper">
+        <select class="segment-select-custom" id="segmentDropdown">
+          <option value="all">All Insights</option>
+          <option value="AI">AI Models</option>
+          <option value="Finance">Finance</option>
+          <option value="Investing">Investing</option>
+          <option value="Startups">Startups</option>
+          <option value="Future">Future Tech</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="section-header" style="max-width: 900px; margin: 0 auto 2rem;">
+      <h2>🔥 Latest Drops</h2>
+      <div class="section-badge">fresh insights daily</div>
+    </div>
 
+    <!-- FIREBASE RENDERS CARDS DIRECTLY IN STANDARD BLOCKS MATRIX -->
+    <div class="featured-grid" id="blogContainer">
+      Loading insights...
     </div>
   </section>
 
@@ -377,8 +351,31 @@
     </div>
   </footer>
 
-  <!-- SCRIPT ENGINE INJECTIONS -->
+  <!-- AUTOMATION BINDINGS INJECTIONS -->
   <script type="module" src="firebase.js"> </script>
+
+  <!-- FIREBASE DATA FILTER CONTROL CONNECTOR -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdown = document.getElementById("segmentDropdown");
+      
+      if(dropdown) {
+        dropdown.addEventListener("change", () => {
+          const activeCategory = dropdown.value;
+          const cards = document.querySelectorAll(".featured-card");
+          
+          cards.forEach(card => {
+            const cardCategory = card.dataset.category;
+            if(activeCategory === "all" || cardCategory === activeCategory) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      }
+    });
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -391,67 +388,7 @@
       closeBtn.addEventListener("click", () => { sidebar.classList.remove("active"); overlay.classList.remove("active"); });
       overlay.addEventListener("click", () => { sidebar.classList.remove("active"); overlay.classList.remove("active"); });
 
-      /* YEAR CONFIG */
       document.getElementById("year").innerText = new Date().getFullYear();
-
-      const hero = document.querySelector(".hero");
-      const bgGlow = document.getElementById("bgGlow");
-      const stage = document.getElementById("visualStage");
-      const magneticBtn = document.getElementById("magneticBtn");
-      const particlesContainer = document.getElementById("heroParticles");
-
-      if (particlesContainer) {
-        const particleCount = 22;
-        for (let i = 0; i < particleCount; i++) {
-          const particle = document.createElement("div");
-          particle.className = "hero-particle-dot";
-          particle.style.left = Math.random() * 100 + "%";
-          particle.style.top = Math.random() * 100 + "%";
-          const sizeVal = Math.random() * 3 + 2;
-          particle.style.width = sizeVal + "px";
-          particle.style.height = sizeVal + "px";
-          particle.style.animationDelay = Math.random() * 8 + "s";
-          particle.style.animationDuration = Math.random() * 6 + 8 + "s";
-          particlesContainer.appendChild(particle);
-        }
-      }
-
-      if (hero && window.innerWidth > 992) {
-        let frameTracking = false;
-        hero.addEventListener("mousemove", function (e) {
-          if (!frameTracking) {
-            window.requestAnimationFrame(function () {
-              const boundingBox = hero.getBoundingClientRect();
-              const offsetX = e.clientX - boundingBox.left;
-              const offsetY = e.clientY - boundingBox.top;
-              const relativeX = (offsetX / boundingBox.width) - 0.5;
-              const relativeY = (offsetY / boundingBox.height) - 0.5;
-
-              if (bgGlow) bgGlow.style.transform = `translate(calc(-50% + ${relativeX * 120}px), calc(-50% + ${relativeY * 120}px))`;
-              if (stage) stage.style.transform = `rotateX(${relativeY * -18}deg) rotateY(${relativeX * 18}deg)`;
-              frameTracking = false;
-            });
-            frameTracking = true;
-          }
-        });
-
-        hero.addEventListener("mouseleave", function () {
-          if (bgGlow) bgGlow.style.transform = "translate(-50%, -50%)";
-          if (stage) stage.style.transform = "rotateX(0deg) rotateY(0deg)";
-        });
-      }
-
-      if (magneticBtn && window.innerWidth > 768) {
-        magneticBtn.addEventListener("mousemove", function (e) {
-          const coordinates = magneticBtn.getBoundingClientRect();
-          const targetX = e.clientX - coordinates.left - coordinates.width / 2;
-          const targetY = e.clientY - coordinates.top - coordinates.height / 2;
-          magneticBtn.style.transform = `translate(${targetX * 0.35}px, ${targetY * 0.35}px) scale(1.02)`;
-        });
-        magneticBtn.addEventListener("mouseleave", function () {
-          magneticBtn.style.transform = "translate(0px, 0px) scale(1)";
-        });
-      }
 
       const themeBtn = document.getElementById("themeToggle");
       let currentTheme = 0;
