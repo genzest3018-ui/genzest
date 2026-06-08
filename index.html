@@ -16,7 +16,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- SEO High-Ranking Core Metadata Targeting AI + Finance -->
+<!-- SEO Core Metadata Setup -->
 <title>GENZEST | Insights on AI, Finance & Investing</title>
 <meta name="description" content="GENZEST delivers premium analytics, simplified intelligence, and structural trends across artificial intelligence, fintech models, and modern investing ecosystems.">
 <meta name="keywords" content="AI finance, algorithmic investing, quantitative trading, fintech solutions, financial machine learning, digital banking tech" />
@@ -43,7 +43,7 @@
 <link rel="apple-touch-icon" href="/officiallogo.jpeg">
 <meta property="og:image" content="https://genzest.in/officiallogo.jpeg">
 
-<!-- Fonts -->
+<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
@@ -59,84 +59,97 @@
 </script>
 <link rel="stylesheet" href="assets/css/style.css"> 
 
-<!-- Native Layout Spacing & Premium Box Custom Component Styling -->
+<!-- Custom Pixel-Perfect Overwrite Layout Configuration -->
 <style>
+  /* Premium Glass Box with Solid White Outline */
+  .seo-section {
+    padding: 2rem 5% 1.5rem;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+  }
+  
   .why-genzest-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 24px;
-    padding: 2.5rem;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Premium Sharp White Outline */
+    border-radius: 20px;
+    padding: 2.2rem 2.5rem;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
     max-width: 900px;
-    transition: 0.35s ease;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.3s ease;
   }
+  
   .why-genzest-card:hover {
-    border-color: rgba(96, 165, 250, 0.25);
-    box-shadow: 0 25px 50px rgba(59, 130, 246, 0.1);
-    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 20px 45px rgba(255, 255, 255, 0.05);
   }
+  
   .why-genzest-card h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
     font-weight: 800;
     letter-spacing: -1px;
     background: linear-gradient(135deg, #60a5fa, #a855f7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  
   .why-genzest-card p {
-    font-size: 1.1rem;
-    line-height: 1.9;
+    font-size: 1.08rem;
+    line-height: 1.85;
     color: #cbd5e1;
     margin: 0;
   }
   
   body.theme-light .why-genzest-card {
     background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.06);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   }
-  body.theme-light .why-genzest-card p {
-    color: #475569;
-  }
+  body.theme-light .why-genzest-card p { color: #475569; }
+  
   body.theme-eye .why-genzest-card {
-    background: rgba(29, 39, 28, 0.5);
-    border-color: rgba(132, 204, 22, 0.15);
+    background: rgba(29, 39, 28, 0.4);
+    border-color: rgba(132, 204, 22, 0.3);
   }
   body.theme-eye .why-genzest-card h2 {
     background: linear-gradient(135deg, #84cc16, #a3e635);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  body.theme-eye .why-genzest-card p {
-    color: #b5c5ae;
-  }
+  body.theme-eye .why-genzest-card p { color: #b5c5ae; }
 
+  /* Tighten Spacing Constraints Exclusively Across Mobile Media Ports */
   @media (max-width: 768px) {
     .hero {
       min-height: auto !important;
-      padding-top: 6.5rem !important;
-      padding-bottom: 2rem !important;
+      padding-top: 6.8rem !important;
+      padding-bottom: 1rem !important; /* Brought significantly up */
     }
     .seo-section {
-      padding-top: 1rem !important;
-      padding-bottom: 2.5rem !important;
-      padding-left: 5% !important;
-      padding-right: 5% !important;
+      padding-top: 0.5rem !important; /* Zeroed gap margins */
+      padding-bottom: 1rem !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
     }
     .why-genzest-card {
-      padding: 1.6rem;
-      border-radius: 20px;
+      padding: 1.5rem 1.25rem !important; /* Adjusted safe paddings inside phone frame */
+      border-radius: 16px !important;
     }
     .why-genzest-card h2 {
-      font-size: 1.8rem;
+      font-size: 1.65rem !important;
     }
     .why-genzest-card p {
-      font-size: 1rem;
-      line-height: 1.8;
+      font-size: 0.98rem !important;
+      line-height: 1.75 !important;
+    }
+    .featured-section {
+      padding-top: 0.5rem !important; /* Pulled feed container up nicely */
     }
   }
 </style>
@@ -171,7 +184,7 @@
 
   <div class="overlay" id="overlay"></div>
 
-  <!-- HERO CORE BLOCK -->
+  <!-- HERO BLOCK -->
   <section class="hero">
      <div class="hero-content">
       <div class="hero-badge">
@@ -181,7 +194,6 @@
       <h1>
         <span class="hero-gradient">Future Of</span>
         <span class="handwritten">AI × Finance</span>
-        <span class="hero-gradient">Where Intelligence Meets Capital.</span>
       </h1>
 
       <p>
@@ -194,7 +206,7 @@
     </div>   
   </section>
 
-  <!-- SEO INSIGHTS BOX CARD COMPONENT -->
+  <!-- SEO INSIGHTS COMPACT WHITE OUTLINE CARD -->
   <section class="seo-section">
     <div class="why-genzest-card">
       <h2>Why GENZEST?</h2>
@@ -295,7 +307,7 @@
     </div>
   </footer>
 
-  <!-- DYNAMIC RUNTIME SCRIPT HOOKS AND PARALLAX CONTROLS -->
+  <!-- SCRIPT ENGINE INJECTIONS -->
   <script type="module" src="firebase.js"> </script>
 
   <script>
@@ -309,7 +321,7 @@
       closeBtn.addEventListener("click", () => { sidebar.classList.remove("active"); overlay.classList.remove("active"); });
       overlay.addEventListener("click", () => { sidebar.classList.remove("active"); overlay.classList.remove("active"); });
 
-      /* YEAR INITIALIZATION LAYER */
+      /* YEAR CONFIG */
       document.getElementById("year").innerText = new Date().getFullYear();
 
       const hero = document.querySelector(".hero");
