@@ -1086,3 +1086,85 @@ body.theme-light .input-glow-group input { color: #0f172a; }
 .submit-action-btn:hover {
   transform: scale(0.98);
 }
+/* ==========================================================================
+   ENHANCED RESPONSIVE NEWSLETTER LAYOUT UTILITY
+   ========================================================================== */
+@media (max-width: 768px) {
+  .glass-capture-card {
+    padding: 2.25rem 1.5rem !important;
+    border-radius: 24px !important;
+    margin: 0 10px !important;
+  }
+
+  .card-interior-flow {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: left !important;
+  }
+
+  .text-column h3 {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .text-column p {
+    font-size: 0.95rem !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .bullet-feature-row {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .bullet-item {
+    font-size: 0.9rem !important;
+  }
+
+  /* FLUID FIELD TRANSFORMATION: Stacks the input field and button beautifully */
+  .input-glow-group {
+    flex-direction: column !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    gap: 1rem !important;
+  }
+
+  .input-glow-group input {
+    width: 100% !important;
+    background: rgba(11, 16, 32, 0.6) !important;
+    border: 1px solid var(--border) !important;
+    padding: 1rem 1.25rem !important;
+    border-radius: 14px !important;
+    height: 54px !important;
+    font-size: 1rem !important;
+  }
+
+  body.theme-light .input-glow-group input {
+    background: rgba(0, 0, 0, 0.03) !important;
+  }
+
+  .input-glow-group input:focus {
+    border-color: #7c5cff !important;
+    box-shadow: 0 0 20px rgba(124, 92, 255, 0.15) !important;
+  }
+
+  .submit-action-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    height: 54px !important;
+    border-radius: 14px !important;
+    font-size: 1rem !important;
+    box-shadow: 0 8px 20px rgba(124, 92, 255, 0.2) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-column h3 {
+    font-size: 1.6rem !important;
+  }
+  .newsletter-subscription-deck {
+    padding: 3rem 0 1rem 0 !important; /* Maximizes horizontal breathing space on small displays */
+  }
+}
