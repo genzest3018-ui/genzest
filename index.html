@@ -199,9 +199,12 @@ content="GENZEST explores AI, finance, investing, future careers, business trend
 
   <!-- SEO SECTION -->
   <section class="seo-section">
-    <h1 style="color:blueviolet; box-shadow: blueviolet;">
-Explore More
-<span id="typing"></span>
+    <div class="explore-interaction-deck">
+  <span class="explore-pre-badge">CONTINUOUS LIFELONG LEARNING</span>
+  <h3 class="explore-dynamic-headline">
+    Explore More About <span id="typing" class="typing-gradient-target"></span>
+  </h3>
+</div>
 </h1>
     <h2>Why GENZEST?</h2>
     <p>
@@ -390,7 +393,10 @@ deleting?60:120
 );
 
 }
-
+// Wrapped securely inside a DOM loader to prevent execution lag bugs
+    document.addEventListener("DOMContentLoaded", function() {
+      typeEffect();
+    });
 typeEffect();
 </script>
 <!-- HERO INTERACTION PLATFORM UTILITY LAYER -->

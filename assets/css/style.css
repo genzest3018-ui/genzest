@@ -598,6 +598,84 @@ border-color:transparent;
 }
 }
 /* ==========================================================================
+   GENZEST EXPLORE MORE PREMIUM TYPING WORKSPACE
+   ========================================================================== */
+.explore-interaction-deck {
+  margin: 4rem 0 2.5rem 0;
+  padding: 2.5rem;
+  background: rgba(17, 24, 39, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+body.theme-light .explore-interaction-deck {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+body.theme-eye .explore-interaction-deck {
+  background: rgba(29, 39, 28, 0.4);
+}
+
+.explore-pre-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #7c5cff;
+}
+
+body.theme-eye .explore-pre-badge {
+  color: var(--accent);
+}
+
+.explore-dynamic-headline {
+  font-size: clamp(1.8rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35em;
+}
+
+/* Dynamic Gradient Accent that scales across theme layers */
+.typing-gradient-target {
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  border-right: 3px solid #7c5cff;
+  padding-right: 6px;
+  animation: typingCursorBlink 0.9s step-end infinite;
+  display: inline-block;
+  min-height: 1.2em; /* Structural Shield: Prevents content below from shaking during deletions */
+}
+
+body.theme-eye .typing-gradient-target {
+  border-right-color: var(--accent);
+}
+
+@keyframes typingCursorBlink {
+  from, to { border-color: transparent }
+  50% { border-color: currentColor }
+}
+
+@media (max-width: 480px) {
+  .explore-interaction-deck {
+    padding: 1.75rem 1.25rem;
+    margin: 2.5rem 0 1.5rem 0;
+  }
+}
+/* ==========================================================================
    GLASSMORPHIC CAPTURE SYSTEM
    ========================================================================== */
 .newsletter-subscription-deck {
