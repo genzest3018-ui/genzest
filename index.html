@@ -119,10 +119,6 @@
     transition: 0.3s ease;
   }
 
-  .search-wrap-fixed input:focus {
-    border-color: #7c5cff;
-  }
-
   .dropdown-filter-wrapper {
     position: relative;
     width: 200px;
@@ -143,10 +139,6 @@
     appearance: none;
     -webkit-appearance: none;
     transition: 0.25s ease;
-  }
-
-  .segment-select-custom:focus {
-    border-color: #7c5cff;
   }
 
   .dropdown-filter-wrapper::after {
@@ -238,10 +230,6 @@
       <p>
         Simplifying complex artificial intelligence concepts and financial intelligence for the next generation.
       </p>
-
-      <a href="/" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'}); return false;" class="hero-btn">
-        Explore Insights <i class="fas fa-arrow-right"></i>
-      </a>
     </div>   
   </section>
 
@@ -255,12 +243,12 @@
     </div>
   </section>
 
-  <!-- ARTICLES FEED CONTAINER SECTION -->
+  <!-- ARTICLES FEED CONTAINER SECTION (100% PURE STATIC FORMAT) -->
   <section class="featured-section" id="featured" style="width: 100%; box-sizing: border-box; padding: 2rem 5%;">
     
     <div class="search-control-deck">
       <div class="search-wrap-fixed">
-        <input type="text" id="searchInput" placeholder="Search insights and analytical papers..." />
+        <input type="text" id="searchInput" placeholder="Search insights..." />
       </div>
       <div class="dropdown-filter-wrapper">
         <select class="segment-select-custom" id="segmentDropdown">
@@ -279,9 +267,46 @@
       <div class="section-badge">fresh insights daily</div>
     </div>
 
-    <!-- FIREBASE AUTOMATION CARDS CONTAINER MATRIX -->
+    <!-- HARDCODED ARTICLES GRID MATRIX -->
     <div class="featured-grid" id="blogContainer">
-      Loading insights...
+
+      <!-- ===================================================================== -->
+      <!-- 📝 JAB BHI NEW .HTML ARTICLE FILE BANAO, USKA CARD SABSE UPAR YAHAN PASTE KARO -->
+      <!-- ===================================================================== -->
+
+      <!-- CARD 1: ACTIVE LIVE ARTICLE (AI + FINANCE) -->
+      <article class="featured-card" data-category="AI">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop" alt="AI Stock Trading Preview" loading="lazy">
+        <div class="featured-content">
+          <div class="featured-category">AI Models</div>
+          <div class="featured-author">Pulkit & Vansh</div>
+          <h3>The AI Revolution in Indian Stock Trading: How Retail Investors Are Beating the Market in 2026</h3>
+          <p>Discover how retail investors in India are leveraging advanced AI algorithms and automated technical analysis to beat the stock market.</p>
+          <div class="card-actions" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 1rem;">
+            <a href="article.html" class="read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+            <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.origin + '/article.html').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Share', 2000); })">Share</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 2: DUMMY COMING SOON CARD -->
+      <article class="featured-card" data-category="Finance" style="opacity: 0.75;">
+        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200&auto=format&fit=crop" alt="Coming Soon Preview" loading="lazy">
+        <div class="featured-content">
+          <div class="featured-category">Finance</div>
+          <div class="featured-author">GENZEST Lab</div>
+          <h3>Next-Gen Financial Intelligence & Macro Frameworks</h3>
+          <p>We are cracking down on structural market indicators and machine learning analysis systems. Stay tuned for the complete documentation drop.</p>
+          <div class="card-actions" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 1rem;">
+            <span style="color: #a855f7; font-weight: 700; font-size: 0.9rem;"><i class="fas fa-hourglass-half"></i> Coming Soon</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================================================================== -->
+      <!-- END OF STATIC ARTICLES GRID MATRIX -->
+      <!-- ===================================================================== -->
+
     </div>
   </section>
 
@@ -351,29 +376,35 @@
     </div>
   </footer>
 
-  <!-- AUTOMATION BINDINGS INJECTIONS -->
-  <script type="module" src="firebase.js"> </script>
-
-  <!-- FIREBASE DATA FILTER CONTROL CONNECTOR -->
+  <!-- STANDALONE SEARCH & DROPDOWN FILTER LOGIC -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const dropdown = document.getElementById("segmentDropdown");
-      
-      if(dropdown) {
-        dropdown.addEventListener("change", () => {
-          const activeCategory = dropdown.value;
-          const cards = document.querySelectorAll(".featured-card");
-          
-          cards.forEach(card => {
-            const cardCategory = card.dataset.category;
-            if(activeCategory === "all" || cardCategory === activeCategory) {
-              card.style.display = "block";
-            } else {
-              card.style.display = "none";
-            }
-          });
+      const searchInput = document.getElementById("searchInput");
+
+      function filterCards() {
+        const selectedCategory = dropdown.value;
+        const searchQuery = searchInput.value.toLowerCase();
+        const cards = document.querySelectorAll(".featured-card");
+
+        cards.forEach(card => {
+          const cardCategory = card.dataset.category || "";
+          const cardTitle = card.querySelector("h3").textContent.toLowerCase();
+          const cardDesc = card.querySelector("p").textContent.toLowerCase();
+
+          const matchesCategory = (selectedCategory === "all" || cardCategory === selectedCategory);
+          const matchesSearch = cardTitle.includes(searchQuery) || cardDesc.includes(searchQuery);
+
+          if (matchesCategory && matchesSearch) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
         });
       }
+
+      if (dropdown) dropdown.addEventListener("change", filterCards);
+      if (searchInput) searchInput.addEventListener("input", filterCards);
     });
   </script>
 
