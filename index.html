@@ -62,12 +62,21 @@ content="GENZEST explores AI, finance, investing, future careers, business trend
   content="Modern insights on AI, investing, crypto and future finance."
 />
   <meta name="twitter:image" content="https://genzest.in/officiallogo.jpeg"/>
+<!-- <meta
+  name="twitter:image"
+  content="https://genzest.in/1779508386745.png"
+/> -->
 
-  <!-- Logo Favicon -->
+<!-- Favicon -->
+<!-- <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/genzest3018-ui/genzest/main/file_0000000051a071fa98c5016a62ce7c00.png">
+
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/genzest3018-ui/genzest/main/file_0000000051a071fa98c5016a62ce7c00.png"> -->
+<!--logo-->
   <link rel="icon" type="image/jpeg" href="/officiallogo.jpeg">
   <link rel="apple-touch-icon" href="/officiallogo.jpeg">
 
 <meta property="og:image" content="https://genzest.in/officiallogo.jpeg">
+
 
 <!-- Fonts -->
 <link
@@ -216,6 +225,7 @@ Explore More
   <button class="filter-btn" data-category="Investing">Investing</button>
   <button class="filter-btn" data-category="Startups">Startups</button>
   <button class="filter-btn" data-category="Future">Future</button>
+  <!-- <button class="filter-btn" data-category="Crypto">Crypto</button> -->
 </div>
 </div>
     <div class="section-header">
@@ -224,11 +234,9 @@ Explore More
     </div>
 
     <div class="featured-grid" id="blogContainer">
-      <!-- STATIC ENGINE RENDERS CARDS DIRECTLY HERE -->
+      Loading insights...
     </div>
   </section>
-
-  <!-- NEWSLETTER -->
   <section class="newsletter-subscription-deck">
     <div class="deck-container">
       <div class="glass-capture-card">
@@ -259,7 +267,6 @@ Explore More
       </div>
     </div>
   </section>
-
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-grid">
@@ -270,7 +277,7 @@ Explore More
         </p>
       </div>
 
-      <div>
+          <div>
         <div class="footer-title">Navigate</div>
         <div class="footer-links">
           <a href="/">Home</a>
@@ -304,190 +311,177 @@ Explore More
     </div>
   </footer>
 
-  <!-- ======================================================= -->
-  <!-- ⚙️ STATIC BLOG COMPILING ENGINE (NO FIREBASE ENGINE)    -->
-  <!-- ======================================================= -->
+    <!-- FIREBASE -->
+  <script type="module" src="firebase.js"> </script>
+  
   <script>
-    // 📝 JAB BHI NEW HTML FILE BANAO, USKA DETAILS DIRECT ISS ARRAY MEIN NEECHE JODTE JAO!
-    const localPosts = [
-      {
-        title: "The AI Revolution in Indian Stock Trading: How Retail Investors Are Beating the Market in 2026",
-        description: "Discover how retail investors in India are leveraging advanced AI algorithms and automated technical analysis to beat the stock market.",
-        category: "AI",
-        author: "Pulkit & Vansh",
-        image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop",
-        urlPath: "article.html" // Aapki banayi hui static html file ka direct link
-      },
-      {
-        title: "Why Swiggy Launched Toing App: 2026 Strategy Explained",
-        description: "A deep dive tracking Swiggy's recent local ecosystem landscape strategy pivot and automated operational changes.",
-        category: "Startups",
-        author: "Pulkit & Vansh",
-        image: "https://genzest.in/1779508386745.png",
-        urlPath: "blog.html?slug=why-swiggy-launched-toing-app-2026-strategy-explained"
-      },
-      {
-        title: "AI Job Replacement Timeline 2026: Safe Career Frameworks",
-        description: "Analyzing recent industrial automation patterns and engineering safe strategic career routes across corporate India.",
-        category: "Future",
-        author: "Pulkit & Vansh",
-        image: "https://genzest.in/1779508386745.png",
-        urlPath: "blog.html?slug=ai-job-replacement-timeline-2026"
-      }
-    ];
+     const words = [
+"AI",
+"Finance",
+"Investing",
+"Future ",
+"Business Trends",
 
-    function renderStaticBlogs() {
-      const blogContainer = document.getElementById("blogContainer");
-      const searchInput = document.getElementById("searchInput").value.toLowerCase();
-      
-      // Active category filter state fetch
-      const activeFilterBtn = document.querySelector(".filter-btn.active");
-      const activeCategory = activeFilterBtn ? activeFilterBtn.dataset.category : "all";
+];
 
-      blogContainer.innerHTML = "";
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
 
-      const filtered = localPosts.filter(post => {
-        const matchesSearch = post.title.toLowerCase().includes(searchInput) || 
-                              post.description.toLowerCase().includes(searchInput) ||
-                              post.category.toLowerCase().includes(searchInput);
-        
-        const matchesCategory = (activeCategory === "all" || post.category === activeCategory);
-        
-        return matchesSearch && matchesCategory;
-      });
+const typingElement =
+document.getElementById("typing");
 
-      if (filtered.length === 0) {
-        blogContainer.innerHTML = "<p style='color: var(--muted); padding: 1rem;'>No insights match your filter criteria.</p>";
-        return;
-      }
+function typeEffect(){
 
-      filtered.forEach(post => {
-        blogContainer.innerHTML += `
-          <article class="featured-card" data-category="${post.category}">
-            <img src="${post.image}" alt="${post.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400?text=GENZEST'">
-            <div class="featured-content">
-              <div class="featured-category">${post.category}</div>
-              <div class="featured-author">${post.author}</div>
-              <h3>${post.title}</h3>
-              <p>${post.description}</p>
-              <div class="card-actions" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 1rem;">
-                <a href="${post.urlPath}" class="read-link">
-                  Read Article <i class="fas fa-arrow-right"></i>
-                </a>
-                <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.origin + '/' + '${post.urlPath}').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Share', 2000); }).catch(err => console.error('Error:', err))">Share</button>
-              </div>
-            </div>
-          </article>
-        `;
-      });
-    }
+let currentWord =
+words[wordIndex];
 
-    // Set up search and filter inputs event bindings
-    document.getElementById("searchInput").addEventListener("input", renderStaticBlogs);
+if(!deleting){
 
-    document.querySelectorAll(".filter-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        renderStaticBlogs();
-      });
-    });
+typingElement.textContent =
+currentWord.substring(
+0,
+charIndex+1
+);
 
-    // Initial load setup trigger
-    document.addEventListener("DOMContentLoaded", renderStaticBlogs);
-  </script>
+charIndex++;
 
-  <!-- SUB-UTILITIES LOGIC -->
-  <script>
-     const words = ["AI", "Finance", "Investing", "Future ", "Business Trends"];
-     let wordIndex = 0; let charIndex = 0; let deleting = false;
-     const typingElement = document.getElementById("typing");
+if(charIndex===currentWord.length){
 
-     function typeEffect(){
-       let currentWord = words[wordIndex];
-       if(!deleting){
-         typingElement.textContent = currentWord.substring(0, charIndex+1);
-         charIndex++;
-         if(charIndex===currentWord.length){ deleting=true; setTimeout(typeEffect,1500); return; }
-       } else {
-         typingElement.textContent= currentWord.substring(0, charIndex-1);
-         charIndex--;
-         if(charIndex===0){ deleting=false; wordIndex++; if(wordIndex===words.length){ wordIndex=0; } }
-       }
-       setTimeout(typeEffect, deleting?60:120);
-     }
-     typeEffect();
-  </script>
+deleting=true;
 
+setTimeout(typeEffect,1500);
+
+return;
+
+}
+
+}
+
+else{
+
+typingElement.textContent=
+currentWord.substring(
+0,
+charIndex-1
+);
+
+charIndex--;
+
+if(charIndex===0){
+
+deleting=false;
+
+wordIndex++;
+
+if(wordIndex===words.length){
+
+wordIndex=0;
+
+}
+
+}
+
+}
+
+setTimeout(
+typeEffect,
+deleting?60:120
+);
+
+}
+
+typeEffect();
+</script>
+<!-- HERO INTERACTION PLATFORM UTILITY LAYER -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      /* SIDEBAR NAVIGATION FUNCTIONALITY */
-      const menuBtn = document.getElementById("menuBtn");
-      const closeBtn = document.getElementById("closeBtn");
-      const sidebar = document.getElementById("sidebar");
-      const overlay = document.getElementById("overlay");
-
-      menuBtn.addEventListener("click", () => { sidebar.classList.add("active"); overlay.classList.add("active"); });
-      closeBtn.addEventListener("click", () => { sidebar.classList.remove("active"); overlay.classList.remove("active"); });
-      overlay.addEventListener("click", () => { sidebar.classList.remove("active"); overlay.classList.remove("active"); });
-
-      /* YEAR CONFIG */
-      document.getElementById("year").innerText = new Date().getFullYear();
-
-      /* HIGH-PERFORMANCE INTUITIVE PARALLAX LIGHTING EFFECTS */
-      const hero = document.querySelector(".hero");
+      const hero = document.getElementById("heroScene");
       const bgGlow = document.getElementById("bgGlow");
       const stage = document.getElementById("visualStage");
+      const magneticBtn = document.getElementById("magneticBtn");
       const particlesContainer = document.getElementById("heroParticles");
 
+      /* 1. Hardware Accelerated Micro-Particle Array Generator */
       if (particlesContainer) {
-        for (let i = 0; i < 22; i++) {
+        const particleCount = 22;
+        for (let i = 0; i < particleCount; i++) {
           const particle = document.createElement("div");
           particle.className = "hero-particle-dot";
+          
+          // Spatial Distributive Coordinates Generator
           particle.style.left = Math.random() * 100 + "%";
           particle.style.top = Math.random() * 100 + "%";
+          
+          // Kinetic Variance Shifting Variables Array
           const sizeVal = Math.random() * 3 + 2;
           particle.style.width = sizeVal + "px";
           particle.style.height = sizeVal + "px";
           particle.style.animationDelay = Math.random() * 8 + "s";
           particle.style.animationDuration = Math.random() * 6 + 8 + "s";
+          
           particlesContainer.appendChild(particle);
         }
       }
 
+      /* 2. Optimized 3D Mouse Parallax and Glow-Tracking Mechanics */
       if (hero && window.innerWidth > 992) {
         let frameTracking = false;
+
         hero.addEventListener("mousemove", function (e) {
           if (!frameTracking) {
             window.requestAnimationFrame(function () {
               const boundingBox = hero.getBoundingClientRect();
-              const relativeX = (e.clientX - boundingBox.left) / boundingBox.width - 0.5;
-              const relativeY = (e.clientY - boundingBox.top) / boundingBox.height - 0.5;
+              
+              // Map Coordinate Spatial Center Zero Offset Axes
+              const offsetX = e.clientX - boundingBox.left;
+              const offsetY = e.clientY - boundingBox.top;
+              
+              const percentageX = offsetX / boundingBox.width;
+              const percentageY = offsetY / boundingBox.height;
+              
+              const relativeX = percentageX - 0.5;
+              const relativeY = percentageY - 0.5;
 
-              if (bgGlow) bgGlow.style.transform = `translate(calc(-50% + ${relativeX * 120}px), calc(-50% + ${relativeY * 120}px))`;
-              if (stage) stage.style.transform = `rotateX(${relativeY * -18}deg) rotateY(${relativeX * 18}deg)`;
+              // Execute Ambient Plasma Glow Shift Base
+              if (bgGlow) {
+                bgGlow.style.transform = `translate(calc(-50% + ${relativeX * 120}px), calc(-50% + ${relativeY * 120}px))`;
+              }
+
+              // Apply Rotational 3D Pitch Vector Restraints (Max 10 Degrees Strict Limit)
+              if (stage) {       const pitchRotation = relativeY * -18; 
+                const yawRotation = relativeX * 18;   
+                stage.style.transform = `rotateX(${pitchRotation}deg) rotateY(${yawRotation}deg)`;
+              }
+
               frameTracking = false;
             });
             frameTracking = true;
           }
         });
 
+        // Soft Return Easing Array Reset Logic Wrapper
         hero.addEventListener("mouseleave", function () {
           if (bgGlow) bgGlow.style.transform = "translate(-50%, -50%)";
           if (stage) stage.style.transform = "rotateX(0deg) rotateY(0deg)";
         });
       }
 
-      /* AUTOMATED INTERACTIVE THEME ROTATION SWITCH */
-      const themeBtn = document.getElementById("themeToggle");
-      let currentTheme = 0;
-      themeBtn.addEventListener("click", () => {
-        currentTheme = (currentTheme + 1) % 3;
-        document.body.classList.remove("theme-light", "theme-eye");
-        if (currentTheme === 0) themeBtn.innerHTML = "Theme";
-        else if (currentTheme === 1) { document.body.classList.add("theme-light"); themeBtn.innerHTML = "Light Theme"; }
-        else if (currentTheme === 2) { document.body.classList.add("theme-eye"); themeBtn.innerHTML = "Eye Care Theme"; }
-      });
+      /* 3. High-Fidelity Button Magnetic Interface Engine */
+      if (magneticBtn && window.innerWidth > 768) {
+        magneticBtn.addEventListener("mousemove", function (e) {
+          const coordinates = magneticBtn.getBoundingClientRect();
+          const targetX = e.clientX - coordinates.left - coordinates.width / 2;
+          const targetY = e.clientY - coordinates.top - coordinates.height / 2;
+
+          // Pull Matrix toward cursor vector weight calculations
+          magneticBtn.style.transform = `translate(${targetX * 0.35}px, ${targetY * 0.35}px) scale(1.02)`;
+        });
+
+        magneticBtn.addEventListener("mouseleave", function () {
+          magneticBtn.style.transform = "translate(0px, 0px) scale(1)";
+        });
+      }
     });
   </script>
 </body>
