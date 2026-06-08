@@ -16,7 +16,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- SEO Optimized Core Metadata Setup - Focused Strictly on AI & Finance -->
+<!-- SEO Optimized Core Metadata Setup -->
 <title>GENZEST | Simplifying AI & Finance</title>
 <meta name="description" content="GENZEST simplifies complex artificial intelligence frameworks and financial analytics with actionable, high-signal insights.">
 <meta name="keywords" content="AI and finance, financial intelligence, artificial intelligence insights, personal finance, fintech, tech trends" />
@@ -25,7 +25,7 @@
 
 <link rel="canonical" href="https://genzest.in/" />
 
-<!-- Open Graph / WhatsApp Link Preview Tags Fixed -->
+<!-- Open Graph / WhatsApp Link Preview Tags -->
 <meta property="og:title" content="GENZEST | Simplifying AI & Finance" />
 <meta property="og:description" content="Simplifying complex artificial intelligence concepts and financial analytics for the next generation." />
 <meta property="og:type" content="website" />
@@ -58,7 +58,7 @@
 <link rel="stylesheet" href="assets/css/style.css"> 
 
 <style>
-  /* Symmetric Layout Glass Card with Sharp White Outline and Text Base */
+  /* 🎯 Symmetric Layout Glass Card with Theme Responsive Text Colors */
   .hero-merged-summary-box {
     max-width: 900px;
     margin: 1.5rem auto 0;
@@ -73,10 +73,11 @@
     -webkit-backdrop-filter: blur(16px);
   }
   
+  /* Default Dark Theme Text Color */
   .hero-merged-summary-box p {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #f8fafc !important;
+    color: #e2e8f0; 
     margin: 0;
     font-weight: 400;
   }
@@ -115,16 +116,21 @@
     flex: 1;
   }
 
+  /* Theme Responsive Search Input */
   .search-wrap-fixed input {
     width: 100%;
     padding: 1rem 1.2rem;
     border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: #0b1020;
-    color: white;
+    color: #ffffff;
     font-size: 1rem;
     outline: none;
     transition: 0.3s ease;
+  }
+
+  .search-wrap-fixed input:focus {
+    border-color: #7c5cff;
   }
 
   .dropdown-filter-wrapper {
@@ -132,6 +138,7 @@
     width: 200px;
   }
 
+  /* Theme Responsive Custom Select Dropdown */
   .segment-select-custom {
     width: 100%;
     height: 100%;
@@ -147,6 +154,10 @@
     appearance: none;
     -webkit-appearance: none;
     transition: 0.25s ease;
+  }
+
+  .segment-select-custom:focus {
+    border-color: #7c5cff;
   }
 
   .dropdown-filter-wrapper::after {
@@ -184,6 +195,56 @@
   @keyframes flashIndicator {
     0%, 100% { transform: translateX(0); opacity: 0.4; }
     50% { transform: translateX(4px); opacity: 1; }
+  }
+
+  /* ======================================================= */
+  /* 🎨 NATIVE LIGHT THEME CONTROLS OVERWRITE                */
+  /* ======================================================= */
+  body.theme-light .hero-merged-summary-box {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.15);
+  }
+  body.theme-light .hero-merged-summary-box p {
+    color: #1e293b !important; /* Proper Dark Slate for Light Theme Visibility */
+  }
+  body.theme-light .search-wrap-fixed input {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+  body.theme-light .segment-select-custom {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+  body.theme-light .segment-select-custom option {
+    background: #ffffff;
+    color: #0f172a;
+  }
+
+  /* ======================================================= */
+  /* 🎨 NATIVE EYE CARE THEME CONTROLS OVERWRITE              */
+  /* ======================================================= */
+  body.theme-eye .hero-merged-summary-box {
+    background: rgba(20, 30, 20, 0.3);
+    border-color: rgba(132, 204, 22, 0.25);
+  }
+  body.theme-eye .hero-merged-summary-box p {
+    color: #c4d7be !important; /* Balanced Soft Sage Green text */
+  }
+  body.theme-eye .search-wrap-fixed input {
+    background: #141c14;
+    color: #e1e7dd;
+    border-color: rgba(132, 204, 22, 0.15);
+  }
+  body.theme-eye .segment-select-custom {
+    background: #141c14;
+    color: #e1e7dd;
+    border-color: rgba(132, 204, 22, 0.15);
+  }
+  body.theme-eye .segment-select-custom option {
+    background: #141c14;
+    color: #e1e7dd;
   }
 
   @media (max-width: 768px) {
@@ -262,6 +323,7 @@
         <span class="handwritten">AI × Finance</span>
       </h1>
 
+      <!-- 🎯 RESPONSIVE MERGED BOX -->
       <div class="hero-merged-summary-box">
         <p>
           GENZEST is your ultimate guide to cracking artificial intelligence frameworks, personal finance concepts, and tech trends with simplified, high-signal insights designed for the next generation.
