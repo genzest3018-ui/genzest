@@ -3,7 +3,6 @@
 
 <head>
 <meta name="2324b346a2c816918e7d4e2853606bcf0a2f84a7" content="2324b346a2c816918e7d4e2853606bcf0a2f84a7" />
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-25LP8VZBEV"></script>
 
 <script>
@@ -41,7 +40,6 @@ content="GENZEST explores AI, finance, investing, future careers, business trend
 
 <link rel="canonical" href="https://genzest.in/" />
 
-<!-- Open Graph -->
 <meta property="og:title" content="GENZEST | AI, Finance & Investing" />
 <meta
   property="og:description"
@@ -54,7 +52,6 @@ content="GENZEST explores AI, finance, investing, future careers, business trend
   content="https://genzest.in/1779508386745.png"
 />
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="GENZEST | AI, Finance & Investing" />
 <meta
@@ -62,35 +59,23 @@ content="GENZEST explores AI, finance, investing, future careers, business trend
   content="Modern insights on AI, investing, crypto and future finance."
 />
   <meta name="twitter:image" content="https://genzest.in/officiallogo.jpeg"/>
-<!-- <meta
-  name="twitter:image"
-  content="https://genzest.in/1779508386745.png"
-/> -->
 
-<!-- Favicon -->
-<!-- <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/genzest3018-ui/genzest/main/file_0000000051a071fa98c5016a62ce7c00.png">
-
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/genzest3018-ui/genzest/main/file_0000000051a071fa98c5016a62ce7c00.png"> -->
-<!--logo-->
   <link rel="icon" type="image/jpeg" href="/officiallogo.jpeg">
   <link rel="apple-touch-icon" href="/officiallogo.jpeg">
 
 <meta property="og:image" content="https://genzest.in/officiallogo.jpeg">
 
 
-<!-- Fonts -->
 <link
   href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap"
   rel="stylesheet"
 />
 
-<!-- Icons -->
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 />
 
-<!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -105,7 +90,6 @@ content="GENZEST explores AI, finance, investing, future careers, business trend
 
 <body>
 
-  <!-- NAVBAR -->
   <header class="topbar">
     <a href="/" class="brand">⚡ GENZEST</a>
 
@@ -114,7 +98,6 @@ content="GENZEST explores AI, finance, investing, future careers, business trend
     </button>
   </header>
 
-  <!-- SIDEBAR -->
   <div class="sidebar" id="sidebar">
     <div class="sidebar-top">
       <button class="menu-btn" id="closeBtn" type="button" aria-label="Close menu">
@@ -165,11 +148,9 @@ content="GENZEST explores AI, finance, investing, future careers, business trend
     </button>
   </div>
 
-  <!-- OVERLAY -->
   <div class="overlay" id="overlay"></div>
 
-  <!-- HERO -->
- <section class="hero" >
+  <section class="hero" >
      <div class="hero-content">
       <div class="hero-badge">
         <i class="fas fa-bolt"></i>
@@ -197,12 +178,7 @@ content="GENZEST explores AI, finance, investing, future careers, business trend
     </div>   
   </section>
 
-  <!-- SEO SECTION -->
   <section class="seo-section">
-    <h1 style="color:blueviolet; box-shadow: blueviolet;">
-Explore More
-<span id="typing"></span>
-</h1>
     <h2>Why GENZEST?</h2>
     <p>
       GENZEST is a modern media platform focused on artificial intelligence, finance, investing, crypto, startups and future business trends.
@@ -210,7 +186,6 @@ Explore More
     </p>
   </section>
 
-  <!-- POSTS -->
   <section class="featured-section" id="featured">
     <div class="search-wrap">
       <div class="filter-wrap">
@@ -225,7 +200,6 @@ Explore More
   <button class="filter-btn" data-category="Investing">Investing</button>
   <button class="filter-btn" data-category="Startups">Startups</button>
   <button class="filter-btn" data-category="Future">Future</button>
-  <!-- <button class="filter-btn" data-category="Crypto">Crypto</button> -->
 </div>
 </div>
     <div class="section-header">
@@ -237,6 +211,7 @@ Explore More
       Loading insights...
     </div>
   </section>
+  
   <section class="newsletter-subscription-deck">
     <div class="deck-container">
       <div class="glass-capture-card">
@@ -267,7 +242,7 @@ Explore More
       </div>
     </div>
   </section>
-  <!-- FOOTER -->
+  
   <footer class="footer">
     <div class="footer-grid">
       <div>
@@ -277,7 +252,7 @@ Explore More
         </p>
       </div>
 
-          <div>
+      <div>
         <div class="footer-title">Navigate</div>
         <div class="footer-links">
           <a href="/">Home</a>
@@ -311,92 +286,23 @@ Explore More
     </div>
   </footer>
 
-    <!-- FIREBASE -->
-  <script type="module" src="firebase.js"> </script>
-  
-  <script>
-     const words = [
-"AI",
-"Finance",
-"Investing",
-"Future ",
-"Business Trends",
+    <script type="module" src="firebase.js"> </script>
 
-];
-
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-const typingElement =
-document.getElementById("typing");
-
-function typeEffect(){
-
-let currentWord =
-words[wordIndex];
-
-if(!deleting){
-
-typingElement.textContent =
-currentWord.substring(
-0,
-charIndex+1
-);
-
-charIndex++;
-
-if(charIndex===currentWord.length){
-
-deleting=true;
-
-setTimeout(typeEffect,1500);
-
-return;
-
-}
-
-}
-
-else{
-
-typingElement.textContent=
-currentWord.substring(
-0,
-charIndex-1
-);
-
-charIndex--;
-
-if(charIndex===0){
-
-deleting=false;
-
-wordIndex++;
-
-if(wordIndex===words.length){
-
-wordIndex=0;
-
-}
-
-}
-
-}
-
-setTimeout(
-typeEffect,
-deleting?60:120
-);
-
-}
-
-typeEffect();
-</script>
-<!-- HERO INTERACTION PLATFORM UTILITY LAYER -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const hero = document.getElementById("heroScene");
+      const menuBtn = document.getElementById("menuBtn");
+      const closeBtn = document.getElementById("closeBtn");
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+
+      menuBtn.addEventListener("click", () => { sidebar.classList.add("active"); overlay.classList.add("active"); });
+      closeBtn.addEventListener("click", () => { sidebar.classList.remove("active"); overlay.classList.remove("active"); });
+      overlay.addEventListener("click", () => { sidebar.classList.remove("active"); overlay.classList.remove("active"); });
+
+      /* YEAR CONFIG */
+      document.getElementById("year").innerText = new Date().getFullYear();
+
+      const hero = document.querySelector(".hero");
       const bgGlow = document.getElementById("bgGlow");
       const stage = document.getElementById("visualStage");
       const magneticBtn = document.getElementById("magneticBtn");
@@ -408,18 +314,13 @@ typeEffect();
         for (let i = 0; i < particleCount; i++) {
           const particle = document.createElement("div");
           particle.className = "hero-particle-dot";
-          
-          // Spatial Distributive Coordinates Generator
           particle.style.left = Math.random() * 100 + "%";
           particle.style.top = Math.random() * 100 + "%";
-          
-          // Kinetic Variance Shifting Variables Array
           const sizeVal = Math.random() * 3 + 2;
           particle.style.width = sizeVal + "px";
           particle.style.height = sizeVal + "px";
           particle.style.animationDelay = Math.random() * 8 + "s";
           particle.style.animationDuration = Math.random() * 6 + 8 + "s";
-          
           particlesContainer.appendChild(particle);
         }
       }
@@ -432,35 +333,23 @@ typeEffect();
           if (!frameTracking) {
             window.requestAnimationFrame(function () {
               const boundingBox = hero.getBoundingClientRect();
-              
-              // Map Coordinate Spatial Center Zero Offset Axes
               const offsetX = e.clientX - boundingBox.left;
               const offsetY = e.clientY - boundingBox.top;
-              
-              const percentageX = offsetX / boundingBox.width;
-              const percentageY = offsetY / boundingBox.height;
-              
-              const relativeX = percentageX - 0.5;
-              const relativeY = percentageY - 0.5;
+              const relativeX = (offsetX / boundingBox.width) - 0.5;
+              const relativeY = (offsetY / boundingBox.height) - 0.5;
 
-              // Execute Ambient Plasma Glow Shift Base
               if (bgGlow) {
                 bgGlow.style.transform = `translate(calc(-50% + ${relativeX * 120}px), calc(-50% + ${relativeY * 120}px))`;
               }
-
-              // Apply Rotational 3D Pitch Vector Restraints (Max 10 Degrees Strict Limit)
-              if (stage) {       const pitchRotation = relativeY * -18; 
-                const yawRotation = relativeX * 18;   
-                stage.style.transform = `rotateX(${pitchRotation}deg) rotateY(${yawRotation}deg)`;
+              if (stage) {
+                stage.style.transform = `rotateX(${relativeY * -18}deg) rotateY(${relativeX * 18}deg)`;
               }
-
               frameTracking = false;
             });
             frameTracking = true;
           }
         });
 
-        // Soft Return Easing Array Reset Logic Wrapper
         hero.addEventListener("mouseleave", function () {
           if (bgGlow) bgGlow.style.transform = "translate(-50%, -50%)";
           if (stage) stage.style.transform = "rotateX(0deg) rotateY(0deg)";
@@ -473,8 +362,6 @@ typeEffect();
           const coordinates = magneticBtn.getBoundingClientRect();
           const targetX = e.clientX - coordinates.left - coordinates.width / 2;
           const targetY = e.clientY - coordinates.top - coordinates.height / 2;
-
-          // Pull Matrix toward cursor vector weight calculations
           magneticBtn.style.transform = `translate(${targetX * 0.35}px, ${targetY * 0.35}px) scale(1.02)`;
         });
 
@@ -482,6 +369,17 @@ typeEffect();
           magneticBtn.style.transform = "translate(0px, 0px) scale(1)";
         });
       }
+
+      /* AUTOMATED INTERACTIVE THEME ROTATION SWITCH */
+      const themeBtn = document.getElementById("themeToggle");
+      let currentTheme = 0;
+      themeBtn.addEventListener("click", () => {
+        currentTheme = (currentTheme + 1) % 3;
+        document.body.classList.remove("theme-light", "theme-eye");
+        if (currentTheme === 0) themeBtn.innerHTML = "Theme";
+        else if (currentTheme === 1) { document.body.classList.add("theme-light"); themeBtn.innerHTML = "Light Theme"; }
+        else if (currentTheme === 2) { document.body.classList.add("theme-eye"); themeBtn.innerHTML = "Eye Care Theme"; }
+      });
     });
   </script>
 </body>
