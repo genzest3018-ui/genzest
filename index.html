@@ -47,7 +47,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-<!-- Structural JSON-LD Structured Engine Schema -->
+<!-- Structural Schema -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -59,11 +59,11 @@
 </script>
 <link rel="stylesheet" href="assets/css/style.css"> 
 
-<!-- Custom Pixel-Perfect Overwrite Layout Configuration -->
+<!-- Advanced Layout Overwrites For Left Sidebar Filter Matrix -->
 <style>
-  /* Premium Glass Box with Solid White Outline */
+  /* Compact Box Layout With Solid White Outline */
   .seo-section {
-    padding: 2rem 5% 1.5rem;
+    padding: 1.5rem 5% 1rem;
     width: 100%;
     display: block;
     box-sizing: border-box;
@@ -71,27 +71,21 @@
   
   .why-genzest-card {
     background: rgba(255, 255, 255, 0.01);
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Premium Sharp White Outline */
-    border-radius: 20px;
-    padding: 2.2rem 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
     max-width: 900px;
     width: 100%;
     box-sizing: border-box;
-    transition: 0.3s ease;
-  }
-  
-  .why-genzest-card:hover {
-    border-color: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 20px 45px rgba(255, 255, 255, 0.05);
   }
   
   .why-genzest-card h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
     font-weight: 800;
     letter-spacing: -1px;
     background: linear-gradient(135deg, #60a5fa, #a855f7);
@@ -100,57 +94,121 @@
   }
   
   .why-genzest-card p {
-    font-size: 1.08rem;
-    line-height: 1.85;
+    font-size: 1.05rem;
+    line-height: 1.7;
     color: #cbd5e1;
     margin: 0;
   }
-  
-  body.theme-light .why-genzest-card {
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  }
-  body.theme-light .why-genzest-card p { color: #475569; }
-  
-  body.theme-eye .why-genzest-card {
-    background: rgba(29, 39, 28, 0.4);
-    border-color: rgba(132, 204, 22, 0.3);
-  }
-  body.theme-eye .why-genzest-card h2 {
-    background: linear-gradient(135deg, #84cc16, #a3e635);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  body.theme-eye .why-genzest-card p { color: #b5c5ae; }
 
-  /* Tighten Spacing Constraints Exclusively Across Mobile Media Ports */
+  /* Split Layout Architecture: Left Sidebar Filters + Right Blogs Feed Grid */
+  .blog-split-container {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .left-filter-sidebar {
+    position: sticky;
+    top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    background: rgba(17, 24, 39, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .sidebar-filter-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #60a5fa;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+  }
+
+  .left-filter-sidebar .filter-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0;
+  }
+
+  .left-filter-sidebar .filter-btn {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1.2rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.25s ease;
+  }
+
+  .left-filter-sidebar .filter-btn:hover,
+  .left-filter-sidebar .filter-btn.active {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+  }
+
+  /* Micro Tuning Layout Adjustments for Phones */
+  @media (max-width: 992px) {
+    .blog-split-container {
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem;
+    }
+    .left-filter-sidebar {
+      position: relative !important;
+      top: 0 !important;
+      padding: 1rem !important;
+      background: transparent !important;
+      border: none !important;
+      gap: 0.8rem !important;
+    }
+    .sidebar-filter-title { display: none; }
+    
+    /* Transform to Native Horizontal Smooth Horizontal Tracker on mobile */
+    .left-filter-sidebar .filter-wrap {
+      flex-direction: row !important;
+      overflow-x: auto;
+      white-space: nowrap;
+      width: 100vw;
+      margin-left: -5%;
+      padding: 0 5% 0.5rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    .left-filter-sidebar .filter-btn {
+      width: auto !important;
+      display: inline-block;
+      padding: 0.6rem 1.2rem !important;
+      border-radius: 999px !important;
+    }
+  }
+
   @media (max-width: 768px) {
     .hero {
       min-height: auto !important;
-      padding-top: 6.8rem !important;
-      padding-bottom: 1rem !important; /* Brought significantly up */
+      padding-top: 6.5rem !important;
+      padding-bottom: 0.5rem !important;
     }
     .seo-section {
-      padding-top: 0.5rem !important; /* Zeroed gap margins */
-      padding-bottom: 1rem !important;
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
+      padding: 0.25rem 1rem 0.5rem !important;
     }
     .why-genzest-card {
-      padding: 1.5rem 1.25rem !important; /* Adjusted safe paddings inside phone frame */
-      border-radius: 16px !important;
+      padding: 1.2rem 1rem !important;
+      border-radius: 12px !important;
     }
-    .why-genzest-card h2 {
-      font-size: 1.65rem !important;
-    }
-    .why-genzest-card p {
-      font-size: 0.98rem !important;
-      line-height: 1.75 !important;
-    }
-    .featured-section {
-      padding-top: 0.5rem !important; /* Pulled feed container up nicely */
-    }
+    .why-genzest-card h2 { font-size: 1.45rem !important; }
+    .why-genzest-card p { font-size: 0.95rem !important; line-height: 1.6 !important; }
+    .featured-section { padding-top: 0.25rem !important; }
   }
 </style>
 </head>
@@ -197,7 +255,7 @@
       </h1>
 
       <p>
-        GENZEST delivers premium analytics, strategic deep-dives, and structured trends shaping the intersection of artificial intelligence and modern global finance.
+        Premium deep-dives shaping automated financial trading technology and artificial intelligence models.
       </p>
 
       <a href="/" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'}); return false;" class="hero-btn">
@@ -206,38 +264,50 @@
     </div>   
   </section>
 
-  <!-- SEO INSIGHTS COMPACT WHITE OUTLINE CARD -->
+  <!-- SEO INSIGHTS COMPACT CARD -->
   <section class="seo-section">
     <div class="why-genzest-card">
       <h2>Why GENZEST?</h2>
       <p>
-        GENZEST is a highly targeted data media platform explicitly bridging the gap between artificial intelligence applications and modern financial models. We provide high-signal analysis, algorithmic frameworks, and technical asset research for the new generation of smart investors and builders navigating automated fintech landscapes.
+        A precision financial intelligence portal decrypting complex algorithmic trading, machine learning applications, and fintech innovation vectors for retail macro investors.
       </p>
     </div>
   </section>
 
-  <!-- AUTOMATION DYNAMIC BLOG FEED VIEWPORT -->
+  <!-- SPLIT SCREEN BLOGGING LAYER CONTAINER -->
   <section class="featured-section" id="featured">
-    <div class="search-wrap">
-      <div class="filter-wrap">
-        <input type="text" id="searchInput" placeholder="Search articles..." />
-        <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="AI">AI</button>
-        <button class="filter-btn" data-category="Finance">Finance</button>
-        <button class="filter-btn" data-category="Investing">Investing</button>
-        <button class="filter-btn" data-category="Startups">Startups</button>
-        <button class="filter-btn" data-category="Future">Future</button>
-      </div>
-    </div>
-    
-    <div class="section-header">
-      <h2>🔥 Latest Drops</h2>
-      <div class="section-badge">fresh insights daily</div>
-    </div>
+    <div class="blog-split-container">
+      
+      <!-- LEFT FIXED SIDEBAR / MOBILE ROW FILTER COMPONENT -->
+      <aside class="left-filter-sidebar">
+        <div class="sidebar-filter-title"><i class="fas fa-filter"></i> Segments</div>
+        <div class="filter-wrap">
+          <button class="filter-btn active" data-category="all">All Insights</button>
+          <button class="filter-btn" data-category="AI">AI Models</button>
+          <button class="filter-btn" data-category="Finance">Finance</button>
+          <button class="filter-btn" data-category="Investing">Investing</button>
+          <button class="filter-btn" data-category="Startups">Startups</button>
+          <button class="filter-btn" data-category="Future">Future Tech</button>
+        </div>
+      </aside>
 
-    <!-- FIREBASE AUTOMATION POPULATES ACTIVE CARDS MATRIX HERE EXCLUSIVELY -->
-    <div class="featured-grid" id="blogContainer">
-      Loading insights...
+      <!-- RIGHT COLUMN FEED LAYER CONTENT -->
+      <div class="feed-content-column" style="width: 100%;">
+        <div class="search-wrap" style="margin-top: 0;">
+          <input type="text" id="searchInput" placeholder="Search insights and analytical papers..." />
+        </div>
+        
+        <div class="section-header">
+          <h2>🔥 Latest Drops</h2>
+          <div class="section-badge">fresh insights daily</div>
+        </div>
+
+        <!-- FIREBASE AUTOMATION ENGINE POPULATION MATRIX CONTAINER -->
+        <div class="featured-grid" id="blogContainer">
+          Loading insights...
+        </div>
+      </div>
+
     </div>
   </section>
 
