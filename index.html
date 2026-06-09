@@ -21,7 +21,7 @@
 <meta name="description" content="GENZEST simplifies complex artificial intelligence frameworks and financial analytics with actionable, high-signal insights.">
 <meta name="keywords" content="AI and finance, financial intelligence, artificial intelligence insights, personal finance, fintech, tech trends" />
 <meta name="robots" content="index, follow" />
-<meta name="theme-color" content="#050505" />
+<meta name="theme-color" content="#070a13" />
 
 <link rel="canonical" href="https://genzest.in/" />
 
@@ -40,7 +40,6 @@
 
 <link rel="icon" type="image/jpeg" href="/officiallogo.jpeg">
 <link rel="apple-touch-icon" href="/officiallogo.jpeg">
-<meta property="og:image" content="https://genzest.in/officiallogo.jpeg">
 
 <!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
@@ -56,233 +55,9 @@
 }
 </script>
 <link rel="stylesheet" href="assets/css/style.css"> 
-
-<!-- <style>
-  /* 🎯 Symmetric Layout Glass Card with Theme Responsive Text Colors */
-  .hero-merged-summary-box {
-    max-width: 900px;
-    margin: 1.5rem auto 0;
-    text-align: left;
-    width: 100%;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 14px;
-    padding: 1.2rem 1.5rem;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-  }
-  
-  /* Default Dark Theme Text Color */
-  .hero-merged-summary-box p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #e2e8f0; 
-    margin: 0;
-    font-weight: 400;
-  }
-
-  /* Clear Border Outline Box Framework for Cards Stability */
-  .featured-card {
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
-    transition: cubic-bezier(0.16, 1, 0.3, 1) 0.4s !important;
-  }
-  
-  .featured-card:hover {
-    border-color: rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05) !important;
-  }
-  
-  .featured-author-subtext {
-    font-size: 0.78rem !important;
-    color: #64748b !important;
-    font-weight: 500 !important;
-    margin-top: 0.15rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .search-control-deck {
-    max-width: 900px;
-    margin: 0 auto 1.5rem;
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .search-wrap-fixed {
-    flex: 1;
-  }
-
-  /* Theme Responsive Search Input */
-  .search-wrap-fixed input {
-    width: 100%;
-    padding: 1rem 1.2rem;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: #0b1020;
-    color: #ffffff;
-    font-size: 1rem;
-    outline: none;
-    transition: 0.3s ease;
-  }
-
-  .search-wrap-fixed input:focus {
-    border-color: #7c5cff;
-  }
-
-  .dropdown-filter-wrapper {
-    position: relative;
-    width: 200px;
-  }
-
-  /* Theme Responsive Custom Select Dropdown */
-  .segment-select-custom {
-    width: 100%;
-    height: 100%;
-    padding: 0 1.2rem;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #ffffff;
-    background: #0b1020;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    cursor: pointer;
-    outline: none;
-    appearance: none;
-    -webkit-appearance: none;
-    transition: 0.25s ease;
-  }
-
-  .segment-select-custom:focus {
-    border-color: #7c5cff;
-  }
-
-  .dropdown-filter-wrapper::after {
-    content: '\f078';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    position: absolute;
-    right: 1.2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #60a5fa;
-    pointer-events: none;
-    font-size: 0.85rem;
-  }
-
-  .swipe-guidance-track {
-    max-width: 900px;
-    margin: 0.5rem auto 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: #475569;
-    font-size: 0.82rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .swipe-guidance-track i {
-    animation: flashIndicator 1.6s infinite ease-in-out;
-    color: #60a5fa;
-  }
-
-  @keyframes flashIndicator {
-    0%, 100% { transform: translateX(0); opacity: 0.4; }
-    50% { transform: translateX(4px); opacity: 1; }
-  }
-
-  /* ======================================================= */
-  /* 🎨 NATIVE LIGHT THEME CONTROLS OVERWRITE                */
-  /* ======================================================= */
-  body.theme-light .hero-merged-summary-box {
-    background: rgba(0, 0, 0, 0.03);
-    border-color: rgba(0, 0, 0, 0.15);
-  }
-  body.theme-light .hero-merged-summary-box p {
-    color: #1e293b !important; /* Proper Dark Slate for Light Theme Visibility */
-  }
-  body.theme-light .search-wrap-fixed input {
-    background: #f1f5f9;
-    color: #0f172a;
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-  body.theme-light .segment-select-custom {
-    background: #f1f5f9;
-    color: #0f172a;
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-  body.theme-light .segment-select-custom option {
-    background: #ffffff;
-    color: #0f172a;
-  }
-
-  /* ======================================================= */
-  /* 🎨 NATIVE EYE CARE THEME CONTROLS OVERWRITE              */
-  /* ======================================================= */
-  body.theme-eye .hero-merged-summary-box {
-    background: rgba(20, 30, 20, 0.3);
-    border-color: rgba(132, 204, 22, 0.25);
-  }
-  body.theme-eye .hero-merged-summary-box p {
-    color: #c4d7be !important; /* Balanced Soft Sage Green text */
-  }
-  body.theme-eye .search-wrap-fixed input {
-    background: #141c14;
-    color: #e1e7dd;
-    border-color: rgba(132, 204, 22, 0.15);
-  }
-  body.theme-eye .segment-select-custom {
-    background: #141c14;
-    color: #e1e7dd;
-    border-color: rgba(132, 204, 22, 0.15);
-  }
-  body.theme-eye .segment-select-custom option {
-    background: #141c14;
-    color: #e1e7dd;
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      min-height: auto !important;
-      padding-top: 6.5rem !important;
-      padding-bottom: 1.5rem !important;
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
-    }
-    .hero-merged-summary-box {
-      margin: 1.2rem 0 0 0 !important;
-      padding: 1.2rem 1.1rem !important;
-      border-radius: 12px !important;
-    }
-    .hero-merged-summary-box p {
-      font-size: 0.98rem !important;
-      line-height: 1.65 !important;
-    }
-    .featured-section {
-      padding: 1.5rem 1rem !important;
-    }
-    .search-control-deck {
-      flex-direction: column !important;
-      gap: 0.75rem !important;
-    }
-    .dropdown-filter-wrapper {
-      width: 100% !important;
-    }
-    .segment-select-custom {
-      padding: 1rem 1.2rem !important;
-      height: auto !important;
-    }
-  }
-</style> -->
 </head>
 
-<body>
+<body class="redesign-body">
 
   <!-- NAVBAR MODULE -->
   <header class="topbar">
@@ -300,8 +75,6 @@
       </button>
     </div>
     <a href="/"><i class="fas fa-house"></i> Home</a>
-    <a href="emi-calculator.html"><i class="fas fa-calculator"></i> EMI Calculator</a>
-    <span class="update-feature-badge">NEW</span>
     <a href="/" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'}); return false;" style="cursor:pointer;"><i class="fas fa-fire"></i> Latest Drops</a>
     <a href="about.html"><i class="fas fa-circle-info"></i> About</a>
     <a href="privacy-policy.html"><i class="fas fa-shield-halved"></i> Privacy Policy</a>
@@ -313,114 +86,180 @@
 
   <div class="overlay" id="overlay"></div>
 
-  <!-- HERO BLOCK -->
-  <section class="hero">
-     <div class="hero-content" style="width: 100%;">
-      <div class="hero-badge">
-        <i class="fas fa-bolt"></i> AI & Financial Intelligence
+  <!-- 1. HERO BLOCK (FIGMA REDESIGN STEP 1) -->
+  <section class="hero-redesign">
+    <div class="hero-content-redesign">
+      <div class="hero-badge-redesign">
+        <i class="fas fa-bolt"></i> AI × FINANCE INTELLIGENCE
       </div>
-
-      <h1>
-        <span class="hero-gradient">Future Of</span>
-        <span class="handwritten">AI × Finance</span>
-      </h1>
-
-      <!-- 🎯 RESPONSIVE MERGED BOX -->
-      <div class="hero-merged-summary-box">
-        <p>
-          GENZEST is your ultimate guide to cracking artificial intelligence frameworks, personal finance concepts, and tech trends with simplified, high-signal insights designed for the next generation.
-        </p>
+      <h1 class="hero-title-redesign">Decode AI &<br><span>Finance Faster</span></h1>
+      <p class="hero-desc-redesign">
+        GENZEST is your ultimate guide to cracking artificial intelligence frameworks, personal finance concepts, and tech trends with simplified, high-signal insights designed for the next generation.
+      </p>
+      <div class="hero-action-row-redesign">
+        <a href="#featured" class="btn-primary-redesign">Read Latest Insights <i class="fas fa-arrow-right"></i></a>
+        <a href="#newsletter" class="btn-secondary-redesign">Join Newsletter</a>
       </div>
-    </div>   
+    </div>
   </section>
 
-  <!-- ARTICLES FEED CONTAINER SECTION -->
-  <section class="featured-section" id="featured" style="width: 100%; box-sizing: border-box; padding: 1rem 5% 2rem;">
-    
+  <!-- CONTROL DECK: SEARCH & FILTER (FIGMA REDESIGN STEP 3 & 4) -->
+  <section class="control-deck-section">
     <div class="search-control-deck">
       <div class="search-wrap-fixed">
-        <input type="text" id="searchInput" placeholder="Search insights..." />
+        <input type="text" id="searchInput" placeholder="Search AI & Finance insights..." />
       </div>
       <div class="dropdown-filter-wrapper">
         <select class="segment-select-custom" id="segmentDropdown">
           <option value="all">All Insights</option>
-          <option value="AI">AI</option>
-          <option value="Finance">Finance</option>
+          <option value="AI">AI Insights</option>
+          <option value="Finance">Finance Insights</option>
           <option value="Most Viewed">Most Viewed</option>
-          <option value="Latest">Latest</option>
+          <option value="Latest">Latest Drops</option>
         </select>
       </div>
     </div>
-
-    <!-- USER GUIDE SWIPE METRIC INDICATOR LAYER -->
-    <div class="swipe-guidance-track">
-      <span>Swipe left / right to browse</span> <i class="fas fa-arrow-right-long"></i>
-    </div>
-    
-    <div class="section-header" style="max-width: 900px; margin: 0 auto 2rem;">
-      <h2>🔥 Latest Drops</h2>
-      <div class="section-badge">fresh insights daily</div>
-    </div>
-
-    <!-- HARDCODED ARTICLES GRID MATRIX WITH HIGH-QUALITY SEPARATION BORDERS -->
-    <div class="featured-grid" id="blogContainer">
-
-      <!-- CARD 1: ACTIVE LIVE STATIC HTML ARTICLE -->
-      <article class="featured-card" data-category="AI">
-        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop" alt="AI Stock Trading Preview" loading="lazy">
-        <div class="featured-content">
-          <div class="featured-category" style="visibility: hidden; height: 0; margin: 0; padding: 0;">AI</div>
-          <div class="featured-author">Pulkit & Vansh</div>
-          <div class="featured-author-subtext">Authors • GENZEST Editorial</div>
-          <h3>The AI Revolution in Indian Stock Trading: How Retail Investors Are Beating the Market in 2026</h3>
-          <p>Discover how retail investors in India are leveraging advanced AI algorithms and automated technical analysis to beat the stock market.</p>
-          <div class="card-actions" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 1rem;">
-            <a href="articlefile/article.html" class="read-link">Read Article <i class="fas fa-arrow-right"></i></a>
-            <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.origin + '/articlefile/article.html').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Share', 2000); })">Share</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- CARD 2: COMING SOON TEMPLATE CARD -->
-      <article class="featured-card" data-category="Finance" style="opacity: 0.85;">
-        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200&auto=format&fit=crop" alt="Coming Soon Preview" loading="lazy">
-        <div class="featured-content">
-          <div class="featured-category" style="visibility: hidden; height: 0; margin: 0; padding: 0;">Finance</div>
-          <div class="featured-author">GENZEST Lab</div>
-          <div class="featured-author-subtext">Authors • GENZEST Editorial</div>
-          <h3>Next-Gen Financial Intelligence Frameworks</h3>
-          <p>Cracking structural financial modeling, quantitative indicators, and systemic macro analytics data pipelines.</p>
-          <div class="card-actions" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 1rem;">
-            <span style="color: #a855f7; font-weight: 700; font-size: 0.9rem;"><i class="fas fa-hourglass-half"></i> Coming Soon</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
   </section>
 
-  <!-- CAPTURE NEWSLETTER UNIT -->
-  <section class="newsletter-subscription-deck">
+  <!-- 12. COMPLETE HOMEPAGE GRID PLACEMENT MATRIX -->
+  <main class="homepage-split-layout" id="featured">
+    
+    <!-- LEFT COLUMN: 2. FEATURED ARTICLE FEED AREA -->
+    <section class="main-feed-column">
+      <div class="section-heading-redesign">
+        <h2><i class="fas fa-fire"></i> Featured Analysis</h2>
+      </div>
+
+      <div class="featured-grid-redesign" id="blogContainer">
+        
+        <!-- CARD 1: MAIN LIVE ARTICLE -->
+        <article class="featured-card-redesign" data-category="AI">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop" alt="AI Stock Trading Preview" loading="lazy">
+            <div class="card-badge-floating">Featured</div>
+          </div>
+          <div class="card-content-redesign">
+            <div class="author-meta-row">
+              <span class="author-name-tag"><i class="fas fa-user-edit"></i> Pulkit & Vansh</span>
+              <span class="author-sub-editorial">GENZEST Editorial</span>
+            </div>
+            <h3>The AI Revolution in Indian Stock Trading: How Retail Investors Are Beating the Market in 2026</h3>
+            <p>Discover how retail investors in India are leveraging advanced AI algorithms and automated technical analysis to beat the stock market.</p>
+            <div class="card-footer-action">
+              <a href="article.html" class="link-read-article">Read Article <i class="fas fa-arrow-right"></i></a>
+              <button class="btn-card-share" onclick="navigator.clipboard.writeText(window.location.origin + '/article.html').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Share', 2000); })"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: COMING SOON TEMPLATE -->
+        <article class="featured-card-redesign" data-category="Finance" style="opacity: 0.85;">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200&auto=format&fit=crop" alt="Coming Soon Preview" loading="lazy">
+            <div class="card-badge-floating lock-badge"><i class="fas fa-lock"></i> Pipeline</div>
+          </div>
+          <div class="card-content-redesign">
+            <div class="author-meta-row">
+              <span class="author-name-tag"><i class="fas fa-flask"></i> GENZEST Lab</span>
+              <span class="author-sub-editorial">GENZEST Editorial</span>
+            </div>
+            <h3>Next-Gen Financial Intelligence Frameworks</h3>
+            <p>Cracking structural financial modeling, quantitative indicators, and systemic macro analytics data pipelines.</p>
+            <div class="card-footer-action">
+              <span class="coming-soon-label"><i class="fas fa-hourglass-half"></i> Coming Soon</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- RIGHT COLUMN: SIDEBAR DECK (5. TRENDING SECTIONS + 7. AI TOOLS LIST) -->
+    <aside class="sidebar-deck-column">
+      
+      <!-- 5. WHAT'S TRENDING PANEL -->
+      <div class="sidebar-widget-box">
+        <div class="widget-header">
+          <h3><i class="fas fa-chart-line" style="color: #ff4757;"></i> What's Trending</h3>
+        </div>
+        <div class="trending-list-wrapper">
+          <div class="trending-item">
+            <span class="trending-rank">01</span>
+            <div class="trending-item-body">
+              <h4>OpenAI Launches New Reasoning Model</h4>
+              <p>Impact analysis on financial neural network parsing tools.</p>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-rank">02</span>
+            <div class="trending-item-body">
+              <h4>Anthropic's Claude 3.5 Outperforms GPT-4o</h4>
+              <p>In quantitative corporate balance-sheet evaluation tests.</p>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-rank">03</span>
+            <div class="trending-item-body">
+              <h4>Nifty 50 Hits All-Time High</h4>
+              <p>Evaluating structural macro factors pushing the charts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. AI FINANCE TOOLS MINI DESK -->
+      <div class="sidebar-widget-box">
+        <div class="widget-header">
+          <h3><i class="fas fa-calculator" style="color: #60a5fa;"></i> Free AI & Finance Tools</h3>
+        </div>
+        <div class="tools-grid-mini">
+          <div class="tool-item-card">
+            <div class="tool-icon-circle"><i class="fas fa-wallet"></i></div>
+            <div class="tool-item-info">
+              <h5>EMI Calculator</h5>
+              <p>Calculate your loan EMI instantly</p>
+            </div>
+          </div>
+          <div class="tool-item-card">
+            <div class="tool-icon-circle"><i class="fas fa-seedling"></i></div>
+            <div class="tool-item-info">
+              <h5>SIP Calculator</h5>
+              <p>Plan your wealth targets smartly</p>
+            </div>
+          </div>
+          <div class="tool-item-card">
+            <div class="tool-icon-circle"><i class="fas fa-percentage"></i></div>
+            <div class="tool-item-info">
+              <h5>CAGR Calculator</h5>
+              <p>Compute compound growth velocity</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </main>
+
+  <!-- 6. NEWSLETTER CAPTURE UNIT -->
+  <section class="newsletter-subscription-deck" id="newsletter">
     <div class="deck-container">
       <div class="glass-capture-card">
         <div class="card-interior-flow">
           <div class="text-column">
-            <h3>Join The GENZEST Newsletter</h3>
-            <p>Get high-signal weekly intelligence tracking automated financial market updates and core AI advancements directly in your inbox.</p>
-            
+            <h3>Join 1,000+ Readers</h3>
+            <p>Get a 5-minute weekly briefing covering AI breakthroughs, market trends, and financial framework deep-dives without the clutter.</p>
             <div class="bullet-feature-row">
-              <span class="bullet-item"><i class="fas fa-check-circle"></i> Quantitative Breakdowns</span>
-              <span class="bullet-item"><i class="fas fa-check-circle"></i> AI-Finance Domain Focus</span>
+              <span class="bullet-item"><i class="fas fa-check-circle"></i> AI Breakthroughs</span>
+              <span class="bullet-item"><i class="fas fa-check-circle"></i> Market Trends</span>
               <span class="bullet-item"><i class="fas fa-check-circle"></i> Zero Spam</span>
             </div>
           </div>
-          
           <div class="form-column">
             <form class="premium-capture-form" onsubmit="event.preventDefault(); alert('Computing pipeline active. Transmission complete!');">
               <div class="input-glow-group">
-                <input type="email" placeholder="Enter institutional email address..." required aria-label="Newsletter email submission capture fields">
+                <input type="email" placeholder="Enter your email address..." required aria-label="Newsletter email fields">
                 <button type="submit" class="submit-action-btn">
-                  <span>Subscribe</span> <i class="fas fa-paper-plane"></i>
+                  <span>Subscribe Now</span> <i class="fas fa-paper-plane"></i>
                 </button>
               </div>
             </form>
@@ -430,27 +269,24 @@
     </div>
   </section>
   
-  <!-- FOOTER STRUCTURAL MATRIX -->
+  <!-- 10. FOOTER SECTION MODULE -->
   <footer class="footer">
     <div class="footer-grid">
       <div>
         <div class="footer-logo">GENZEST</div>
         <p class="footer-text">
-          Leading information utility decoding intelligence patterns across global automated finance and modern machine learning frameworks.
+          Leading information platform decoding intelligence patterns across modern automated finance and machine learning frameworks.
         </p>
       </div>
-
       <div>
         <div class="footer-title">Navigate</div>
         <div class="footer-links">
           <a href="/">Home</a>
-          <a href="/" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'}); return false;" style="cursor:pointer;">Latest Posts</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
           <a href="disclaimer.html">Disclaimer</a>
         </div>
       </div>
-
       <div>
         <div class="footer-title">Legal</div>
         <div class="footer-links">
@@ -459,13 +295,12 @@
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       © <span id="year"></span> GENZEST — all rights reserved.
     </div>
   </footer>
 
-  <!-- STANDALONE SEARCH & DROPDOWN FILTER LOGIC -->
+  <!-- AUTOMATION INTERFACES BINDINGS -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const dropdown = document.getElementById("segmentDropdown");
@@ -474,7 +309,7 @@
       function filterCards() {
         const selectedValue = dropdown.value;
         const searchQuery = searchInput.value.toLowerCase();
-        const cards = document.querySelectorAll(".featured-card");
+        const cards = document.querySelectorAll(".featured-card-redesign");
 
         cards.forEach(card => {
           const cardCategory = card.dataset.category || "";
