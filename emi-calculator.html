@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMI Calculator | GENZEST</title>
+  <meta name="description" content="Calculate your monthly home, car, or personal loan EMIs instantly with the GENZEST modern financial compute module.">
+  <link rel="icon" type="image/jpeg" href="/officiallogo.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* MATCHING GENZEST THEME CORRIDORS */
+    :root {
+      --bg: #050505;
+      --surface: #111827;
+      --surface2: #0f172a;
+      --text: #ffffff;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #3b82f6;
+      --gradient: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+    }
+
+    body.theme-light {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface2: #f1f5f9;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: rgba(0, 0, 0, 0.08);
+    }
+
+    body.theme-eye {
+      --bg: #101510;
+      --surface: #1d271c;
+      --surface2: #182117;
+      --text: #e6f1dd;
+      --muted: #b5c5ae;
+      --accent: #84cc16;
+      --gradient: linear-gradient(135deg, #84cc16, #65a30d, #4d7c0f);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      transition: 0.3s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAVBAR */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      background: rgba(5, 5, 5, 0.75);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    body.theme-light .topbar { background: rgba(255, 255, 255, 0.75); }
+    body.theme-eye .topbar { background: rgba(16, 21, 16, 0.85); }
+
+    .brand {
+      text-decoration: none;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -2px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .menu-btn {
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1.2rem;
+      border: 1px solid var(--border);
+      transition: 0.3s ease;
+    }
+
+    .menu-btn:hover {
+      background: var(--accent);
+      color: white;
+      transform: scale(0.95);
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      padding: 2rem;
+      background: rgba(10, 15, 28, 0.97);
+      backdrop-filter: blur(20px);
+      z-index: 2000;
+      transition: 0.35s ease;
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+
+    body.theme-light .sidebar { background: rgba(255, 255, 255, 0.97); }
+    body.theme-eye .sidebar { background: rgba(16, 21, 16, 0.97); }
+    .sidebar.active { right: 0; }
+    .sidebar-top { display: flex; justify-content: flex-end; margin-bottom: 3rem; }
+    
+    .sidebar a {
+      text-decoration: none;
+      color: var(--text);
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.1rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: 0.25s ease;
+    }
+
+    .sidebar a:hover { color: var(--accent); padding-left: 8px; }
+
+    .theme-toggle {
+      margin-top: 2rem;
+      border: none;
+      background: var(--gradient);
+      color: white;
+      padding: 1rem;
+      border-radius: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s ease;
+      z-index: 1500;
+    }
+    .overlay.active { opacity: 1; visibility: visible; }
+
+    /* EMI CALCULATOR CORE CONTAINER CSS */
+    main {
+      padding: 8rem 5% 4rem;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .calc-wrapper {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(17, 24, 39, 0.45);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 3rem;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    body.theme-light .calc-wrapper {
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03);
+    }
+
+    body.theme-eye .calc-wrapper { background: rgba(29, 39, 28, 0.5); }
+
+    .calc-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .calc-header h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header p {
+      color: var(--muted);
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+    }
+
+    .input-side {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .input-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .input-label-row span:first-child {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .value-display {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* Range Input Track Resets */
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      background: var(--border);
+      border-radius: 99px;
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* Output Section Card styling */
+    .output-side {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .result-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .result-block span {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .emi-value {
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .breakdown-row {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .breakdown-row:last-child { border-bottom: none; }
+    .breakdown-row span:first-child { color: var(--muted); }
+    .breakdown-row span:last-child { font-weight: 600; }
+
+    /* FOOTER */
+    .footer {
+      padding: 2rem 5%;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE DESIGN VIEWPORTS */
+    @media (max-width: 768px) {
+      main { padding-top: 6rem; }
+      .calc-wrapper { padding: 2rem 1.5rem; }
+      .calc-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .output-side { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="/" class="brand">⚡ GENZEST</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <button class="menu-btn" id="closeBtn" type="button" aria-label="Close menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <a href="/"><i class="fas fa-house"></i> Home</a>
+    <a href="about.html"><i class="fas fa-circle-info"></i> About</a>
+    <a href="privacy-policy.html"><i class="fas fa-shield-halved"></i> Privacy Policy</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <button class="theme-toggle" id="themeToggle" type="button">Theme</button>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main>
+    <div class="calc-wrapper">
+      <div class="calc-header">
+        <h1>EMI Loan Calculator</h1>
+        <p>Analyze your monthly payment parameters against custom principal totals instantly.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="input-side">
+          <div class="input-block">
+            <div class="input-label-row">
+              <span>LOAN AMOUNT</span>
+              <span class="value-display">₹<span id="amountLabel">5,000,000</span></span>
+            </div>
+            <input type="range" id="loanAmount" min="100000" max="10000000" step="50000" value="5000000">
+          </div>
+
+          <div class="input-block">
+            <div class="input-label-row">
+              <span>INTEREST RATE (P.A.)</span>
+              <span class="value-display"><span id="interestLabel">8.5</span>%</span>
+            </div>
+            <input type="range" id="interestRate" min="5" max="20" step="0.1" value="8.5">
+          </div>
+
+          <div class="input-block">
+            <div class="input-label-row">
+              <span>LOAN TENURE</span>
+              <span class="value-display"><span id="tenureLabel">20</span> Years</span>
+            </div>
+            <input type="range" id="loanTenure" min="1" max="30" step="1" value="20">
+          </div>
+        </div>
+
+        <div class="output-side">
+          <div class="result-block">
+            <span>MONTHLY EMI PAYMENT</span>
+            <div class="emi-value">₹<span id="monthlyEmiDisplay">0</span></div>
+          </div>
+
+          <div style="width: 100%;">
+            <div class="breakdown-row">
+              <span>Principal Amount</span>
+              <span>₹<span id="principalDisplay">0</span></span>
+            </div>
+            <div class="breakdown-row">
+              <span>Total Interest Payable</span>
+              <span>₹<span id="interestDisplay">0</span></span>
+            </div>
+            <div class="breakdown-row">
+              <span>Total Amount Repayable</span>
+              <span>₹<span id="totalDisplay">0</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> GENZEST — all rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. UI Navigation Bindings
+      const menuBtn = document.getElementById("menuBtn");
+      const closeBtn = document.getElementById("closeBtn");
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+
+      menuBtn.addEventListener("click", () => { sidebar.classList.add("active"); overlay.classList.add("active"); });
+      closeBtn.addEventListener("click", () => { sidebar.classList.remove("active"); overlay.classList.remove("active"); });
+      overlay.addEventListener("click", () => { sidebar.classList.remove("active"); overlay.classList.remove("active"); });
+
+      // Live Timestamp Synchronization
+      document.getElementById("year").innerText = new Date().getFullYear();
+
+      // Theme Integration Loop Setup
+      const themeBtn = document.getElementById("themeToggle");
+      let currentTheme = localStorage.getItem('genzest-theme-idx') ? parseInt(localStorage.getItem('genzest-theme-idx')) : 0;
+      
+      function applyThemeClass(idx) {
+        document.body.classList.remove("theme-light", "theme-eye");
+        if (idx === 0) themeBtn.innerHTML = "Theme";
+        if (idx === 1) { document.body.classList.add("theme-light"); themeBtn.innerHTML = "Light Theme"; }
+        if (idx === 2) { document.body.classList.add("theme-eye"); themeBtn.innerHTML = "Eye Care Theme"; }
+      }
+      applyThemeClass(currentTheme);
+
+      themeBtn.addEventListener("click", () => {
+        currentTheme = (currentTheme + 1) > 2 ? 0 : currentTheme + 1;
+        localStorage.setItem('genzest-theme-idx', currentTheme);
+        applyThemeClass(currentTheme);
+      });
+
+      // 2. COMPUTE LOGIC ENGINE
+      const amountSlider = document.getElementById("loanAmount");
+      const interestSlider = document.getElementById("interestRate");
+      const tenureSlider = document.getElementById("loanTenure");
+
+      function formatCurrency(number) {
+        return Math.round(number).toLocaleString('en-IN');
+      }
+
+      function calculateLoanMatrix() {
+        const P = parseFloat(amountSlider.value);
+        const annualRate = parseFloat(interestSlider.value);
+        const N = parseFloat(tenureSlider.value) * 12; // total months
+
+        // Convert annual interest to monthly value factor
+        const R = (annualRate / 12) / 100;
+
+        // Sync visual string descriptors
+        document.getElementById("amountLabel").innerText = P.toLocaleString('en-IN');
+        document.getElementById("interestLabel").innerText = annualRate;
+        document.getElementById("tenureLabel").innerText = tenureSlider.value;
+
+        // Mathematical loan computation algorithm formulas
+        let emi = 0;
+        if (R > 0) {
+          emi = P * R * Math.pow(1 + R, N) / (Math.pow(1 + R, N) - 1);
+        } else {
+          emi = P / N;
+        }
+
+        const totalRepayment = emi * N;
+        const totalInterest = totalRepayment - P;
+
+        // Dynamic element text injectors
+        document.getElementById("monthlyEmiDisplay").innerText = formatCurrency(emi);
+        document.getElementById("principalDisplay").innerText = formatCurrency(P);
+        document.getElementById("interestDisplay").innerText = formatCurrency(totalInterest);
+        document.getElementById("totalDisplay").innerText = formatCurrency(totalRepayment);
+      }
+
+      // Hook up input event structural monitoring arrays
+      amountSlider.addEventListener("input", calculateLoanMatrix);
+      interestSlider.addEventListener("input", calculateLoanMatrix);
+      tenureSlider.addEventListener("input", calculateLoanMatrix);
+
+      // Initialize default computation matrix values on run
+      calculateLoanMatrix();
+    });
+  </script>
+</body>
+</html>
